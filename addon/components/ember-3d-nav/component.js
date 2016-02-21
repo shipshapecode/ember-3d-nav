@@ -5,12 +5,8 @@ import layout from './template';
 export default Ember.Component.extend({
   layout,
   tagName: '',
+  navIsVisible: false,
   didInsertElement() {
-    //toggle 3d navigation
-    $('.cd-3d-nav-trigger').on('click', () => {
-      this.toggle3dBlock(!$('.cd-header').hasClass('nav-is-visible'));
-    });
-
     $(window).on('resize', () => {
       window.requestAnimationFrame(this.updateSelectedNav);
     });
@@ -27,8 +23,7 @@ export default Ember.Component.extend({
   },
   toggle3dBlock(addOrRemove) {
     if (typeof(addOrRemove) === 'undefined') addOrRemove = true;
-    $('.cd-header').toggleClass('nav-is-visible', addOrRemove);
-    $('.cd-3d-nav-container').toggleClass('nav-is-visible', addOrRemove);
+    this.set('navIsVisible', addOrRemove);
     $('main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
       //fix marker position when opening the menu (after a window resize)
       addOrRemove && this.updateSelectedNav();
@@ -54,9 +49,13 @@ export default Ember.Component.extend({
   actions: {
     onClickAction() {
       this.get('links').setEach('selected', false);
-      Ember.run.scheduleOnce('afterRender', this, () =>{
+      Ember.run.scheduleOnce('afterRender', this, () => {
         this.updateSelectedNav('close');
       });
+    },
+    toggleMenu(){
+      this.toggleProperty('navIsVisible');
+      this.toggle3dBlock(this.get('navIsVisible'));
     }
   }
 });

@@ -1,16 +1,13 @@
-<header class="cd-header">
+<header class="cd-header {{if navIsVisible 'nav-is-visible'}}">
   <a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
-  <a href="#0" class="cd-3d-nav-trigger">
-    Menu
-    <span></span>
-  </a>
+  {{nav-trigger onClickAction='toggleMenu'}}
 </header> <!-- .cd-header -->
 
 <main>
   {{yield}}
 </main>
 
-<nav class="cd-3d-nav-container">
+<nav class="cd-3d-nav-container {{if navIsVisible 'nav-is-visible'}}">
   <ul class="cd-3d-nav">
     {{#each links as |link|}}
       {{nav-item
