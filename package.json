@@ -1,7 +1,7 @@
 {
   "name": "ember-3d-nav",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A 3d rotating top navigation bar for Ember apps",
   "directories": {
     "doc": "doc",
     "test": "tests"
