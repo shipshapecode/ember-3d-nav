@@ -12,25 +12,13 @@
 
 <nav class="cd-3d-nav-container">
   <ul class="cd-3d-nav">
-    <li class="cd-selected">
-      <a href="#0">Dashboard</a>
-    </li>
-
-    <li>
-      <a href="#0">Projects</a>
-    </li>
-
-    <li>
-      <a href="#0">Images</a>
-    </li>
-
-    <li>
-      <a href="#0">Settings</a>
-    </li>
-
-    <li>
-      <a href="#0">New</a>
-    </li>
+    {{#each links as |link|}}
+      {{nav-item
+      cdSelected=link.selected
+      href=link.href
+      onClickAction='onClickAction'
+      text=link.text}}
+    {{/each}}
   </ul> <!-- .cd-3d-nav -->
 
   <span class="cd-marker color-1"></span>
