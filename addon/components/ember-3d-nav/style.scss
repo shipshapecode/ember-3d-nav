@@ -1,9 +1,8 @@
 @import './partials/reset';
-
-@import './partials/variables'; // colors, fonts etc...
-
-@import './partials/mixins'; // custom mixins
-
+@import './partials/variables';
+// colors, fonts etc...
+@import './partials/mixins';
+// custom mixins
 @import './partials/layout'; // responsive grid and media queries
 
 /* --------------------------------
@@ -235,7 +234,7 @@ Main Components
       background-position: 0 0;
     }
 
-    .no-touch &:hover {
+    &:hover {
       background-color: darken($body-bg, 15%);
     }
   }
@@ -243,7 +242,7 @@ Main Components
   .cd-selected a {
     background-color: darken($body-bg, 20%);
 
-    .no-touch &:hover {
+    &:hover {
       background-color: darken($body-bg, 20%);
     }
 
@@ -302,8 +301,6 @@ Main Components
   -moz-transition: -moz-transform $animation-duration, left 0.5s, color 0.5s, background-color 0.5s;
   transition: transform $animation-duration, left 0.5s, color 0.5s, background-color 0.5s;
 
-
-
   &::before {
     /* triangle at the bottom of nav selected item */
     content: '';
@@ -327,18 +324,22 @@ Main Components
   color: $color-1;
   background-color: $color-1;
 }
+
 .color-2 {
   color: $color-2;
   background-color: $color-2;
 }
+
 .color-3 {
   color: $color-3;
   background-color: $color-3;
 }
+
 .color-4 {
   color: $color-4;
   background-color: $color-4;
 }
+
 .color-5 {
   color: $color-5;
   background-color: $color-5;

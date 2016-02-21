@@ -4,7 +4,6 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
   didInsertElement() {
     //toggle 3d navigation
     $('.cd-3d-nav-trigger').on('click', function() {
