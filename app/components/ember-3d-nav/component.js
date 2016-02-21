@@ -1,0 +1,1 @@
+export { default } from 'ember-3d-nav/components/ember-3d-nav/component';
