@@ -5,27 +5,27 @@ export default Ember.Route.extend({
     {
       href: '#0',
       selected: true,
-      text: 'Dashboard'
+      text: 'About'
     },
     {
       href: '#0',
       selected: false,
-      text: 'Projects'
+      text: 'Technologies'
     },
     {
       href: '#0',
       selected: false,
-      text: 'Images'
+      text: 'Team'
     },
     {
       href: '#0',
       selected: false,
-      text: 'Settings'
+      text: 'Portfolio'
     },
     {
       href: '#0',
       selected: false,
-      text: 'New'
+      text: 'Contact'
     }
   ]),
   setupController(controller){

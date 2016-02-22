@@ -4,7 +4,7 @@
   float: right;
   height: 45px;
   width: 45px;
-  margin-top: 18px;
+  margin-top: 30px;
 
   /* replace text with background image */
   overflow: hidden;
@@ -19,7 +19,7 @@
     position: absolute;
     width: 28px;
     height: 3px;
-    background-color: #FFF;
+    background-color: $text-color;
     backface-visibility: hidden;
   }
 
@@ -50,12 +50,12 @@
 
     span {
       /* hide line in the center */
-      background-color: rgba(#FFF, 0);
+      background-color: rgba($text-color, 0);
 
       &::before,
       &::after {
         /* keep visible other 2 lines */
-        background-color: rgba(#FFF, 1);
+        background-color: rgba($text-color, 1);
       }
 
       &::before {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="64px"
+	 viewBox="0 0 32 64" enable-background="new 0 0 32 64" xml:space="preserve">
+<title>icon-1</title>
+<desc>Created with Sketch.</desc>
+<g transform="translate(0, 0)">
+	
+		<line fill="none" stroke="#354952" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="16" y1="6.402" x2="16" y2="30.692"/>
+	
+		<circle fill="none" stroke="#354952" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="16" cy="3.703" r="2.699"/>
+	
+		<line fill="none" stroke="#354952" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="11.952" y1="10.45" x2="20.049" y2="10.45"/>
+	<path fill="none" stroke="#354952" stroke-width="2" stroke-miterlimit="10" d="M26.795,24.08
+		c-2.023,3.913-6.072,6.612-10.795,6.612c-4.723,0-8.771-2.699-10.795-6.612"/>
+	<polyline fill="none" stroke="#354952" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="5.205,29.343 
+		5.205,23.945 10.603,23.945 	"/>
+	<polyline fill="none" stroke="#354952" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="21.398,23.945 
+		26.795,23.945 26.795,29.343 	"/>
+</g>
+<title>icon-1</title>
+<desc>Created with Sketch.</desc>
+<g transform="translate(0, 0)">
+	
+		<line fill="none" stroke="#E35746" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="16" y1="38.361" x2="16" y2="62.65"/>
+	
+		<circle fill="none" stroke="#E35746" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="16" cy="35.662" r="2.699"/>
+	
+		<line fill="none" stroke="#E35746" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="11.951" y1="42.408" x2="20.049" y2="42.408"/>
+	<path fill="none" stroke="#E35746" stroke-width="2" stroke-miterlimit="10" d="M26.795,56.038
+		C24.771,59.951,20.723,62.65,16,62.65s-8.771-2.699-10.795-6.612"/>
+	<polyline fill="none" stroke="#E35746" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="5.205,61.301 
+		5.205,55.903 10.603,55.903 	"/>
+	<polyline fill="none" stroke="#E35746" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="21.398,55.903 
+		26.795,55.903 26.795,61.301 	"/>
+</g>
+</svg>

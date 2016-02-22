@@ -37,7 +37,10 @@ export default Ember.Component.extend({
     const backgroundColor = selectedItem.data('color');
     const marker = $('.cd-marker');
 
-    marker.removeClassPrefix('color').addClass('color-' + selectedItemPosition).css({
+    if (this.get('multiColor')) {
+      marker.removeClassPrefix('color').addClass('color-' + selectedItemPosition);
+    }
+    marker.css({
       'left': leftPosition
     });
     if (type == 'close') {

@@ -57,7 +57,12 @@ Main Components
 
 .cd-logo {
   float: left;
-  margin-top: 28px;
+  margin-top: 15px;
+
+  img {
+    height: auto;
+    width: 75px;
+  }
 }
 
 .cd-3d-nav-container {
@@ -118,23 +123,23 @@ Main Components
     @include column(1/$nav-items); // see partials > _layout.scss
 
     &:first-of-type a::before {
-      background-image: url(../img/icon-1.svg);
+      background-image: url(../img/boat.svg);
     }
 
     &:nth-of-type(2) a::before {
-      background-image: url(../img/icon-2.svg);
+      background-image: url(../img/code.svg);
     }
 
     &:nth-of-type(3) a::before {
-      background-image: url(../img/icon-3.svg);
+      background-image: url(../img/team.svg);
     }
 
     &:nth-of-type(4) a::before {
-      background-image: url(../img/icon-4.svg);
+      background-image: url(../img/portfolio.svg);
     }
 
     &:nth-of-type(5) a::before {
-      background-image: url(../img/icon-5.svg);
+      background-image: url(../img/anchor.svg);
     }
   }
 
@@ -271,15 +276,22 @@ main {
   transform: translateZ(0);
   backface-visibility: hidden;
 
-  h1 {
-    text-align: center;
-    font: {
-      size: 2.4rem;
-      weight: 300;
+  .info-text {
+    margin: 0 auto;
+    width: 60vw;
+    h1, p {
+      text-align: center;
+      font: {
+        size: 2rem;
+        weight: 300;
+      }
+      color: $text-color;
+      margin: 2em auto;
+      @include font-smoothing;
     }
-    color: $text-color;
-    margin: 2em auto;
-    @include font-smoothing;
+    h1 {
+      font-size: 4rem;
+    }
   }
 
   &.nav-is-visible {
