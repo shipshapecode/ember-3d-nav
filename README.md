@@ -5,6 +5,9 @@ It aims to make it easily configurable for use with your Ember apps.
 
 This is currently **pre-alpha**, but if you'd like to help out and contribute please let me know!
 
+[![Demo](http://i.imgur.com/408RMvv.gif)](http://shipshapecode.github.io/ember-3d-nav/)
+[http://shipshapecode.github.io/ember-3d-nav/](http://shipshapecode.github.io/ember-3d-nav/)
+
 ## Installation
 
 `ember install ember-3d-nav`
