@@ -20,21 +20,21 @@
     width: 28px;
     height: 3px;
     background-color: #FFF;
-    @include backface-visibility(hidden);
+    backface-visibility: hidden;
   }
 
   span {
     /* this is the central line */
     top: 21px;
     left: 8px;
-    @include transition(background 0.2s $animation-duration);
+    transition: background 0.2s $animation-duration;
 
     &::before,
     &:after {
       /* these are the upper and lower lines */
       content: '';
       left: 0;
-      @include transition(transform 0.2s $animation-duration);
+      transition: transform 0.2s $animation-duration;
     }
 
     &::before {
@@ -59,11 +59,11 @@
       }
 
       &::before {
-        @include transform(translateY(8px) rotate(-45deg));
+        transform: translateY(8px) rotate(-45deg);
       }
 
       &::after {
-        @include transform(translateY(-8px) rotate(45deg));
+        transform: translateY(-8px) rotate(45deg);
       }
     }
   }

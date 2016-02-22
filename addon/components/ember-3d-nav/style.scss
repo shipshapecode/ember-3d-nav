@@ -37,20 +37,20 @@ Main Components
   height: 80px;
   width: 90%;
   margin: 0 auto;
-  @include transition(transform $animation-duration);
+  transition: transform $animation-duration;
   @include clearfix;
   /* Force Hardware Acceleration in WebKit */
-  @include transform(translateZ(0));
-  @include backface-visibility(hidden);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   &.nav-is-visible {
-    @include transform(translateY($nav-height-S));
+    transform: translateY($nav-height-S);
   }
 
   @include MQ(M) {
 
     &.nav-is-visible {
-      @include transform(translateY($nav-height-M));
+      transform: translateY($nav-height-M);
     }
   }
 }
@@ -70,20 +70,13 @@ Main Components
   background-color: $nav-container-bg;
   visibility: hidden;
   /* enable a 3D-space for children elements */
-  @include perspective(1000px);
-
-  @include transform(translateY(-100%));
-
-  -webkit-transition: -webkit-transform $animation-duration 0s, visibility 0s $animation-duration;
-  -moz-transition: -moz-transform $animation-duration 0s, visibility 0s $animation-duration;
+  perspective: 1000px;
+  transform: translateY(-100%);
   transition: transform $animation-duration 0s, visibility 0s $animation-duration;
 
   &.nav-is-visible {
     visibility: visible;
-    @include transform(translateY(0));
-
-    -webkit-transition: -webkit-transform $animation-duration 0s, visibility $animation-duration 0s;
-    -moz-transition: -moz-transform $animation-duration 0s, visibility $animation-duration 0s;
+    transform: translateY(0);
     transition: transform $animation-duration 0s, visibility $animation-duration 0s;
   }
 
@@ -99,12 +92,12 @@ Main Components
   background-color: $nav-bg;
 
   /* Force Hardware Acceleration */
-  @include transform(translateZ(0));
-  @include backface-visibility(hidden);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
-  @include transform-origin(center bottom);
-  @include transform(rotateX(90deg));
-  @include transition(transform $animation-duration);
+  transform-origin: center bottom;
+  transform: rotateX(90deg);
+  transition: transform $animation-duration;
 
   &::after {
     /* menu dark cover layer - to enhance perspective effect */
@@ -117,7 +110,7 @@ Main Components
     background-color: $nav-container-bg;
     opacity: 1;
     visibility: visible;
-    @include transition(opacity $animation-duration 0s, visibility $animation-duration 0s);
+    transition: opacity $animation-duration 0s, visibility $animation-duration 0s;
   }
 
   li {
@@ -150,7 +143,7 @@ Main Components
     display: block;
     height: 100%;
     color: transparent;
-    @include transition(background-color 0.2s);
+    transition: background-color 0.2s;
 
     &::before {
       /* navigation icons */
@@ -182,13 +175,13 @@ Main Components
   }
 
   .nav-is-visible & {
-    @include transform(translateZ(0));
+    transform: translateZ(0);
 
     &::after {
       /* menu cover layer - hide it when navigation is visible */
       opacity: 0;
       visibility: hidden;
-      @include transition(opacity $animation-duration 0s, visibility 0s $animation-duration);
+      transition: opacity $animation-duration 0s, visibility 0s $animation-duration;
     }
   }
 
@@ -224,11 +217,8 @@ Main Components
   left: 0;
   height: 3px;
   width: 100%/$nav-items;
-  @include transform-origin(center bottom);
-  @include transform(translateZ(0) rotateX(90deg));
-
-  -webkit-transition: -webkit-transform $animation-duration, left 0.5s, color 0.5s, background-color 0.5s;
-  -moz-transition: -moz-transform $animation-duration, left 0.5s, color 0.5s, background-color 0.5s;
+  transform-origin: center bottom;
+  transform: translateZ(0) rotateX(90deg);
   transition: transform $animation-duration, left 0.5s, color 0.5s, background-color 0.5s;
 
   &::before {
@@ -244,7 +234,7 @@ Main Components
   }
 
   .nav-is-visible & {
-    @include transform(translateZ(0));
+    transform: translateZ(0);
   }
 }
 
@@ -276,10 +266,10 @@ Main Components
 }
 
 main {
-  @include transition(transform $animation-duration);
+  transition: transform $animation-duration;
   /* Force Hardware Acceleration in WebKit */
-  @include transform(translateZ(0));
-  @include backface-visibility(hidden);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   h1 {
     text-align: center;
@@ -293,12 +283,12 @@ main {
   }
 
   &.nav-is-visible {
-    @include transform(translateY($nav-height-S));
+    transform: translateY($nav-height-S);
   }
 
   @include MQ(M) {
     &.nav-is-visible {
-      @include transform(translateY($nav-height-M));
+      transform: translateY($nav-height-M);
     }
 
     h1 {
