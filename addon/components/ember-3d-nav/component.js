@@ -21,15 +21,18 @@ export default Ember.Component.extend({
       return this;
     };
   },
-  toggle3dBlock(addOrRemove) {
-    if (typeof(addOrRemove) === 'undefined') addOrRemove = true;
-    this.set('navIsVisible', addOrRemove);
+  toggle3dBlock() {
+    let addOrRemove = this.get('navIsVisible');
     $('main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
       //fix marker position when opening the menu (after a window resize)
       addOrRemove && this.updateSelectedNav();
     });
   },
-  //this function update the .cd-marker position
+  /**
+   * This function updates the .cd-marker position
+   *
+   * @param type Whether it is a close or not
+   */
   updateSelectedNav(type) {
     const selectedItem = $('.cd-selected');
     const selectedItemPosition = selectedItem.index() + 1;
@@ -45,7 +48,8 @@ export default Ember.Component.extend({
     });
     if (type == 'close') {
       marker.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
-        this.toggle3dBlock(false);
+        this.set('navIsVisible', false);
+        this.toggle3dBlock();
       });
     }
   },
@@ -58,7 +62,7 @@ export default Ember.Component.extend({
     },
     toggleMenu(){
       this.toggleProperty('navIsVisible');
-      this.toggle3dBlock(this.get('navIsVisible'));
+      this.toggle3dBlock();
     }
   }
 });

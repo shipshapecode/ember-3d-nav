@@ -9,7 +9,9 @@ export default Ember.Component.extend({
   cdSelected: false,
   text: '',
   click(){
-    this.sendAction('onClickAction');
-    this.set('cdSelected', true);
+    if (!this.get('cdSelected')) {
+      this.sendAction('onClickAction');
+      this.set('cdSelected', true);
+    }
   }
 });
