@@ -1,7 +1,6 @@
-<header class="cd-header {{if navIsVisible 'nav-is-visible'}}">
+{{#nav-trigger-container navIsVisible=navIsVisible toggleMenu='toggleMenu'}}
   <a href="#0" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
-  {{nav-trigger onClickAction='toggleMenu'}}
-</header> <!-- .cd-header -->
+{{/nav-trigger-container}}
 
 <main>
   {{yield}}

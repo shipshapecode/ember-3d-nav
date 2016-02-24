@@ -5,6 +5,16 @@ $color-3: #d6915e; // Di Serria
 $color-4: #5397c7; // Danube
 $color-5: #77cd91; // De York
 
+.cd-logo {
+  float: left;
+  margin-top: 15px;
+
+  img {
+    height: auto;
+    width: 75px;
+  }
+}
+
 /* these are the colors of the markers - line + arrow */
 
 .color-1 {
