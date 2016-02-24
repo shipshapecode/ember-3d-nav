@@ -6,30 +6,6 @@
 @import './partials/layout'; // responsive grid and media queries
 
 /* --------------------------------
-Primary style
--------------------------------- */
-
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font: {
-    size: 1.6rem;
-    family: $primary-font; // variables inside partials > _variables.scss
-  }
-  background-color: $body-bg;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* --------------------------------
 Main Components
 -------------------------------- */
 

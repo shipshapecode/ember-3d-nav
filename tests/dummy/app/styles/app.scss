@@ -1,9 +1,35 @@
+$body-bg: #82B4BC; // light blue
+
 $color-1: #E35746;
 //$color-1: #9a57bd; // Amethyst
 $color-2: #c96aa4; // Hopbush
 $color-3: #d6915e; // Di Serria
 $color-4: #5397c7; // Danube
 $color-5: #77cd91; // De York
+
+// fonts
+
+$primary-font: 'Open Sans', sans-serif;
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font: {
+    size: 1.6rem;
+    family: $primary-font; // variables inside partials > _variables.scss
+  }
+  background-color: $body-bg;
+}
+
+a {
+  text-decoration: none;
+}
 
 .cd-logo {
   float: left;
