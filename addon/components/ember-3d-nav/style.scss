@@ -215,34 +215,6 @@ Main Components
   }
 }
 
-
-/* these are the colors of the markers - line + arrow */
-
-.color-1 {
-  color: $color-1;
-  background-color: $color-1;
-}
-
-.color-2 {
-  color: $color-2;
-  background-color: $color-2;
-}
-
-.color-3 {
-  color: $color-3;
-  background-color: $color-3;
-}
-
-.color-4 {
-  color: $color-4;
-  background-color: $color-4;
-}
-
-.color-5 {
-  color: $color-5;
-  background-color: $color-5;
-}
-
 main {
   transition: transform $animation-duration;
   /* Force Hardware Acceleration in WebKit */
