@@ -1,5 +1,5 @@
 {{#nav-trigger-container navIsVisible=navIsVisible toggleMenu='toggleMenu'}}
-  <a href="#0" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
+  <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
 {{/nav-trigger-container}}
 
 <main>
@@ -9,11 +9,9 @@
 <nav class="cd-3d-nav-container {{if navIsVisible 'nav-is-visible'}}">
   <ul class="cd-3d-nav">
     {{#each links as |link|}}
-      {{nav-item
-      cdSelected=link.selected
-      href=link.href
-      onClickAction='onClickAction'
-      text=link.text}}
+      {{#nav-item cdSelected=link.selected onClickAction='onClickAction'}}
+        <a href="{{link.href}}">{{link.text}}</a>
+      {{/nav-item}}
     {{/each}}
   </ul> <!-- .cd-3d-nav -->
 
