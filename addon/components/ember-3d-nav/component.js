@@ -34,7 +34,7 @@ export default Ember.Component.extend({
    * @param type Whether it is a close or not
    */
   updateSelectedNav(type) {
-    const selectedItem = $('.cd-selected');
+    const selectedItem = $('.is-selected');
     const selectedItemPosition = selectedItem.index() + 1;
     const leftPosition = selectedItem.offset().left;
     const backgroundColor = selectedItem.data('color');
@@ -54,8 +54,7 @@ export default Ember.Component.extend({
     }
   },
   actions: {
-    onClickAction() {
-      this.get('links').setEach('selected', false);
+    navItemSelected() {
       Ember.run.scheduleOnce('afterRender', this, () => {
         this.updateSelectedNav('close');
       });

@@ -8,11 +8,13 @@
 
 <nav class="cd-3d-nav-container {{if navIsVisible 'nav-is-visible'}}">
   <ul class="cd-3d-nav">
-    {{#each links as |link|}}
-      {{#nav-item cdSelected=link.selected onClickAction='onClickAction'}}
-        <a href="{{link.href}}">{{link.text}}</a>
-      {{/nav-item}}
-    {{/each}}
+    {{#nav-items-container navItemSelected='navItemSelected' as |selectedIndex navItemClicked|}}
+      {{#each links as |link index|}}
+        {{#nav-item index=index selectedIndex=selectedIndex onClickAction=navItemClicked}}
+          <a href="{{link.href}}">{{link.text}}</a>
+        {{/nav-item}}
+      {{/each}}
+    {{/nav-items-container}}
   </ul>
 
   {{nav-marker multiColor=multiColor}}

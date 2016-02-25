@@ -133,7 +133,7 @@ Main Components
     }
   }
 
-  .cd-selected a {
+  .is-selected a {
     background-color: darken($body-bg, 20%);
 
     &:hover {
