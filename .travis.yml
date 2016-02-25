@@ -36,3 +36,11 @@ install:
 
 script:
   - ember try $EMBER_TRY_SCENARIO test
+
+after_script:
+  - codeclimate-test-reporter < lcov.dat
+
+addons:
+    code_climate:
+        repo_token:
+              secure: "k4wbZZ5Rh2h7ZnMl0Njax86WPo1KAXBCRQwMdLZiRsZ0fDIBlTN69xwRXqVanbZUP30Nq8T3OvSwilJl1OBZS/et6hSZZmQXjkE05YBXvgKMheU/mtqvQW0dkYC29AYsXHbJpVMNfZiR6T0z95wGZSO08zwiA0upFGnOMPGj7kuQiq1qBNcQF8qzQ5z1IUV3Mq4wo5QvS+VaAQt0eBTXBr9hkIS7Nosq0AO/33q0gnm6glGnl68oSNpp4CO4uHRfK83dsaHW4UvbEEOEKes3HgwyDnUudecL+Yniask7ojIC0HLm9Bhg83D5sO2FburD00ZAi0EPW1KjjnxwvqEuuQZ5UT/2zMYwBi9EmHxsBmQReR2SFNMklG+nFB6hIWItW4LII3STyh7ZzP1dan6b83cGrsxO7r29ZyofwmOhToazu3+6D5VAhhDVX3tQqMYv8MHpF53u5rlAHbhaEajYJzfVpnY9M2VoZDUQMqU7hJfRnDOjFOswF7WImQFXzbNf1zAjhINhuw7vPyTiU9mEXFuZndHhxrAqt2GYoRp5OmoH6SgGedqiEf3FrXiydjduHVBAyniErt2myzeXvOC6aW5Dh4fNf83b4MBlw8IM4AbhGYqquE4Xi4nSGSyn5dEQR4ZY4ndFHHd3uyJNqC6Afj+4g32b82kakDspOb6TxKo="

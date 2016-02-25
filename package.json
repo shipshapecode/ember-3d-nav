@@ -23,9 +23,11 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
+    "codeclimate-test-reporter": "^0.3.1",
     "ember-cli": "2.3.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-autoprefixer": "0.6.0",
+    "ember-cli-blanket": "0.8.0",
     "ember-cli-dependency-checker": "^1.2.0",
     "ember-cli-github-pages": "0.0.7",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
