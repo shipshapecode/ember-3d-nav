@@ -9,6 +9,7 @@
 Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-rotating-navigation/) by CodyHouse. 
 It aims to make it easily configurable for use with your Ember apps.
 
+## Looking for contributors!
 This is currently **pre-alpha**, but if you'd like to help out and contribute please let me know!
 
 [![Demo](http://i.imgur.com/408RMvv.gif)](http://shipshapecode.github.io/ember-3d-nav/)
@@ -16,11 +17,35 @@ This is currently **pre-alpha**, but if you'd like to help out and contribute pl
 
 ## Installation
 
+`ember-truth-helpers` are currently required to use this addon, so you must run both of these ember installs:
+
+`ember install ember-truth-helpers`
+
 `ember install ember-3d-nav`
 
 ## Usage
 
-You must define an array of links to pass to the component
+There are now 3 yields, the header, the main, and the nav-items sections. You can use them somewhat like this:
+
+```hbs
+{{#ember-3d-nav as |section selectedIndex navItemClicked|}}
+  {{#if (eq section 'header')}}
+    <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
+  {{/if}}
+  {{#if (eq section 'main')}}
+    {{outlet}}
+  {{/if}}
+  {{#if (eq section 'nav-items')}}
+    {{#each links as |link index|}}
+      {{#nav-item index=index selectedIndex=selectedIndex onClickAction=navItemClicked}}
+        <a href="{{link.href}}">{{link.text}}</a>
+      {{/nav-item}}
+    {{/each}}
+  {{/if}}
+{{/ember-3d-nav}}
+```
+
+I have defined my links in an array, which I would recommend, but you can manually create `nav-item` components as well.
 
 ```js
 links: Ember.A([
@@ -50,12 +75,4 @@ links: Ember.A([
       text: 'New'
     }
   ]),
-```
-
-Then just pass the links to the component like so:
-
-```hbs
-{{#ember-3d-nav links=links}}
-  {{!--}}Put your page content here, it will be wrapped by the nav{{--}}
-{{/ember-3d-nav}}
 ```
