@@ -6,9 +6,6 @@ module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
     autoprefixer: {
       browsers: ['> 5%', 'IE >= 10']
-    },
-    sassOptions: {
-      includePaths: ['addon']
     }
   });
 

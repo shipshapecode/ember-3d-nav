@@ -1,3 +1,11 @@
-@import "addon/components/ember-3d-nav/style";
-@import 'addon/components/nav-marker/style';
-@import "addon/components/nav-trigger/style";
+@import './partials/reset';
+@import './partials/variables';
+// colors, fonts etc...
+@import './partials/mixins';
+// custom mixins
+@import './partials/layout'; // responsive grid and media queries
+
+//Components
+@import "ember-3d-nav";
+@import 'nav-marker';
+@import "nav-trigger";
