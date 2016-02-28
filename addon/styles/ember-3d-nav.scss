@@ -139,7 +139,8 @@ Main Components
         weight: 600;
       }
       text-align: center;
-      @include font-smoothing;
+      //TODO move font smoothing
+      //@include font-smoothing;
 
       /* truncate text with ellipsis if too long */
       white-space: nowrap;
@@ -159,24 +160,6 @@ main {
   /* Force Hardware Acceleration in WebKit */
   transform: translateZ(0);
   backface-visibility: hidden;
-
-  .info-text {
-    margin: 0 auto;
-    width: 60vw;
-    h1, p {
-      text-align: center;
-      font: {
-        size: 2rem;
-        weight: 300;
-      }
-      color: $text-color;
-      margin: 2em auto;
-      @include font-smoothing;
-    }
-    h1 {
-      font-size: 4rem;
-    }
-  }
 
   &.nav-is-visible {
     transform: translateY($nav-height-S);

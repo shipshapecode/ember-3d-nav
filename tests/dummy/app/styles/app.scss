@@ -1,3 +1,5 @@
+@import 'mixins';
+$text-color: #F5F0E1; // cream
 $body-bg: #82B4BC; // light blue
 
 $color-1: #E35746;
@@ -62,6 +64,26 @@ a {
   img {
     height: auto;
     width: 75px;
+  }
+}
+
+main {
+  .info-text {
+    margin: 0 auto;
+    width: 60vw;
+    h1, p {
+      text-align: center;
+      font: {
+        size: 2rem;
+        weight: 300;
+      }
+      color: $text-color;
+      margin: 2em auto;
+      @include font-smoothing;
+    }
+    h1 {
+      font-size: 4rem;
+    }
   }
 }
 
