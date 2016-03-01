@@ -10,7 +10,7 @@
   <ul class="cd-3d-nav">
     {{#nav-items-container navItemSelected='navItemSelected' as |selectedIndex navItemClicked|}}
       {{yield 'nav-items' selectedIndex navItemClicked}}
-      <span class="nav-marker color-{{if multiColor (math selectedIndex '+' 1) 1}}"></span>
+      <span class="nav-marker color-{{if multiColor (add selectedIndex 1) 1}}"></span>
     {{/nav-items-container}}
   </ul>
 </nav>
