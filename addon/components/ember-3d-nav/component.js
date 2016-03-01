@@ -29,20 +29,15 @@ export default Ember.Component.extend({
     });
   },
   /**
-   * This function updates the .cd-marker position
+   * This function updates the .nav-marker position
    *
    * @param type Whether it is a close or not
    */
   updateSelectedNav(type) {
     const selectedItem = $('.is-selected');
-    const selectedItemPosition = selectedItem.index() + 1;
     const leftPosition = selectedItem.offset().left;
-    const backgroundColor = selectedItem.data('color');
-    const marker = $('.cd-marker');
+    const marker = $('.nav-marker');
 
-    if (this.get('multiColor')) {
-      marker.removeClassPrefix('color').addClass('color-' + selectedItemPosition);
-    }
     marker.css({
       'left': leftPosition
     });
