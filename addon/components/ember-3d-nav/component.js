@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   navIsVisible: false,
   didInsertElement() {
     $(window).on('resize', () => {
-      window.requestAnimationFrame(this.updateSelectedNav);
+      window.requestAnimationFrame(this.updateSelectedNav.bind(this));
     });
 
     $.fn.removeClassPrefix = function(prefix) {
