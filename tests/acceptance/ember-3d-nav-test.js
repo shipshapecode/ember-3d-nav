@@ -10,7 +10,7 @@ test("clicking menu button opens nav", function (assert) {
   andThen(function () {
     assert.equal(find('.cd-3d-nav-container').hasClass('nav-is-visible'), false, "nav-is-visible class not applied initially");
   });
-  click('.cd-3d-nav-trigger');
+  click('.nav-trigger');
   andThen(function () {
     assert.equal(find('.cd-3d-nav-container').hasClass('nav-is-visible'), true, "nav-is-visible class applied after clicking menu button");
   });
