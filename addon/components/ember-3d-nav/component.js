@@ -10,16 +10,6 @@ export default Ember.Component.extend({
     $(window).on('resize', () => {
       window.requestAnimationFrame(this.updateSelectedNav.bind(this));
     });
-
-    $.fn.removeClassPrefix = function(prefix) {
-      this.each((i, el) => {
-        let classes = el.className.split(" ").filter(function(c) {
-          return c.lastIndexOf(prefix, 0) !== 0;
-        });
-        el.className = $.trim(classes.join(" "));
-      });
-      return this;
-    };
   },
   toggle3dBlock() {
     let addOrRemove = this.get('navIsVisible');
