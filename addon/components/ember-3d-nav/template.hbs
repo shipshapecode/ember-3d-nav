@@ -10,7 +10,7 @@
   <ul class="cd-3d-nav">
     {{#nav-items-container navItemSelected='navItemSelected' as |selectedIndex navItemClicked|}}
       {{yield 'nav-items' selectedIndex navItemClicked}}
-      {{nav-marker multiColor=multiColor selectedIndex=selectedIndex totalNavItems=5}}
+      {{nav-marker multiColor=multiColor selectedIndex=selectedIndex totalNavItems=totalNavItems}}
     {{/nav-items-container}}
   </ul>
 </nav>
