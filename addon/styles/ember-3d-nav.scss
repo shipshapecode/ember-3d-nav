@@ -70,6 +70,28 @@ Main Components
 }
 
 .cd-3d-nav {
+  grid {
+    height: 100%;
+    centered {
+      > * {
+        position: relative;
+        min-height: 1px;
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+    }
+  }
   /* this is the 3D rotating navigation */
   position: relative;
   height: 100%;
@@ -95,11 +117,6 @@ Main Components
     opacity: 1;
     visibility: visible;
     transition: opacity $animation-duration 0s, visibility $animation-duration 0s;
-  }
-
-  li {
-    height: 100%;
-    @include column(1/$nav-items); // see partials > _layout.scss
   }
 
   a {

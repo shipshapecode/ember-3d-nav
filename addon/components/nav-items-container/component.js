@@ -3,7 +3,8 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout,
-  tagName: '',
+  tagName: 'grid',
+  classNameBindings: [''],
   selectedIndex: 0,
   actions: {
     navItemClicked(selectedIndex) {

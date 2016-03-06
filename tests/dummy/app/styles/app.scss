@@ -1,4 +1,5 @@
 @import 'mixins';
+
 $text-color: #F5F0E1; // cream
 $body-bg: #82B4BC; // light blue
 
@@ -34,7 +35,7 @@ a {
 }
 
 .cd-3d-nav {
-  li {
+  centered {
     &:first-of-type a::before {
       background-image: url(../img/boat.svg);
     }
