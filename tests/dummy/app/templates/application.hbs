@@ -1,4 +1,4 @@
-{{#ember-3d-nav multiColor=true as |section selectedIndex navItemClicked|}}
+{{#ember-3d-nav fixed=true multiColor=true as |section selectedIndex navItemClicked|}}
   {{#if (eq section 'header')}}
     <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
   {{/if}}
@@ -14,7 +14,7 @@
     </div>
   {{/if}}
   {{#if (eq section 'nav-items')}}
-    {{#each links as |link index|}}
+    {{#each model.links as |link index|}}
       {{#nav-item index=index selectedIndex=selectedIndex onClickAction=navItemClicked}}
         <a href="{{link.href}}">{{link.text}}</a>
       {{/nav-item}}

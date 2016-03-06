@@ -11,6 +11,26 @@ Main Components
   /* Force Hardware Acceleration in WebKit */
   transform: translateZ(0);
   backface-visibility: hidden;
+  &.fixed {
+    display: block;
+    left: 50%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    transform: translateX(-50%) translateZ(0);
+    z-index: 1;
+
+    &.nav-is-visible {
+      transform: translateX(-50%) translateY($nav-height-S);
+    }
+
+    @include MQ(M) {
+
+      &.nav-is-visible {
+        transform: translateX(-50%) translateY($nav-height-M);
+      }
+    }
+  }
 
   &.nav-is-visible {
     transform: translateY($nav-height-S);
