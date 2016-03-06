@@ -57,6 +57,10 @@ If you set `fixed to true, the header will become fixed, so it will be visible r
 
 You can set `multiColor` to true, which will enable class names like `color-1`, `color-2`, `color-3` etc. on the nav-marker, so you can specify different colors for the indicator.
 
+`totalNavItems`
+
+This is a number indicating how many nav items you have. It allows the width of the marker to be calculated dynamically.
+
 I have defined my links in an array, which I would recommend, but you can manually create `nav-item` components as well.
 
 ```js
