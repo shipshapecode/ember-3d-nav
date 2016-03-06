@@ -30,7 +30,7 @@ This is currently **pre-alpha**, but if you'd like to help out and contribute pl
 There are now 3 yields, the header, the main, and the nav-items sections. You can use them somewhat like this:
 
 ```hbs
-{{#ember-3d-nav as |section selectedIndex navItemClicked|}}
+{{#ember-3d-nav fixed=false multiColor=true as |section selectedIndex navItemClicked|}}
   {{#if (eq section 'header')}}
     <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
   {{/if}}
@@ -46,6 +46,16 @@ There are now 3 yields, the header, the main, and the nav-items sections. You ca
   {{/if}}
 {{/ember-3d-nav}}
 ```
+
+## Options
+
+`fixed`
+
+If you set `fixed to true, the header will become fixed, so it will be visible regardless of where you scroll on the page.
+
+`multiColor`
+
+You can set `multiColor` to true, which will enable class names like `color-1`, `color-2`, `color-3` etc. on the nav-marker, so you can specify different colors for the indicator.
 
 I have defined my links in an array, which I would recommend, but you can manually create `nav-item` components as well.
 
