@@ -3,7 +3,7 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout,
-  tagName: 'li',
+  tagName: 'centered',
   classNameBindings: ['isSelected'],
   href: '',
   isSelected: Ember.computed('selectedIndex', function () {

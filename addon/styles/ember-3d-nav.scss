@@ -70,6 +70,16 @@ Main Components
 }
 
 .cd-3d-nav {
+  grid {
+    height: 100%;
+    centered {
+      > * {
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
   /* this is the 3D rotating navigation */
   position: relative;
   height: 100%;
@@ -95,11 +105,6 @@ Main Components
     opacity: 1;
     visibility: visible;
     transition: opacity $animation-duration 0s, visibility $animation-duration 0s;
-  }
-
-  li {
-    height: 100%;
-    @include column(1/$nav-items); // see partials > _layout.scss
   }
 
   a {
