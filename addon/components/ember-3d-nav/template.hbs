@@ -8,7 +8,7 @@
 
 <nav class="cd-3d-nav-container {{if navIsVisible 'nav-is-visible'}}">
   <ul class="cd-3d-nav">
-    {{#nav-items-container navItemSelected='navItemSelected' as |selectedIndex navItemClicked|}}
+    {{#nav-items-container toggle3dBlock='toggle3dBlock' updateSelectedNav='updateSelectedNav' as |selectedIndex navItemClicked|}}
       {{yield 'nav-items' selectedIndex navItemClicked}}
       {{nav-marker multiColor=multiColor selectedIndex=selectedIndex totalNavItems=totalNavItems}}
     {{/nav-items-container}}
