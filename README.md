@@ -12,82 +12,89 @@ Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-ro
 It aims to make it easily configurable for use with your Ember apps.
 
 ## Looking for contributors!
-This is currently **pre-alpha**, but if you'd like to help out and contribute please let me know!
+This is currently **alpha**, but if you'd like to help out and contribute please let me know!
 
 [![Demo](http://i.imgur.com/408RMvv.gif)](http://shipshapecode.github.io/ember-3d-nav/)
 [http://shipshapecode.github.io/ember-3d-nav/](http://shipshapecode.github.io/ember-3d-nav/)
 
 ## Installation
 
-`ember-truth-helpers` are currently required to use this addon, so you must run both of these ember installs:
-
-`ember install ember-truth-helpers`
-
 `ember install ember-3d-nav`
 
 ## Usage
 
-There are now 3 yields, the header, the main, and the nav-items sections. You can use them somewhat like this:
+To make the nav work, you must provide a `nav-trigger-container`, `nav-container`, and at least one `nav-item` inside the `nav-container`.
+
+This is the configuration used in the sample app in tests/dummy:
 
 ```hbs
-{{#ember-3d-nav fixed=false multiColor=true as |section selectedIndex navItemClicked|}}
-  {{#if (eq section 'header')}}
-    <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
-  {{/if}}
-  {{#if (eq section 'main')}}
-    {{outlet}}
-  {{/if}}
-  {{#if (eq section 'nav-items')}}
-    {{#each links as |link index|}}
-      {{#nav-item index=index selectedIndex=selectedIndex onClickAction=navItemClicked}}
-        <a href="{{link.href}}">{{link.text}}</a>
-      {{/nav-item}}
-    {{/each}}
-  {{/if}}
-{{/ember-3d-nav}}
+{{#nav-trigger-container fixed=true}}
+  <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
+{{/nav-trigger-container}}
+
+<main>
+  <div class="info-text">
+    <h1>Ember-3D-Nav</h1>
+    <p>
+      This Ember addon is based on the amazing work done by CodyHouse on
+      <a href="https://codyhouse.co/gem/3d-rotating-navigation/">3D Rotating Navigation</a>.
+      Some changes have been made to convert things into Ember components and try to make it reusable,
+      but a lot of the original styles have stayed.
+    </p>
+  </div>
+</main>
+
+{{#nav-container multiColor=true totalNavItems=model.links.length}}
+  {{#each model.links as |link index|}}
+    {{#nav-item index=index}}
+      <a href="{{link.href}}">{{link.text}}</a>
+    {{/nav-item}}
+  {{/each}}
+{{/nav-container}}
 ```
 
 ## Options
 
-`fixed`
+Each component takes various options, some of which are required.
 
-If you set `fixed to true, the header will become fixed, so it will be visible regardless of where you scroll on the page.
+`index (required)`
 
-`multiColor`
+Each `nav-item` must have an `index`, which is an integer, passed in. This allows the selectedIndex to be calculated.
 
-You can set `multiColor` to true, which will enable class names like `color-1`, `color-2`, `color-3` etc. on the nav-marker, so you can specify different colors for the indicator.
+`fixed (optional)`
 
-`totalNavItems`
+`nav-trigger-container` accepts a parameter `fixed`, which is a boolean. If you set `fixed` to true, the header will become fixed, so it will be visible regardless of where you scroll on the page.
 
-This is a number indicating how many nav items you have. It allows the width of the marker to be calculated dynamically.
+`multiColor (optional)`
 
-I have defined my links in an array, which I would recommend, but you can manually create `nav-item` components as well.
+`nav-container` accepts a parameter `multiColor`, which is a boolean. You can set `multiColor` to true, which will enable class names like `color-1`, `color-2`, `color-3` etc. on the nav-marker, so you can specify different colors for the indicator.
+
+`totalNavItems (required)`
+
+`nav-container` accepts a parameter `totalNavItems`, which is an integer. This is a number indicating how many nav items you have. It allows the width of the marker to be calculated dynamically.
+
+I have defined my links in an array, which I would recommend, so you can easily determine the selected index, but you can manually create `nav-item` components as well.
 
 ```js
 links: Ember.A([
     {
       href: '#0',
-      selected: true,
       text: 'Dashboard'
     },
     {
       href: '#0',
-      selected: false,
       text: 'Projects'
     },
     {
       href: '#0',
-      selected: false,
       text: 'Images'
     },
     {
       href: '#0',
-      selected: false,
       text: 'Settings'
     },
     {
       href: '#0',
-      selected: false,
       text: 'New'
     }
   ]),
