@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   classNameBindings: [':cd-header', 'navService.navIsVisible:nav-is-visible', 'fixed:fixed'],
   actions: {
     toggleMenu() {
-      this.get('navService').toggleProperty('navIsVisible');
+      this.toggleProperty('navService.navIsVisible');
       this.get('navService').toggle3dBlock();
     }
   }
