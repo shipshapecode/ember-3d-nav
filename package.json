@@ -1,6 +1,6 @@
 {
   "name": "ember-3d-nav",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A 3d rotating top navigation bar for Ember apps",
   "directories": {
     "doc": "doc",
