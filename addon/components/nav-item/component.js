@@ -5,14 +5,19 @@ export default Ember.Component.extend({
   layout,
   tagName: 'centered',
   classNameBindings: ['isSelected'],
+  navService: Ember.inject.service('ember-3d-nav'),
   href: '',
-  isSelected: Ember.computed('selectedIndex', function () {
-    return this.get('index') === this.get('selectedIndex');
+  isSelected: Ember.computed('navService.selectedIndex', function() {
+    return this.get('index') === this.get('navService').get('selectedIndex');
   }),
   text: '',
   click() {
     if (!this.get('isSelected')) {
       this.sendAction('onClickAction', this.get('index'));
+      this.get('navService').set('selectedIndex', this.get('index'));
+      Ember.run.scheduleOnce('afterRender', this, () => {
+        this.get('navService').updateSelectedNav('close');
+      });
     }
   }
 });

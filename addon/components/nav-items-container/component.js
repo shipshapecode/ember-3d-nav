@@ -6,18 +6,10 @@ export default Ember.Component.extend({
   layout,
   tagName: 'grid',
   classNameBindings: [''],
-  selectedIndex: 0,
+  navService: Ember.inject.service('ember-3d-nav'),
   didInsertElement() {
     $(window).on('resize', () => {
-      window.requestAnimationFrame(this.sendAction('updateSelectedNav'));
+      window.requestAnimationFrame(this.get('navService').updateSelectedNav);
     });
-  },
-  actions: {
-    navItemClicked(selectedIndex) {
-      this.set('selectedIndex', selectedIndex);
-      Ember.run.scheduleOnce('afterRender', this, () => {
-        this.sendAction('updateSelectedNav', 'close');
-      });
-    }
   }
 });

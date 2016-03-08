@@ -3,10 +3,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'span',
   classNameBindings: [':nav-marker', 'colorNumber', 'numberOfNavItems'],
-  colorNumber: Ember.computed('multiColor', 'selectedIndex', function() {
+  navService: Ember.inject.service('ember-3d-nav'),
+  colorNumber: Ember.computed('multiColor', 'navService.selectedIndex', function() {
     let color = 'color-';
     if (this.get('multiColor')) {
-      color += (this.get('selectedIndex') + 1);
+      color += (this.get('navService.selectedIndex') + 1);
     }
     else {
       color += 1;
