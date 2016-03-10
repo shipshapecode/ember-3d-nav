@@ -3,13 +3,13 @@ Main Components
 -------------------------------- */
 
 .cd-header {
-  height: 80px;
-  width: 90%;
-  margin: 0 auto;
+  min-height: 80px;
+  padding: 15px 5vw;
   transition: transform $animation-duration;
   @include clearfix;
   /* Force Hardware Acceleration in WebKit */
   transform: translateZ(0);
+  width: 100%;
   backface-visibility: hidden;
   &.fixed {
     display: block;

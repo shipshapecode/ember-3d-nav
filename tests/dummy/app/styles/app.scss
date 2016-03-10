@@ -2,6 +2,7 @@
 
 $text-color: #F5F0E1; // cream
 $body-bg: #82B4BC; // light blue
+$darkBlue: #354952;
 
 $color-1: #E35746;
 //$color-1: #9a57bd; // Amethyst
@@ -28,6 +29,7 @@ body {
     family: $primary-font; // variables inside partials > _variables.scss
   }
   background-color: $body-bg;
+  height: 200vh;
 }
 
 a {
@@ -60,7 +62,6 @@ a {
 
 .cd-logo {
   float: left;
-  margin-top: 15px;
 
   img {
     height: auto;
@@ -113,4 +114,12 @@ main {
 .color-5 {
   color: $color-5;
   background-color: $color-5;
+}
+
+.fixed {
+  transition: background-color 1000ms linear;
+}
+
+.fixed-and-scrolled {
+  background-color: $darkBlue;
 }
