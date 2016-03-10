@@ -65,6 +65,8 @@ Each `nav-item` must have an `index`, which is an integer, passed in. This allow
 
 `nav-trigger-container` accepts a parameter `fixed`, which is a boolean. If you set `fixed` to true, the header will become fixed, so it will be visible regardless of where you scroll on the page.
 
+- Note: when `fixed` is set to true, a scroll event listener is applied to the window. This will set a class of `fixed-and-scrolled` to true whenever the window has been scrolled down. This allows for setting the background color of the navbar to another color, if you want, so that it is easier to see when fixed and scrolled over the page content.
+
 `multiColor (optional)`
 
 `nav-container` accepts a parameter `multiColor`, which is a boolean. You can set `multiColor` to true, which will enable class names like `color-1`, `color-2`, `color-3` etc. on the nav-marker, so you can specify different colors for the indicator.
