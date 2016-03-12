@@ -180,7 +180,7 @@ Main Components
   }
 }
 
-main {
+.main {
   transition: transform $animation-duration;
   /* Force Hardware Acceleration in WebKit */
   transform: translateZ(0);
