@@ -12,7 +12,7 @@ export default Ember.Service.extend({
   selectedIndex: 0,
   toggle3dBlock() {
     let addOrRemove = this.get('navIsVisible');
-    $('main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
+    $('.main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
       //fix marker position when opening the menu (after a window resize)
       addOrRemove && this.updateSelectedNav();
     });
