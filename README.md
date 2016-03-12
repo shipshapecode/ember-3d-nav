@@ -46,9 +46,7 @@ This is the configuration used in the sample app in tests/dummy:
 
 {{#nav-container multiColor=true totalNavItems=model.links.length}}
   {{#each model.links as |link index|}}
-    {{#nav-item index=index}}
-      <a href="{{link.href}}">{{link.text}}</a>
-    {{/nav-item}}
+    {{nav-item index=index link=link}}
   {{/each}}
 {{/nav-container}}
 ```
@@ -75,29 +73,61 @@ Each `nav-item` must have an `index`, which is an integer, passed in. This allow
 
 `nav-container` accepts a parameter `totalNavItems`, which is an integer. This is a number indicating how many nav items you have. It allows the width of the marker to be calculated dynamically.
 
-I have defined my links in an array, which I would recommend, so you can easily determine the selected index, but you can manually create `nav-item` components as well.
+You currently must define your links in an array, so we can easily determine the selected index. Each item must have a `type`, `text` and `href` or `linkTo`. Please see the following example:
 
 ```js
 links: Ember.A([
-    {
-      href: '#0',
-      text: 'Dashboard'
-    },
-    {
-      href: '#0',
-      text: 'Projects'
-    },
-    {
-      href: '#0',
-      text: 'Images'
-    },
-    {
-      href: '#0',
-      text: 'Settings'
-    },
-    {
-      href: '#0',
-      text: 'New'
-    }
-  ]),
+        //linkTo type
+        {
+          linkTo: 'home',
+          text: 'Home',
+          type: 'linkTo'
+        },
+        {
+          linkTo: 'technologies',
+          text: 'Technologies',
+          type: 'linkTo'
+        },
+        {
+          linkTo: 'team',
+          text: 'Team',
+          type: 'linkTo'
+        },
+        {
+          linkTo: 'portfolio',
+          text: 'Portfolio',
+          type: 'linkTo'
+        },
+        {
+          linkTo: 'contact',
+          text: 'Contact',
+          type: 'linkTo'
+        },
+        //href type
+        {
+          href: '#0',
+          text: 'About',
+          type: 'href'
+        },
+        {
+          href: '#1',
+          text: 'Technologies',
+          type: 'href'
+        },
+        {
+          href: 'team/#2',
+          text: 'Team',
+          type: 'href'
+        },
+        {
+          href: '/portfolio/#3',
+          text: 'Portfolio',
+          type: 'href'
+        },
+        {
+          href: '#4',
+          text: 'Contact',
+          type: 'href'
+        }
+      ])
 ```
