@@ -1,7 +1,13 @@
 import Ember from 'ember';
 import $ from 'jquery';
+import getOwner from 'ember-getowner-polyfill';
 
 export default Ember.Service.extend({
+  init(...args) {
+    this._super(args);
+    this.set('applicationController', getOwner(this).lookup('controller:application'));
+  },
+  currentPath: Ember.computed.alias('applicationController.currentPath'),
   navIsVisible: false,
   selectedIndex: 0,
   toggle3dBlock() {

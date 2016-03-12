@@ -16,9 +16,7 @@
 
 {{#nav-container multiColor=true totalNavItems=model.links.length}}
   {{#each model.links as |link index|}}
-    {{#nav-item index=index}}
-      <a href="{{link.href}}">{{link.text}}</a>
-    {{/nav-item}}
+    {{nav-item index=index link=link}}
   {{/each}}
 {{/nav-container}}
 
