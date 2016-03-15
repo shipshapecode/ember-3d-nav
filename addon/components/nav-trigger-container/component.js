@@ -6,7 +6,7 @@ import RespondsToScroll from 'ember-responds-to/mixins/responds-to-scroll';
 export default Ember.Component.extend(RespondsToScroll, {
   layout,
   tagName: 'header',
-  classNameBindings: [':cd-header', 'navService.navIsVisible:nav-is-visible', 'fixed:fixed', 'fixedAndScrolled'],
+  classNameBindings: [':header', 'navService.navIsVisible:nav-is-visible', 'fixed:fixed', 'fixedAndScrolled'],
   navService: Ember.inject.service('ember-3d-nav'),
   fixedAndScrolled: false,
   onScroll: Ember.on('scroll', function() {

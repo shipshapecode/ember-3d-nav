@@ -1,16 +1,10 @@
-@import 'mixins';
-
 $text-color: #F5F0E1; // cream
 $body-bg: #82B4BC; // light blue
-$nav-bg: darken($body-bg, 10%);
-$darkBlue: #354952;
+$fixed-color: #354952; //dark blue
+
+@import "ember-3d-nav";
 
 $color-1: #E35746;
-//$color-1: #9a57bd; // Amethyst
-$color-2: #c96aa4; // Hopbush
-$color-3: #d6915e; // Di Serria
-$color-4: #5397c7; // Danube
-$color-5: #77cd91; // De York
 
 // fonts
 
@@ -37,7 +31,7 @@ a {
   text-decoration: none;
 }
 
-.cd-3d-nav {
+.ember-3d-nav {
   background-color: $nav-bg;
   centered {
     a {
@@ -75,28 +69,7 @@ a {
   }
 }
 
-.nav-trigger {
-  span,
-  span::before,
-  span::after {
-    background-color: $text-color;
-  }
-  .nav-is-visible & {
-
-    span {
-      /* hide line in the center */
-      background-color: rgba($text-color, 0);
-
-      &::before,
-      &::after {
-        /* keep visible other 2 lines */
-        background-color: rgba($text-color, 1);
-      }
-    }
-  }
-}
-
-.cd-logo {
+.logo {
   float: left;
 
   img {
@@ -150,12 +123,4 @@ a {
 .color-5 {
   color: $color-5;
   background-color: $color-5;
-}
-
-.fixed {
-  transition: background-color 1000ms linear;
-}
-
-.fixed-and-scrolled {
-  background-color: $darkBlue;
 }

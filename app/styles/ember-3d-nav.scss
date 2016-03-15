@@ -1,8 +1,19 @@
+@import './partials/reset';
+@import './partials/variables';
+// colors, fonts etc...
+@import './partials/mixins';
+// custom mixins
+@import './partials/layout'; // responsive grid and media queries
+
+//Components
+@import 'nav-marker';
+@import "nav-trigger";
+
 /* --------------------------------
 Main Components
 -------------------------------- */
 
-.cd-header {
+.header {
   min-height: 80px;
   padding: 15px 5vw;
   transition: transform $animation-duration;
@@ -44,7 +55,7 @@ Main Components
   }
 }
 
-.cd-3d-nav-container {
+.ember-3d-nav-container {
   /* this is the 3D navigation container */
   position: fixed;
   top: 0;
@@ -69,7 +80,7 @@ Main Components
   }
 }
 
-.cd-3d-nav {
+.ember-3d-nav {
   grid {
     height: 100%;
     centered {
@@ -188,4 +199,12 @@ Main Components
       margin: 4em auto;
     }
   }
+}
+
+.fixed {
+  transition: background-color 1000ms linear;
+}
+
+.fixed-and-scrolled {
+  background-color: $fixed-color;
 }

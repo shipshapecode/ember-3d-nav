@@ -39,11 +39,24 @@
     }
   }
 
+  span,
+  span::before,
+  span::after {
+    background-color: $text-color;
+  }
   .nav-is-visible & {
-
     span {
+      /* hide line in the center */
+      background-color: rgba($text-color, 0);
+
       &::before {
         transform: translateY(8px) rotate(-45deg);
+      }
+
+      &::before,
+      &::after {
+        /* keep visible other 2 lines */
+        background-color: rgba($text-color, 1);
       }
 
       &::after {
