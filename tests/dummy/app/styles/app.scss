@@ -2,6 +2,7 @@
 
 $text-color: #F5F0E1; // cream
 $body-bg: #82B4BC; // light blue
+$nav-bg: darken($body-bg, 10%);
 $darkBlue: #354952;
 
 $color-1: #E35746;
@@ -37,7 +38,21 @@ a {
 }
 
 .cd-3d-nav {
+  background-color: $nav-bg;
   centered {
+    a {
+      color: $text-color;
+      &:hover {
+        background-color: darken($body-bg, 15%);
+      }
+    }
+    &.is-selected a {
+      background-color: darken($body-bg, 20%);
+
+      &:hover {
+        background-color: darken($body-bg, 20%);
+      }
+    }
     &:first-of-type a::before {
       background-image: url(../img/boat.svg);
     }
@@ -56,6 +71,27 @@ a {
 
     &:nth-of-type(5) a::before {
       background-image: url(../img/anchor.svg);
+    }
+  }
+}
+
+.nav-trigger {
+  span,
+  span::before,
+  span::after {
+    background-color: $text-color;
+  }
+  .nav-is-visible & {
+
+    span {
+      /* hide line in the center */
+      background-color: rgba($text-color, 0);
+
+      &::before,
+      &::after {
+        /* keep visible other 2 lines */
+        background-color: rgba($text-color, 1);
+      }
     }
   }
 }

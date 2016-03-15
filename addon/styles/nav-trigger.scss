@@ -13,7 +13,6 @@
     position: absolute;
     width: 28px;
     height: 3px;
-    background-color: $text-color;
     backface-visibility: hidden;
   }
 
@@ -43,15 +42,6 @@
   .nav-is-visible & {
 
     span {
-      /* hide line in the center */
-      background-color: rgba($text-color, 0);
-
-      &::before,
-      &::after {
-        /* keep visible other 2 lines */
-        background-color: rgba($text-color, 1);
-      }
-
       &::before {
         transform: translateY(8px) rotate(-45deg);
       }
