@@ -131,3 +131,10 @@ links: Ember.A([
         }
       ])
 ```
+
+If you are using SASS, you must import the styles for the navbar into your styles. You can override the styles by setting the following variables:
+
+- `$text-color`
+- `$bg-color`
+- `$fixed-color`
+
