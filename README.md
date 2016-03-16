@@ -132,9 +132,17 @@ links: Ember.A([
       ])
 ```
 
-If you are using SASS, you must import the styles for the navbar into your styles. You can override the styles by setting the following variables:
+If you are using SASS, you must import the styles for the navbar into your styles.
+```scss
+//app.scss
 
-- `$text-color`
-- `$bg-color`
-- `$fixed-color`
+//You can override the styles by setting the following variables:
+
+$text-color: #F5F0E1; // cream
+$body-bg: #82B4BC; // light blue
+$fixed-color: #354952; //dark blue
+
+//Once you have set the colors you want, you then have to import the addon styles.
+@import "ember-3d-nav";
+```
 
