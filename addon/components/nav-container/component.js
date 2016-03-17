@@ -1,9 +1,10 @@
 import Ember from 'ember';
 import layout from './template';
+const {Component, inject} = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'nav',
   classNameBindings: [':ember-3d-nav-container', 'navService.navIsVisible:nav-is-visible'],
-  navService: Ember.inject.service('ember-3d-nav')
+  navService: inject.service('ember-3d-nav')
 });

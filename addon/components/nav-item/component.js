@@ -1,13 +1,14 @@
 import Ember from 'ember';
 import layout from './template';
+const {Component, computed, inject, run} = Ember;
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: 'centered',
   classNameBindings: ['isSelected'],
-  navService: Ember.inject.service('ember-3d-nav'),
+  navService: inject.service('ember-3d-nav'),
   didInsertElement(){
-    Ember.run.later(this, function() {
+    run.later(this, function() {
       //If we are using linkTo, we need to check the currentPath and see if it is the same as the linkTo value
       if (this.get('link.type') === 'linkTo') {
         if (this.get('link.linkTo') === this.get('navService.currentPath')) {
@@ -26,14 +27,14 @@ export default Ember.Component.extend({
       }
     });
   },
-  isSelected: Ember.computed('navService.selectedIndex', function() {
+  isSelected: computed('navService.selectedIndex', function() {
     return this.get('index') === this.get('navService.selectedIndex');
   }),
   click() {
     if (!this.get('isSelected')) {
       this.sendAction('onClickAction', this.get('index'));
       this.set('navService.selectedIndex', this.get('index'));
-      Ember.run.scheduleOnce('afterRender', this, () => {
+      run.scheduleOnce('afterRender', this, () => {
         this.get('navService').updateSelectedNav('close');
       });
     }
