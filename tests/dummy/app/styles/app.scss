@@ -35,7 +35,6 @@ a {
   background-color: $nav-bg;
   centered {
     a {
-      color: $text-color;
       &:hover {
         background-color: darken($body-bg, 15%);
       }

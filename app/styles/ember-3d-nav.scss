@@ -157,6 +157,7 @@ Main Components
   @include MQ(M) {
 
     a {
+      color: $text-color;
       padding: 7.6em 1em 0;
       font: {
         size: 1.3rem;
