@@ -15,7 +15,9 @@ export default Service.extend({
     let addOrRemove = this.get('navIsVisible');
     $('.main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
       //fix marker position when opening the menu (after a window resize)
-      addOrRemove && this.updateSelectedNav();
+      if (addOrRemove) {
+        this.updateSelectedNav();
+      }
     });
   },
   /**
@@ -31,7 +33,7 @@ export default Service.extend({
     marker.css({
       'left': leftPosition
     });
-    if (type == 'close') {
+    if (type === 'close') {
       marker.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
         this.set('navIsVisible', false);
         this.toggle3dBlock();
