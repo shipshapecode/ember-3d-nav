@@ -1,6 +1,6 @@
 /* globals blanket, module */
 
-var options = {
+const options = {
   modulePrefix: 'ember-3d-nav',
   filter: '//.*ember-3d-nav/.*/',
   antifilter: '//.*(tests|template).*/',
@@ -12,7 +12,7 @@ var options = {
     lcovOptions: {
       outputFile: 'lcov.dat',
       renamer: function (moduleName) {
-        var expression = /^ember-3d-nav/;
+        const expression = /^ember-3d-nav/;
         return moduleName.replace(expression, 'addon') + '.js';
       }
     }

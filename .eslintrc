@@ -1,3 +1,17 @@
 {
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used"
+      }
+    ],
+    //ES2015
+    "no-const-assign": "error",
+    "no-duplicate-imports": "error",
+    "no-var": "error",
+    "prefer-const": "error"
+  }
 }
