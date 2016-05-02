@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Signika|Pacifico);
 $text-color: #F5F0E1; // cream
 $body-bg: #82B4BC; // light blue
 $fixed-color: #354952; //dark blue
@@ -8,7 +9,7 @@ $color-1: #E35746;
 
 // fonts
 
-$primary-font: 'Open Sans', sans-serif;
+$primary-font: 'Signika', sans-serif;
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -35,7 +36,6 @@ a {
   background-color: $nav-bg;
   centered {
     a {
-      color: $text-color;
       &:hover {
         background-color: darken($body-bg, 15%);
       }
@@ -89,11 +89,12 @@ a {
         weight: 300;
       }
       color: $text-color;
-      margin: 2em auto;
+      margin: 100px auto;
       @include font-smoothing;
     }
     h1 {
-      font-size: 4rem;
+      font-family: 'Pacifico';
+      font-size: 10vw;
     }
   }
 }

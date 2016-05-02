@@ -1,20 +1,23 @@
 import Ember from 'ember';
 import $ from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
+const {computed, Service} = Ember;
 
-export default Ember.Service.extend({
+export default Service.extend({
   init(...args) {
     this._super(args);
     this.set('applicationController', getOwner(this).lookup('controller:application'));
   },
-  currentPath: Ember.computed.alias('applicationController.currentPath'),
+  currentPath: computed.alias('applicationController.currentPath'),
   navIsVisible: false,
   selectedIndex: 0,
   toggle3dBlock() {
-    let addOrRemove = this.get('navIsVisible');
+    const addOrRemove = this.get('navIsVisible');
     $('.main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
       //fix marker position when opening the menu (after a window resize)
-      addOrRemove && this.updateSelectedNav();
+      if (addOrRemove) {
+        this.updateSelectedNav();
+      }
     });
   },
   /**
@@ -30,7 +33,7 @@ export default Ember.Service.extend({
     marker.css({
       'left': leftPosition
     });
-    if (type == 'close') {
+    if (type === 'close') {
       marker.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
         this.set('navIsVisible', false);
         this.toggle3dBlock();

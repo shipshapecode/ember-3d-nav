@@ -1,6 +1,6 @@
 {
   "name": "ember-3d-nav",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "A 3d rotating top navigation bar for Ember apps",
   "directories": {
     "doc": "doc",
@@ -25,6 +25,7 @@
     "broccoli-asset-rev": "^2.4.2",
     "codeclimate-test-reporter": "^0.3.1",
     "ember-cli": "2.6.0-beta.2",
+    "babel-eslint": "^6.0.2",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-autoprefixer": "0.6.0",
     "ember-cli-blanket": "0.9.4",
@@ -32,7 +33,7 @@
     "ember-cli-github-pages": "0.0.8",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-inject-live-reload": "^1.4.0",
-    "ember-cli-jshint": "^1.0.0",
+    "ember-cli-eslint": "jonathanKingston/ember-cli-eslint#master",
     "ember-cli-qunit": "^1.4.0",
     "ember-cli-release": "1.0.0-beta.1",
     "ember-cli-sass": "5.3.1",
@@ -47,6 +48,7 @@
     "ember-responds-to": "1.1.0",
     "ember-truth-helpers": "1.2.0",
     "flexi": "1.1.7",
+    "eslint-config-ember": "0.0.5",
     "loader.js": "^4.0.1"
   },
   "keywords": [
