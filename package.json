@@ -25,7 +25,7 @@
     "broccoli-asset-rev": "^2.4.2",
     "codeclimate-test-reporter": "^0.3.1",
     "ember-cli": "2.6.0-beta.2",
-    "babel-eslint": "^6.0.2",
+    "babel-eslint": "^6.0.4",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-autoprefixer": "0.6.0",
     "ember-cli-blanket": "0.9.4",
@@ -34,7 +34,7 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-eslint": "jonathanKingston/ember-cli-eslint#master",
-    "ember-cli-qunit": "^1.4.0",
+    "ember-cli-qunit": "^2.0.0",
     "ember-cli-release": "1.0.0-beta.1",
     "ember-cli-sass": "5.3.1",
     "ember-cli-sri": "^2.1.0",
@@ -45,20 +45,20 @@
     "ember-load-initializers": "^0.5.1",
     "ember-math-helpers": "1.0.0",
     "ember-resolver": "^2.0.3",
-    "ember-responds-to": "1.1.0",
+    "ember-responds-to": "1.2.1",
     "ember-truth-helpers": "1.2.0",
-    "flexi": "1.1.7",
-    "eslint-config-ember": "0.0.5",
-    "loader.js": "^4.0.1"
+    "flexi": "1.1.8",
+    "eslint-config-ember": "0.3.0",
+    "loader.js": "^4.0.4"
   },
   "keywords": [
     "ember-addon"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
-    "ember-cli-htmlbars": "^1.0.3",
+    "ember-cli-htmlbars": "^1.0.5",
     "ember-cli-sass": "5.3.1",
-    "ember-responds-to": "1.1.0"
+    "ember-responds-to": "1.2.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
