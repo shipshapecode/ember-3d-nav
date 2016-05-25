@@ -1,36 +1,10 @@
 import Ember from 'ember';
+const {A, Route} = Ember;
 
-export default Ember.Route.extend({
+export default Route.extend({
   model(){
     return {
-      links: Ember.A([
-        //linkTo type to test with
-        /*{
-          linkTo: 'home',
-          text: 'Home',
-          type: 'linkTo'
-        },
-        {
-          linkTo: 'technologies',
-          text: 'Technologies',
-          type: 'linkTo'
-        },
-        {
-          linkTo: 'team',
-          text: 'Team',
-          type: 'linkTo'
-        },
-        {
-          linkTo: 'portfolio',
-          text: 'Portfolio',
-          type: 'linkTo'
-        },
-        {
-          linkTo: 'contact',
-          text: 'Contact',
-          type: 'linkTo'
-        },*/
-        //href type to test with
+      links: A([
         {
           href: '#0',
           text: 'About',
@@ -42,14 +16,14 @@ export default Ember.Route.extend({
           type: 'href'
         },
         {
-          href: 'team/#2',
+          linkTo: 'team',
           text: 'Team',
-          type: 'href'
+          type: 'linkTo'
         },
         {
-          href: '/portfolio/#3',
+          linkTo: 'portfolio',
           text: 'Portfolio',
-          type: 'href'
+          type: 'linkTo'
         },
         {
           href: '#4',
