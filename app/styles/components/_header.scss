@@ -1,0 +1,44 @@
+//////////////////////////////
+// Header
+//////////////////////////////
+
+.header {
+  @include clearfix;
+  width: 100%;
+  min-height: 80px;
+  padding: 15px 5vw;
+  transition: transform $t-animation-duration;
+  transform: translateZ(0); // Force hardware acceleration in Webkit
+  backface-visibility: hidden;
+
+  &.nav-is-visible {
+    transform: translateY($s-nav-height-small);
+
+    @include bp(medium) {
+      transform: translateY($s-nav-height-medium);
+    }
+  }
+
+  &.is-fixed {
+    display: block;
+    text-align: center;
+    transform: translateX(-50%) translateZ(0);
+    transition: background-color 1000ms linear;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+
+    &.nav-is-visible {
+      transform: translateX(-50%) translateY($s-nav-height-small);
+
+      @include bp(medium) {
+        transform: translateX(-50%) translateY($s-nav-height-medium);
+      }
+    }
+  }
+
+  &.is-fixed-and-scrolled {
+    background-color: $c-header-fixed-bg;
+  }
+}

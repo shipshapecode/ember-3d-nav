@@ -1,0 +1,29 @@
+//////////////////////////////
+// Ember 3d Nav Container
+//////////////////////////////
+
+// 3D navigation container
+.ember-3d-nav-container {
+  width: 100%;
+  height: $s-nav-height-small;
+  background-color: $c-nav-container-bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  perspective: 1000px; // Enable 3D-space for child elements
+  transform: translateY(-100%);
+  transition: transform $t-animation-duration,
+              visibility $t-animation-duration;
+
+  @include bp(medium) {
+    height: $s-nav-height-medium;
+  }
+
+  &.nav-is-visible {
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform $t-animation-duration,
+                visibility $t-animation-duration;
+  }
+}

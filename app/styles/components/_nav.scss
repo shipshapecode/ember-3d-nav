@@ -1,0 +1,99 @@
+//////////////////////////////
+// Nav
+//////////////////////////////
+
+// This is the 3D rotating navigation
+.ember-3d-nav {
+  height: 100%;
+  position: relative;
+  transform-origin: center bottom;
+  transform: translateZ(0) rotateX(90deg); // Force hardware acceleration in Webkit
+  transition: transform $t-animation-duration;
+  backface-visibility: hidden;
+
+  grid {
+    height: 100%;
+
+    centered {
+      > * {
+        width: 100%;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  // Menu dark cover layout - enhances perspective effect
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: $c-nav-container-bg;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity $t-animation-duration,
+                visibility $t-animation-duration;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    color: transparent;
+    position: relative;
+    transition: background-color 0.2s;
+
+    @include bp(medium) {
+      @include font-smoothing;
+      color: $c-text-color;
+      font: {
+        size: 1.3rem;
+        weight: 600;
+      }
+      text-align: center;
+      padding: 7.6em 1em 0;
+      // Truncate with ellipsis if too long
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    // Nav Icons
+    &::before {
+      @include center;
+      content: '';
+      height: 32px;
+      width: 32px;
+      background-size: 32px 64px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      position: absolute;
+
+      @include bp(medium) {
+        @include center(x);
+        top: 4.4em;
+      }
+    }
+  }
+
+  .is-selected a {
+
+    &::before {
+      background-position: 0 -32px;
+    }
+  }
+
+  .nav-is-visible & {
+    transform: translateZ(0);
+
+    // Menu cover layer - hide when nav is visible
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $t-animation-duration,
+                  visibility $t-animation-duration;
+    }
+  }
+}

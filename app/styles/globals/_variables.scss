@@ -1,0 +1,50 @@
+//////////////////////////////
+// Variables
+//////////////////////////////
+
+// Breakpoints
+//////////////////////////////
+$breakpoints: (
+  'small': 480px,
+  'medium': 768px,
+  'large': 1170px
+);
+
+// Colors
+//////////////////////////////
+
+// Semantic Colors
+$c-white: #fff;
+$c-black: #000;
+$c-amethyst: #9a57bd;
+$c-hopbush: #c96aa4;
+$c-di-serria: #d6915e;
+$c-danube: #5397c7;
+$c-de-york: #77cd91;
+
+// Functional colors
+$c-brand: #485274;
+$c-body-bg: $c-brand !default;
+$c-nav-container-bg: $c-black !default;
+$c-nav-bg: darken($c-body-bg, 10%) !default;
+$c-text-color: $c-white !default;
+$c-header-fixed-bg: $c-nav-bg !default;
+
+$c-color-1: $c-amethyst !default;
+$c-color-2: $c-hopbush !default;
+$c-color-3: $c-di-serria !default;
+$c-color-4: $c-danube !default;
+$c-color-5: $c-de-york !default;
+
+// Numbers
+//////////////////////////////
+$n-nav-items: 5 !default;
+
+// Sizes
+//////////////////////////////
+$s-nav-height-small: 80px !default;
+$s-nav-height-medium: 170px !default;
+
+// Timings
+//////////////////////////////
+$t-animation-duration: 0.5s !default;

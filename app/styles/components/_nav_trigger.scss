@@ -1,0 +1,60 @@
+//////////////////////////////
+// Nav Trigger
+//////////////////////////////
+
+.nav-trigger {
+  float: right;
+  width: 45px;
+  height: 45px;
+  margin-top: 18px;
+  position: relative;
+  cursor: pointer;
+
+  // Hamburger Icon
+  &-line,
+  &-line::before,
+  &-line::after {
+    width: 28px;
+    height: 3px;
+    background: $c-text-color;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  // Central Line
+  &-line {
+    top: 21px;
+    left: 8px;
+    transition: background $t-animation-duration;
+
+    .nav-is-visible & {
+      background: transparent;
+    }
+
+    // Upper and Lower Lines
+    &::before,
+    &::after {
+      content: '';
+      left: 0;
+      transition: transform $t-animation-duration;
+    }
+
+    // Upper line
+    &::before {
+      bottom: 8px;
+
+      .nav-is-visible & {
+        transform: translateY(8px) rotate(-45deg);
+      }
+    }
+
+    // Lower line
+    &::after {
+      top: 8px;
+
+      .nav-is-visible & {
+        transform: translateY(-8px) rotate(45deg);
+      }
+    }
+  }
+}

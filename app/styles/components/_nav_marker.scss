@@ -1,0 +1,34 @@
+//////////////////////////////
+// Nav Marker
+//////////////////////////////
+
+// Line at the bottom of nav selected item
+.nav-marker {
+  width: (100% / $n-nav-items);
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: center bottom;
+  transform: translateZ(0) rotateX(90deg);
+  transition: transform $t-animation-duration,
+              left $t-animation-duration,
+              color $t-animation-duration,
+              background-color $t-animation-duration;
+
+  // Triangle at the bottom of nav selected item
+  &::before {
+    @include center(x);
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: 3px;
+    border: 10px solid transparent;
+    border-bottom-color: inherit;
+  }
+
+  .nav-is-visible & {
+    transform: translateZ(0);
+  }
+}

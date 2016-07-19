@@ -1,206 +1,24 @@
-@import './partials/reset';
-@import './partials/variables';
-// colors, fonts etc...
-@import './partials/mixins';
-// custom mixins
-@import './partials/layout'; // responsive grid and media queries
+//////////////////////////////
+// Imports
+//////////////////////////////
 
-//Components
-@import 'nav-marker';
-@import "nav-trigger";
+// Vendors
+@import './vendors/reset';
 
-/* --------------------------------
-Main Components
--------------------------------- */
+// Globals
+@import
+  './globals/variables',
+  './globals/mixins'
+;
 
-.header {
-  min-height: 80px;
-  padding: 15px 5vw;
-  transition: transform $animation-duration;
-  @include clearfix;
-  /* Force Hardware Acceleration in WebKit */
-  transform: translateZ(0);
-  width: 100%;
-  backface-visibility: hidden;
-  &.fixed {
-    display: block;
-    left: 50%;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    transform: translateX(-50%) translateZ(0);
-    z-index: 1;
+// Layouts
+@import './layouts/main';
 
-    &.nav-is-visible {
-      transform: translateX(-50%) translateY($nav-height-S);
-    }
-
-    @include MQ(M) {
-
-      &.nav-is-visible {
-        transform: translateX(-50%) translateY($nav-height-M);
-      }
-    }
-  }
-
-  &.nav-is-visible {
-    transform: translateY($nav-height-S);
-  }
-
-  @include MQ(M) {
-
-    &.nav-is-visible {
-      transform: translateY($nav-height-M);
-    }
-  }
-}
-
-.ember-3d-nav-container {
-  /* this is the 3D navigation container */
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: $nav-height-S;
-  width: 100%;
-  background-color: $nav-container-bg;
-  visibility: hidden;
-  /* enable a 3D-space for children elements */
-  perspective: 1000px;
-  transform: translateY(-100%);
-  transition: transform $animation-duration 0s, visibility 0s $animation-duration;
-
-  &.nav-is-visible {
-    visibility: visible;
-    transform: translateY(0);
-    transition: transform $animation-duration 0s, visibility $animation-duration 0s;
-  }
-
-  @include MQ(M) {
-    height: $nav-height-M;
-  }
-}
-
-.ember-3d-nav {
-  grid {
-    height: 100%;
-    centered {
-      > * {
-        left: 0;
-        position: absolute;
-        width: 100%;
-      }
-    }
-  }
-  /* this is the 3D rotating navigation */
-  position: relative;
-  height: 100%;
-
-  /* Force Hardware Acceleration */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-
-  transform-origin: center bottom;
-  transform: rotateX(90deg);
-  transition: transform $animation-duration;
-
-  &::after {
-    /* menu dark cover layer - to enhance perspective effect */
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: $nav-container-bg;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity $animation-duration 0s, visibility $animation-duration 0s;
-  }
-
-  a {
-    position: relative;
-    display: block;
-    height: 100%;
-    color: transparent;
-    transition: background-color 0.2s;
-
-    &::before {
-      /* navigation icons */
-      content: '';
-      height: 32px;
-      width: 32px;
-      position: absolute;
-      @include center;
-      background-size: 32px 64px;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-    }
-  }
-
-  .is-selected a {
-    &::before {
-      background-position: 0 -32px;
-    }
-  }
-
-  .nav-is-visible & {
-    transform: translateZ(0);
-
-    &::after {
-      /* menu cover layer - hide it when navigation is visible */
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity $animation-duration 0s, visibility 0s $animation-duration;
-    }
-  }
-
-  @include MQ(M) {
-
-    a {
-      color: $text-color;
-      padding: 7.6em 1em 0;
-      font: {
-        size: 1.3rem;
-        weight: 600;
-      }
-      text-align: center;
-      //TODO move font smoothing
-      //@include font-smoothing;
-
-      /* truncate text with ellipsis if too long */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      &::before {
-        top: 4.4em;
-        @include center(x);
-      }
-    }
-  }
-}
-
-.main {
-  transition: transform $animation-duration;
-  /* Force Hardware Acceleration in WebKit */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-
-  &.nav-is-visible {
-    transform: translateY($nav-height-S);
-  }
-
-  @include MQ(M) {
-    &.nav-is-visible {
-      transform: translateY($nav-height-M);
-    }
-  }
-}
-
-.fixed {
-  transition: background-color 1000ms linear;
-}
-
-.fixed-and-scrolled {
-  background-color: $fixed-color;
-}
+// Components
+@import
+  './components/header',
+  './components/nav_marker',
+  './components/nav_trigger',
+  './components/nav_container',
+  './components/nav'
+;

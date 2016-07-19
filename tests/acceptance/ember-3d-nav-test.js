@@ -47,11 +47,11 @@ test('scrolling applies fixedAndScrolled', function (assert) {
     $(window).scrollTop(50);
     assert.equal($(window).scrollTop(), 50, 'window scroll is 50');
     run.later(this, function () {
-      assert.equal(find('.header').hasClass('fixed-and-scrolled'), true, 'fixed-and-scrolled applied');
+      assert.equal(find('.header').hasClass('is-fixed-and-scrolled'), true, 'is-fixed-and-scrolled applied');
       $(window).scrollTop(0);
       assert.equal($(window).scrollTop(), 0, 'window scroll is 0');
       run.later(this, function () {
-        assert.equal(find('.header').hasClass('fixed-and-scrolled'), false, 'fixed-and-scrolled removed');
+        assert.equal(find('.header').hasClass('is-fixed-and-scrolled'), false, 'is-fixed-and-scrolled removed');
       }, 100);
     }, 100);
   });

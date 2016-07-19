@@ -1,0 +1,20 @@
+//////////////////////////////
+// Main
+//////////////////////////////
+
+.main {
+  display: block;
+  transform: translateZ(0); // Force hardware acceleration in Webkit
+  transition: transform $t-animation-duration;
+  backface-visibility: hidden;
+
+  &.nav-is-visible {
+    transform: translateY($s-nav-height-small);
+  }
+
+  @include bp(medium) {
+    &.nav-is-visible {
+      transform: translateY($s-nav-height-medium);
+    }
+  }
+}

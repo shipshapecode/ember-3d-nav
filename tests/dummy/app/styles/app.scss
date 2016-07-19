@@ -1,17 +1,30 @@
+//////////////////////////////
+// Dummy App Variables - Overrides default variables set in _variables.scss
+//////////////////////////////
+
+// Colors
+$c-text-color: #F5F0E1; // cream
+$c-body-bg: #82B4BC; // light blue
+$c-header-fixed-bg: #354952; // dark blue
+$c-color-1: #E35746;
+
+// Fonts
 @import url(https://fonts.googleapis.com/css?family=Signika|Pacifico);
-$text-color: #F5F0E1; // cream
-$body-bg: #82B4BC; // light blue
-$fixed-color: #354952; //dark blue
+$f-signika: 'Signika', sans-serif;
+$f-pacifico: 'Pacifico';
 
-@import "ember-3d-nav";
+$f-primary: 'Signika', sans-serif;
 
-$color-1: #E35746;
+// Import Addon SCSS
+@import 'ember-3d-nav';
 
-// fonts
+//////////////////////////////
+// Dummy App Styles
+//////////////////////////////
 
-$primary-font: 'Signika', sans-serif;
-
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -20,12 +33,12 @@ html {
 }
 
 body {
+  height: 200vh;
+  background-color: $c-body-bg;
   font: {
     size: 1.6rem;
-    family: $primary-font; // variables inside partials > _variables.scss
+    family: $f-primary;
   }
-  background-color: $body-bg;
-  height: 200vh;
 }
 
 a {
@@ -33,20 +46,24 @@ a {
 }
 
 .ember-3d-nav {
-  background-color: $nav-bg;
+  background-color: $c-nav-bg;
+
   centered {
+
     a {
       &:hover {
-        background-color: darken($body-bg, 15%);
+        background-color: darken($c-body-bg, 15%);
       }
     }
+
     &.is-selected a {
-      background-color: darken($body-bg, 20%);
+      background-color: darken($c-body-bg, 20%);
 
       &:hover {
-        background-color: darken($body-bg, 20%);
+        background-color: darken($c-body-bg, 20%);
       }
     }
+
     &:first-of-type a::before {
       background-image: url(../img/boat.svg);
     }
@@ -73,55 +90,58 @@ a {
   float: left;
 
   img {
-    height: auto;
     width: 75px;
+    height: auto;
   }
 }
 
 .main {
+
   .info-text {
-    margin: 0 auto;
     width: 60vw;
-    h1, p {
-      text-align: center;
+    margin: 0 auto;
+
+    h1,
+    p {
+      @include font-smoothing;
+      color: $c-text-color;
       font: {
         size: 2rem;
         weight: 300;
       }
-      color: $text-color;
+      text-align: center;
       margin: 100px auto;
-      @include font-smoothing;
     }
+
     h1 {
-      font-family: 'Pacifico';
+      font-family: $f-pacifico;
       font-size: 10vw;
     }
   }
 }
 
-/* these are the colors of the markers - line + arrow */
-
+// These are the colors of the markers - Line & Arrow
 .color-1 {
-  color: $color-1;
-  background-color: $color-1;
+  color: $c-color-1;
+  background-color: $c-color-1;
 }
 
 .color-2 {
-  color: $color-2;
-  background-color: $color-2;
+  color: $c-color-2;
+  background-color: $c-color-2;
 }
 
 .color-3 {
-  color: $color-3;
-  background-color: $color-3;
+  color: $c-color-3;
+  background-color: $c-color-3;
 }
 
 .color-4 {
-  color: $color-4;
-  background-color: $color-4;
+  color: $c-color-4;
+  background-color: $c-color-4;
 }
 
 .color-5 {
-  color: $color-5;
-  background-color: $color-5;
+  color: $c-color-5;
+  background-color: $c-color-5;
 }

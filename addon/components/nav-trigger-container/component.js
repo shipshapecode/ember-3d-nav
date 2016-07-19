@@ -7,7 +7,7 @@ const {Component, inject, on} = Ember;
 export default Component.extend(RespondsToScroll, {
   layout,
   tagName: 'header',
-  classNameBindings: [':header', 'navService.navIsVisible:nav-is-visible', 'fixed:fixed', 'fixedAndScrolled'],
+  classNameBindings: [':header', 'navService.navIsVisible:nav-is-visible', 'fixed:is-fixed', 'fixedAndScrolled:is-fixed-and-scrolled'],
   navService: inject.service('ember-3d-nav'),
   fixedAndScrolled: false,
   onScroll: on('scroll', function() {
