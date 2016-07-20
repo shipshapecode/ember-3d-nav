@@ -11,8 +11,7 @@
 [![Code Climate](https://codeclimate.com/github/shipshapecode/ember-3d-nav/badges/gpa.svg)](https://codeclimate.com/github/shipshapecode/ember-3d-nav)
 [![Test Coverage](https://codeclimate.com/github/shipshapecode/ember-3d-nav/badges/coverage.svg)](https://codeclimate.com/github/shipshapecode/ember-3d-nav/coverage)
 
-Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-rotating-navigation/) by CodyHouse. 
-It aims to make it easily configurable for use with your Ember apps.
+Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-rotating-navigation/) by CodyHouse. It aims to make it easily configurable for use with your Ember apps.
 
 ## Looking for contributors!
 This is currently **beta**, but if you'd like to help out and contribute please let me know!
@@ -62,11 +61,11 @@ Each component takes various options, some of which are required.
 
 Each `nav-item` must have an `index`, which is an integer, passed in. This allows the selectedIndex to be calculated.
 
-`fixed (optional)`
+`isFixed (optional)`
 
-`nav-trigger-container` accepts a parameter `fixed`, which is a boolean. If you set `fixed` to true, the header will become fixed, so it will be visible regardless of where you scroll on the page.
+`nav-trigger-container` accepts a parameter `isFixed`, which is a boolean. If you set `isFixed` to true, the header will become fixed, so it will be visible regardless of where you scroll on the page.
 
-- Note: when `fixed` is set to true, a scroll event listener is applied to the window. This will set a class of `fixed-and-scrolled` to true whenever the window has been scrolled down. This allows for setting the background color of the navbar to another color, if you want, so that it is easier to see when fixed and scrolled over the page content.
+- Note: when `isFixed` is set to true, a scroll event listener is applied to the window. This will set a class of `is-fixed-and-scrolled` to true whenever the window has been scrolled down. This allows for setting the background color of the navbar to another color, if you want, so that it is easier to see when fixed and scrolled over the page content.
 
 `multiColor (optional)`
 
@@ -74,7 +73,7 @@ Each `nav-item` must have an `index`, which is an integer, passed in. This allow
 
 `totalNavItems (required)`
 
-`nav-container` accepts a parameter `totalNavItems`, which is an integer. This is a number indicating how many nav items you have. It allows the width of the marker to be calculated dynamically.
+`nav-container` accepts a parameter `totalNavItems`, which is an integer. This is a number indicating how many nav items you have. It allows the width of the marker to be calculated dynamically. **Be sure to set `$n-nav-items` in your `app.scss` file (or wherever your Sass variables are stored) as well.**
 
 You currently must define your links in an array, so we can easily determine the selected index. Each item must have a `type`, `text` and `href` or `linkTo`. Please see the following example:
 
@@ -136,16 +135,19 @@ links: Ember.A([
 ```
 
 If you are using SASS, you must import the styles for the navbar into your styles.
+
 ```scss
 //app.scss
 
-//You can override the styles by setting the following variables:
+// You can override the styles by setting the following variables:
+$c-text-color: #F5F0E1; // cream
+$c-body-bg: #82B4BC; // light blue
+$c-is-fixed-color: #354952; //dark blue
 
-$text-color: #F5F0E1; // cream
-$body-bg: #82B4BC; // light blue
-$fixed-color: #354952; //dark blue
+// Be sure to set the number of nav items you have
+$n-nav-items: 4; // Default is 5;
 
-//Once you have set the colors you want, you then have to import the addon styles.
+// Once you have set the colors you want, you then have to import the addon styles.
 @import "ember-3d-nav";
 ```
 
