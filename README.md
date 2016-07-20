@@ -31,7 +31,7 @@ To make the nav work, you must provide a `nav-trigger-container`, `nav-container
 This is the configuration used in the sample app in tests/dummy:
 
 ```hbs
-{{#nav-trigger-container fixed=true}}
+{{#nav-trigger-container isFixed=true}}
   <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
 {{/nav-trigger-container}}
 
