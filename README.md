@@ -46,7 +46,7 @@ This is the configuration used in the sample app in tests/dummy:
   </div>
 </main>
 
-{{#nav-container multiColor=true totalNavItems=model.links.length}}
+{{#nav-container multiColor=true}}
   {{#each model.links as |link index|}}
     {{nav-item index=index link=link}}
   {{/each}}
@@ -70,10 +70,6 @@ Each `nav-item` must have an `index`, which is an integer, passed in. This allow
 `multiColor (optional)`
 
 `nav-container` accepts a parameter `multiColor`, which is a boolean. You can set `multiColor` to true, which will enable class names like `color-1`, `color-2`, `color-3` etc. on the nav-marker, so you can specify different colors for the indicator.
-
-`totalNavItems (required)`
-
-`nav-container` accepts a parameter `totalNavItems`, which is an integer. This is a number indicating how many nav items you have. It allows the width of the marker to be calculated dynamically. **Be sure to set `$n-nav-items` in your `app.scss` file (or wherever your Sass variables are stored) as well.**
 
 You currently must define your links in an array, so we can easily determine the selected index. Each item must have a `type`, `text` and `href` or `linkTo`. Please see the following example:
 
@@ -134,20 +130,31 @@ links: Ember.A([
       ])
 ```
 
-If you are using SASS, you must import the styles for the navbar into your styles.
+## Styles
+
+Ember-3d-nav uses Sass for styles. You can override any variable you find in the `globals/_variables.scss` partial to adjust the styles of your navigation.
+
+`$n-nav-items`
+
+Be sure to update this Sass variable to the number of items in your navigation. By default `$n-nav-items` is set to `5`. This setting will automatically update the width of each item based on what you specify here.
+
+Here is an example of some overrides:
 
 ```scss
-//app.scss
+// app.scss
 
-// You can override the styles by setting the following variables:
+// You can override the styles by setting variables
+// You can reference globals/_variables.scss for more overridable options:
 $c-text-color: #F5F0E1; // cream
 $c-body-bg: #82B4BC; // light blue
 $c-is-fixed-color: #354952; //dark blue
 
 // Be sure to set the number of nav items you have
 $n-nav-items: 4; // Default is 5;
-
-// Once you have set the colors you want, you then have to import the addon styles.
-@import "ember-3d-nav";
 ```
 
+Lastly, be sure to `@import` the styles into your project.
+
+```scss
+@import 'ember-3d-nav';
+```

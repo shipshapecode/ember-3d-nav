@@ -3,7 +3,7 @@ const {Component, computed, inject} = Ember;
 
 export default Component.extend({
   tagName: 'span',
-  classNameBindings: [':nav-marker', 'colorNumber', 'numberOfNavItems'],
+  classNameBindings: [':nav-marker', 'colorNumber'],
   navService: inject.service('ember-3d-nav'),
   colorNumber: computed('multiColor', 'navService.selectedIndex', function() {
     let color = 'color-';
@@ -14,8 +14,5 @@ export default Component.extend({
       color += 1;
     }
     return color;
-  }),
-  numberOfNavItems: computed('totalNavItems', function() {
-    return 'nav-items-' + this.get('totalNavItems');
   })
 });

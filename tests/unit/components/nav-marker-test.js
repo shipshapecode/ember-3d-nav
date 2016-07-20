@@ -18,10 +18,3 @@ test('calculate colorNumber: multiColor', function(assert) {
   navMarker.set('multiColor', true);
   assert.equal(navMarker.get('colorNumber'), 'color-1');
 });
-
-test('calculate numberOfNavItems', function(assert) {
-  assert.expect(1);
-  const navMarker = this.subject();
-  navMarker.set('totalNavItems', 7);
-  assert.equal(navMarker.get('numberOfNavItems'), 'nav-items-7');
-});
