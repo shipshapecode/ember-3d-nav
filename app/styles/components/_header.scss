@@ -23,7 +23,8 @@
     display: block;
     text-align: center;
     transform: translateX(-50%) translateZ(0);
-    transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear,
+                transform $t-animation-duration;
     position: fixed;
     top: 0;
     left: 50%;
