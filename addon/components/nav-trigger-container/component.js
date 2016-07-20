@@ -7,17 +7,17 @@ const {Component, inject, on} = Ember;
 export default Component.extend(RespondsToScroll, {
   layout,
   tagName: 'header',
-  classNameBindings: [':header', 'navService.navIsVisible:nav-is-visible', 'fixed:fixed', 'fixedAndScrolled'],
+  classNameBindings: [':header', 'navService.navIsVisible:nav-is-visible', 'isFixed', 'isFixedAndScrolled'],
   navService: inject.service('ember-3d-nav'),
-  fixedAndScrolled: false,
+  isFixedAndScrolled: false,
   onScroll: on('scroll', function() {
-    if (this.get('fixed')) {
+    if (this.get('isFixed')) {
       const scrollPosition = $(window).scrollTop();
       if (scrollPosition > 0) {
-        this.set('fixedAndScrolled', true);
+        this.set('isFixedAndScrolled', true);
       }
       else if (scrollPosition === 0) {
-        this.set('fixedAndScrolled', false);
+        this.set('isFixedAndScrolled', false);
       }
     }
   }),

@@ -1,4 +1,4 @@
-{{#nav-trigger-container fixed=true}}
+{{#nav-trigger-container isFixed=true}}
   <a href="//shipshape.io" class="logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
 {{/nav-trigger-container}}
 
@@ -14,7 +14,7 @@
   </div>
 </screen>
 
-{{#nav-container multiColor=true totalNavItems=model.links.length}}
+{{#nav-container multiColor=true}}
   {{#each model.links as |link index|}}
     {{nav-item index=index link=link}}
   {{/each}}
