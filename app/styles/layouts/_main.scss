@@ -5,16 +5,16 @@
 .main {
   display: block;
   transform: translateZ(0); // Force hardware acceleration in Webkit
-  transition: transform $t-animation-duration;
+  transition: transform _e3dn('transition-duration');
   backface-visibility: hidden;
 
   &.nav-is-visible {
-    transform: translateY($s-nav-height-small);
+    transform: translateY(_e3dn('nav-height-small'));
   }
 
   @include bp(medium) {
     &.nav-is-visible {
-      transform: translateY($s-nav-height-medium);
+      transform: translateY(_e3dn('nav-height-medium'));
     }
   }
 }

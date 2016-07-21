@@ -5,11 +5,28 @@
 // This is the 3D rotating navigation
 .ember-3d-nav {
   height: 100%;
+  background: _e3dn('nav-bg');
   position: relative;
   transform-origin: center bottom;
   transform: translateZ(0) rotateX(90deg); // Force hardware acceleration in Webkit
-  transition: transform $t-animation-duration;
+  transition: transform _e3dn('transition-duration');
   backface-visibility: hidden;
+  overflow: hidden;
+
+  // Menu dark cover layout - enhances perspective effect
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: _e3dn('nav-container-bg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity _e3dn('transition-duration'),
+                visibility _e3dn('transition-duration');
+  }
 
   grid {
     height: 100%;
@@ -24,19 +41,21 @@
     }
   }
 
-  // Menu dark cover layout - enhances perspective effect
-  &::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    background-color: $c-nav-container-bg;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity $t-animation-duration,
-                visibility $t-animation-duration;
+  centered {
+    a {
+      &:hover {
+        background: _e3dn('nav-item-hover');
+      }
+    }
+
+    &.is-selected a,
+    &.is-selected a:hover {
+      background: _e3dn('nav-item-selected');
+    }
+
+    &.is-selected a:before {
+      background-position: 0 -32px;
+    }
   }
 
   a {
@@ -48,7 +67,7 @@
 
     @include bp(medium) {
       @include font-smoothing;
-      color: $c-text-color;
+      color: _e3dn('text-color');
       font: {
         size: 1.3rem;
         weight: 600;
@@ -77,12 +96,9 @@
         top: 4.4em;
       }
     }
-  }
 
-  .is-selected a {
-
-    &::before {
-      background-position: 0 -32px;
+    .is-selected & {
+      background: _e3dn('nav-item-selected');
     }
   }
 
@@ -93,8 +109,8 @@
     &::after {
       opacity: 0;
       visibility: hidden;
-      transition: opacity $t-animation-duration,
-                  visibility $t-animation-duration;
+      transition: opacity _e3dn('transition-duration'),
+                  visibility _e3dn('transition-duration');
     }
   }
 }

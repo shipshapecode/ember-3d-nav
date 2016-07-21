@@ -7,15 +7,15 @@
   width: 100%;
   min-height: 80px;
   padding: 15px 5vw;
-  transition: transform $t-animation-duration;
+  transition: transform _e3dn('transition-duration');
   transform: translateZ(0); // Force hardware acceleration in Webkit
   backface-visibility: hidden;
 
   &.nav-is-visible {
-    transform: translateY($s-nav-height-small);
+    transform: translateY(_e3dn('nav-height-small'));
 
     @include bp(medium) {
-      transform: translateY($s-nav-height-medium);
+      transform: translateY(_e3dn('nav-height-medium'));
     }
   }
 
@@ -24,22 +24,22 @@
     text-align: center;
     transform: translateX(-50%) translateZ(0);
     transition: background-color 1000ms linear,
-                transform $t-animation-duration;
+                transform _e3dn('transition-duration');
     position: fixed;
     top: 0;
     left: 50%;
     z-index: 1;
 
     &.nav-is-visible {
-      transform: translateX(-50%) translateY($s-nav-height-small);
+      transform: translateX(-50%) translateY(_e3dn('nav-height-small'));
 
       @include bp(medium) {
-        transform: translateX(-50%) translateY($s-nav-height-medium);
+        transform: translateX(-50%) translateY(_e3dn('nav-height-medium'));
       }
     }
   }
 
   &.is-fixed-and-scrolled {
-    background-color: $c-is-fixed-color;
+    background-color: _e3dn('is-fixed-nav-bg');
   }
 }

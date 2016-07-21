@@ -2,11 +2,20 @@
 // Dummy App Variables - Overrides default variables set in _variables.scss
 //////////////////////////////
 
-// Colors
-$c-text-color: #F5F0E1; // cream
-$c-body-bg: #82B4BC; // light blue
-$c-is-fixed-color: #354952; // dark blue
-$c-color-1: #E35746;
+$ember-3d-nav: (
+  'text-color': #f5f0e1,
+  'body-bg': #82b4bc,
+  'nav-bg': darken(#82b4bc, 10%),
+  'nav-item-hover': darken(#82b4bc, 15%),
+  'nav-item-selected': darken(#82b4bc, 20%),
+  'is-fixed-nav-bg': #354952
+);
+
+$c-color-1: #e35746;
+$c-color-2: #c96aa4;
+$c-color-3: #d6915e;
+$c-color-4: #5397c7;
+$c-color-5: #77cd91;
 
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Signika|Pacifico);
@@ -34,7 +43,7 @@ html {
 
 body {
   height: 200vh;
-  background-color: $c-body-bg;
+  background-color: _e3dn('body-bg');
   font: {
     size: 1.6rem;
     family: $f-primary;
@@ -46,23 +55,8 @@ a {
 }
 
 .ember-3d-nav {
-  background-color: $c-nav-bg;
 
   centered {
-
-    a {
-      &:hover {
-        background-color: darken($c-body-bg, 15%);
-      }
-    }
-
-    &.is-selected a {
-      background-color: darken($c-body-bg, 20%);
-
-      &:hover {
-        background-color: darken($c-body-bg, 20%);
-      }
-    }
 
     &:first-of-type a::before {
       background-image: url(../img/boat.svg);
@@ -104,7 +98,7 @@ a {
     h1,
     p {
       @include font-smoothing;
-      color: $c-text-color;
+      color: _e3dn('text-color');
       font: {
         size: 2rem;
         weight: 300;
