@@ -6,20 +6,14 @@
 @import './vendors/reset';
 
 // Globals
-@import
-  './globals/variables',
-  './globals/functions',
-  './globals/mixins'
-;
+@import './globals/variables', './globals/functions', './globals/mixins';
 
 // Layouts
 @import './layouts/main';
 
 // Components
-@import
-  './components/header',
-  './components/nav_marker',
-  './components/nav_trigger',
-  './components/nav_container',
-  './components/nav'
-;
+@import './components/nav_container';
+@import './components/nav_marker';
+@import './components/nav_trigger';
+@import './components/nav_trigger_container';
+@import './components/nav';
