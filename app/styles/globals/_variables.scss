@@ -20,17 +20,17 @@ $c-codyhouse: #485274;
 
 // Ember 3D Nav Defaults
 $ember-3d-nav-defaults: (
-  'nav-items': 5,
-  'nav-container-bg': #000,
-  'nav-bg': darken($c-codyhouse, 10%),
   'is-fixed-nav-bg': darken($c-codyhouse, 5%),
-  'nav-text-color': #fff,
-  'nav-item-hover': darken($c-codyhouse, 15%),
-  'nav-item-selected': darken($c-codyhouse, 20%),
+  'nav-bg': darken($c-codyhouse, 10%),
+  'nav-container-bg': #000,
   'nav-height-small': 80px,
   'nav-height-medium': 170px,
-  'nav-trigger-color': #fff,
+  'nav-item-hover': darken($c-codyhouse, 15%),
+  'nav-item-selected': darken($c-codyhouse, 20%),
+  'nav-items': 5,
   'nav-marker-color': #e35746,
+  'nav-text-color': #fff,
+  'nav-trigger-color': #fff,
   'transition-duration': 0.5s
 );
 

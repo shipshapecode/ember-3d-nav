@@ -3,10 +3,10 @@
 //////////////////////////////
 
 $ember-3d-nav: (
+  'is-fixed-nav-bg': #354952,
   'nav-bg': darken(#82b4bc, 10%),
   'nav-item-hover': darken(#82b4bc, 15%),
   'nav-item-selected': darken(#82b4bc, 20%),
-  'is-fixed-nav-bg': #354952,
   'nav-text-color': #f5f0e1,
   'nav-trigger-color': #f5f0e1
 );
