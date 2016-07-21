@@ -153,7 +153,7 @@ $ember-3d-nav-defaults: (
 
 Under the hood, the addon will merge the default settings and any settings supplied in an `$ember-3d-nav` map and use those to style the navigation. Very little, other than this map, should be required to get the nav looking the way you want it to.
 
-**Note** One particularly important key to update is `nav-items`, this needs to match the number of items in your navigation or the width of your items will be incorrect.
+**Note:** One particularly important key to update is `nav-items`, this needs to match the number of items in your navigation or the width of your items will be incorrect.
 
 Here is an example of what your Sass might look like:
 
@@ -161,8 +161,8 @@ Here is an example of what your Sass might look like:
 // User settings
 $ember-3d-nav: (
   'is-fixed-nav-bg': #354952,
-  'nav-items': 4
-  'nav-text-color': #f5f0e1,
+  'nav-items': 4,
+  'nav-text-color': #f5f0e1
 );
 ```
 
