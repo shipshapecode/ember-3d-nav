@@ -67,7 +67,7 @@
 
     @include bp(medium) {
       @include font-smoothing;
-      color: _e3dn('text-color');
+      color: _e3dn('nav-text-color');
       font: {
         size: 1.3rem;
         weight: 600;

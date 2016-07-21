@@ -3,12 +3,12 @@
 //////////////////////////////
 
 $ember-3d-nav: (
-  'text-color': #f5f0e1,
-  'body-bg': #82b4bc,
   'nav-bg': darken(#82b4bc, 10%),
   'nav-item-hover': darken(#82b4bc, 15%),
   'nav-item-selected': darken(#82b4bc, 20%),
-  'is-fixed-nav-bg': #354952
+  'is-fixed-nav-bg': #354952,
+  'nav-text-color': #f5f0e1,
+  'nav-trigger-color': #f5f0e1
 );
 
 $c-color-1: #e35746;
@@ -43,7 +43,7 @@ html {
 
 body {
   height: 200vh;
-  background-color: _e3dn('body-bg');
+  background-color: #82b4bc;
   font: {
     size: 1.6rem;
     family: $f-primary;
@@ -98,7 +98,7 @@ a {
     h1,
     p {
       @include font-smoothing;
-      color: _e3dn('text-color');
+      color: #f5f0e1;
       font: {
         size: 2rem;
         weight: 300;

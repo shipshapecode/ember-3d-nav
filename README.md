@@ -136,17 +136,17 @@ Ember-3d-nav uses Sass for styles. The default styles for the nav are stored in 
 
 ```scss
 $ember-3d-nav-defaults: (
-  'body-bg': #485274,
+  'nav-items': 5,
   'nav-container-bg': #000,
   'nav-bg': darken(#485274, 10%),
-  'text-color': #fff,
   'is-fixed-nav-bg': darken(#485274, 5%),
-  'nav-items': 5,
+  'nav-text-color': #fff,
   'nav-item-hover': darken(#485274, 15%),
   'nav-item-selected': darken(#485274, 20%),
   'nav-height-small': 80px,
   'nav-height-medium': 170px,
-  'nav-marker': #e35746,
+  'nav-trigger-color': #fff,
+  'nav-marker-color': #e35746,
   'transition-duration': 0.5s
 );
 ```
@@ -160,10 +160,9 @@ Here is an example of what your Sass might look like:
 ```scss
 // User settings
 $ember-3d-nav: (
-  'body-bg': #82b4bc,
-  'text-color': #f5f0e1,
-  'is-fixed-nav-bg': #354952,
   'nav-items': 4
+  'is-fixed-nav-bg': #354952,
+  'nav-text-color': #f5f0e1,
 );
 ```
 
