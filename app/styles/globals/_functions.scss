@@ -1,0 +1,13 @@
+//////////////////////////////
+// Functions
+//////////////////////////////
+
+///
+/// Shortcut function for getting value from $ember-3d-nav map
+/// @access private
+/// @param {String} $key - Key of value to be retrieved
+/// @return Value of key in $ember-3d-nav map
+///
+@function _e3dn($key) {
+  @return map-get($ember-3d-nav, $key);
+}

@@ -132,25 +132,38 @@ links: Ember.A([
 
 ## Styles
 
-Ember-3d-nav uses Sass for styles. You can override any variable you find in the `globals/_variables.scss` partial to adjust the styles of your navigation.
-
-`$n-nav-items`
-
-Be sure to update this Sass variable to the number of items in your navigation. By default `$n-nav-items` is set to `5`. This setting will automatically update the width of each item based on what you specify here.
-
-Here is an example of some overrides:
+Ember-3d-nav uses Sass for styles. The default styles for the nav are stored in an overridable Sass map. This is accomplished by supplying a `$ember-3d-nav` map with any or all of the keys found in the defaults map below.
 
 ```scss
-// app.scss
+$ember-3d-nav-defaults: (
+  'is-fixed-nav-bg': darken($c-codyhouse, 5%),
+  'nav-bg': darken($c-codyhouse, 10%),
+  'nav-container-bg': #000,
+  'nav-height-small': 80px,
+  'nav-height-medium': 170px,
+  'nav-item-hover': darken($c-codyhouse, 15%),
+  'nav-item-selected': darken($c-codyhouse, 20%),
+  'nav-items': 5,
+  'nav-marker-color': #e35746,
+  'nav-text-color': #fff,
+  'nav-trigger-color': #fff,
+  'transition-duration': 0.5s
+);
+```
 
-// You can override the styles by setting variables
-// You can reference globals/_variables.scss for more overridable options:
-$c-text-color: #F5F0E1; // cream
-$c-body-bg: #82B4BC; // light blue
-$c-is-fixed-color: #354952; //dark blue
+Under the hood, the addon will merge the default settings and any settings supplied in an `$ember-3d-nav` map and use those to style the navigation. Very little, other than this map, should be required to get the nav looking the way you want it to.
 
-// Be sure to set the number of nav items you have
-$n-nav-items: 4; // Default is 5;
+**Note** One particularly important key to update is `nav-items`, this needs to match the number of items in your navigation or the width of your items will be incorrect.
+
+Here is an example of what your Sass might look like:
+
+```scss
+// User settings
+$ember-3d-nav: (
+  'is-fixed-nav-bg': #354952,
+  'nav-items': 4
+  'nav-text-color': #f5f0e1,
+);
 ```
 
 Lastly, be sure to `@import` the styles into your project.

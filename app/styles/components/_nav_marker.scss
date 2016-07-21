@@ -4,17 +4,19 @@
 
 // Line at the bottom of nav selected item
 .nav-marker {
-  width: (100% / $n-nav-items);
+  width: (100% / _e3dn('nav-items'));
   height: 3px;
+  background: _e3dn('nav-marker-color');
+  color: _e3dn('nav-marker-color');
   position: absolute;
   bottom: 0;
   left: 0;
   transform-origin: center bottom;
   transform: translateZ(0) rotateX(90deg);
-  transition: transform $t-animation-duration,
-              left $t-animation-duration,
-              color $t-animation-duration,
-              background-color $t-animation-duration;
+  transition: transform _e3dn('transition-duration'),
+              left _e3dn('transition-duration'),
+              color _e3dn('transition-duration'),
+              background-color _e3dn('transition-duration');
 
   // Triangle at the bottom of nav selected item
   &::before {
