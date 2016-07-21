@@ -1,8 +1,8 @@
 //////////////////////////////
-// Header
+// Nav Trigger Container
 //////////////////////////////
 
-.header {
+.nav-trigger-container {
   @include clearfix;
   width: 100%;
   min-height: 80px;
@@ -13,7 +13,6 @@
 
   &.nav-is-visible {
     transform: translateY(_e3dn('nav-height-small'));
-
     @include bp(medium) {
       transform: translateY(_e3dn('nav-height-medium'));
     }
@@ -23,8 +22,7 @@
     display: block;
     text-align: center;
     transform: translateX(-50%) translateZ(0);
-    transition: background-color 1000ms linear,
-                transform _e3dn('transition-duration');
+    transition: background-color 1000ms linear, transform _e3dn('transition-duration');
     position: fixed;
     top: 0;
     left: 50%;
@@ -32,7 +30,6 @@
 
     &.nav-is-visible {
       transform: translateX(-50%) translateY(_e3dn('nav-height-small'));
-
       @include bp(medium) {
         transform: translateX(-50%) translateY(_e3dn('nav-height-medium'));
       }
