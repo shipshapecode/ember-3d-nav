@@ -80,6 +80,18 @@
       text-overflow: ellipsis;
     }
 
+    &:active,
+    &:hover,
+    &:link,
+    &:visited,
+    &:focus {
+      color: transparent;
+
+      @include bp(medium) {
+        color: _e3dn('nav-text-color');
+      }
+    }
+
     // Nav Icons
     &::before {
       @include center;
@@ -95,11 +107,6 @@
         @include center(x);
         top: 4.4em;
       }
-    }
-
-    // To avoid issues where visited color is set app wide and such
-    &:active, &:hover, &:link, &:visited {
-      color: _e3dn('nav-text-color');
     }
 
     .is-selected & {
