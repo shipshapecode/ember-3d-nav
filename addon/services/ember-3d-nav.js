@@ -12,9 +12,10 @@ export default Service.extend({
   navIsVisible: false,
   selectedIndex: 0,
   toggle3dBlock() {
-    const addOrRemove = this.get('navIsVisible');
+    let addOrRemove = this.get('navIsVisible');
+
     $('.main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
-      //fix marker position when opening the menu (after a window resize)
+      // fix marker position when opening the menu (after a window resize)
       if (addOrRemove) {
         this.updateSelectedNav();
       }
@@ -24,11 +25,14 @@ export default Service.extend({
    * This function updates the .nav-marker position
    *
    * @param type Whether it is a close or not
+   * @private
    */
   updateSelectedNav(type) {
-    const selectedItem = $('.is-selected');
-    const leftPosition = selectedItem.offset().left;
-    const marker = $('.nav-marker');
+    let selectedItem = $('.is-selected');
+
+    let leftPosition = selectedItem.offset().left;
+
+    let marker = $('.nav-marker');
 
     marker.css({
       'left': leftPosition

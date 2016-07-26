@@ -1,10 +1,10 @@
 import Ember from 'ember';
-const {A, Route} = Ember;
+const {Route} = Ember;
 
 export default Route.extend({
-  model(){
+  model() {
     return {
-      links: A([
+      links: [
         {
           href: '#0',
           text: 'About',
@@ -30,7 +30,7 @@ export default Route.extend({
           text: 'Contact',
           type: 'href'
         }
-      ])
+      ]
     };
   }
 });
