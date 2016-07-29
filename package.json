@@ -36,7 +36,6 @@
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-qunit": "^2.0.0",
     "ember-cli-release": "^0.2.9",
-    "ember-cli-sass": "5.3.1",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
@@ -59,7 +58,7 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
     "ember-cli-htmlbars": "^1.0.5",
-    "ember-cli-sass": "5.3.1",
+    "ember-cli-sass": "5.4.0",
     "ember-responds-to": "1.2.1"
   },
   "ember-addon": {
