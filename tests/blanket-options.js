@@ -7,7 +7,7 @@ const options = {
   loaderExclusions: [],
   enableCoverage: true,
   cliOptions: {
-    reporters: [ 'lcov' ],
+    reporters: ['lcov'],
     autostart: true,
     lcovOptions: {
       outputFile: 'lcov.dat',

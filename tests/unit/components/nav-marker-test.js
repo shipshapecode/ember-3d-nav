@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('component:nav-marker', 'Unit | nav marker', {
-  needs: [ 'service:ember-3d-nav' ],
+  needs: ['service:ember-3d-nav'],
   unit: true
 });
 

@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import $ from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
-const {computed, Service} = Ember;
+const { computed, Service } = Ember;
 
 export default Service.extend({
   init(...args) {

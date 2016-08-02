@@ -1,11 +1,12 @@
+/* eslint-disable ember-suave/prefer-destructuring */
 import Ember from 'ember';
 import layout from './template';
-const {Component, computed, inject, run} = Ember;
+const { Component, computed, inject, run } = Ember;
 
 export default Component.extend({
   layout,
   tagName: 'centered',
-  classNameBindings: [ 'isSelected' ],
+  classNameBindings: ['isSelected'],
   navService: inject.service('ember-3d-nav'),
   didInsertElement() {
     run.later(this, function() {
@@ -42,3 +43,4 @@ export default Component.extend({
     }
   }
 });
+/* eslint-enable ember-suave/prefer-destructuring */
