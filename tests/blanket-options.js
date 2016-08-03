@@ -1,4 +1,4 @@
-/* globals blanket, module */
+/* eslint-disable */
 
 const options = {
   modulePrefix: 'ember-3d-nav',
@@ -11,10 +11,10 @@ const options = {
     autostart: true,
     lcovOptions: {
       outputFile: 'lcov.dat',
-      renamer(moduleName) {
-        let expression = /^ember-3d-nav/;
+      renamer: function(moduleName) {
+        const expression = /^ember-3d-nav/;
 
-        return `${moduleName.replace(expression, 'addon')}.js`;
+        return moduleName.replace(expression, 'addon') + '.js';
       }
     }
   }
@@ -25,3 +25,5 @@ if (typeof exports === 'undefined') {
 } else {
   module.exports = options;
 }
+
+/* eslint-enable */
