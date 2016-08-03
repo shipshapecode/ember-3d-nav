@@ -1,3 +1,4 @@
+import './blanket-options';
 import resolver from './helpers/resolver';
 import {
   setResolver
