@@ -3,17 +3,19 @@
 //////////////////////////////
 
 // Vendors
-@import './vendors/reset';
+@import './ember-3d-nav/vendors/reset';
 
 // Globals
-@import './globals/variables', './globals/functions', './globals/mixins';
+@import './ember-3d-nav/globals/variables';
+@import './ember-3d-nav/globals/functions';
+@import './ember-3d-nav/globals/mixins';
 
 // Layouts
-@import './layouts/main';
+@import './ember-3d-nav/layouts/main';
 
 // Components
-@import './components/nav_container';
-@import './components/nav_marker';
-@import './components/nav_trigger';
-@import './components/nav_trigger_container';
-@import './components/nav';
+@import './ember-3d-nav/components/nav_container';
+@import './ember-3d-nav/components/nav_marker';
+@import './ember-3d-nav/components/nav_trigger';
+@import './ember-3d-nav/components/nav_trigger_container';
+@import './ember-3d-nav/components/nav';
