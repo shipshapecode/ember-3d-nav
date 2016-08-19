@@ -31,11 +31,11 @@ $f-primary: 'Signika', sans-serif;
 // Dummy App Styles
 //////////////////////////////
 
-// *,
-// *::after,
-// *::before {
-//   box-sizing: border-box;
-// }
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
 html {
   font-size: 62.5%;
