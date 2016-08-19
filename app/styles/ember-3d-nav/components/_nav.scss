@@ -6,6 +6,8 @@
 .ember-3d-nav {
   height: 100%;
   background: _e3dn('nav-bg');
+  margin: 0;
+  padding: 0;
   position: relative;
   transform-origin: center bottom;
   transform: translateZ(0) rotateX(90deg); // Force hardware acceleration in Webkit

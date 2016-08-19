@@ -11,6 +11,13 @@
   transform: translateZ(0); // Force hardware acceleration in Webkit
   backface-visibility: hidden;
 
+  &,
+  & *,
+  & *:before,
+  & *:after {
+    box-sizing: border-box;
+  }
+
   &.nav-is-visible {
     transform: translateY(_e3dn('nav-height-small'));
     @include bp(medium) {
