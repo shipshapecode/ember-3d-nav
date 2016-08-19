@@ -21,6 +21,13 @@
     height: _e3dn('nav-height-medium');
   }
 
+  &,
+  & *,
+  & *:before,
+  & *:after {
+    box-sizing: border-box;
+  }
+
   &.nav-is-visible {
     visibility: visible;
     transform: translateY(0);
