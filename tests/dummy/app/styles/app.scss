@@ -1,28 +1,26 @@
+@import "./fonts";
+$c-bloodOrange: #DA4843;
+$c-primary: #3D2F53;
+$c-navBar: darken($c-primary, 5%);
+
 //////////////////////////////
 // Dummy App Variables - Overrides default variables set in _variables.scss
 //////////////////////////////
 
 $ember-3d-nav: (
-  'is-fixed-nav-bg': #354952,
-  'nav-bg': darken(#82b4bc, 10%),
-  'nav-item-hover': darken(#82b4bc, 15%),
-  'nav-item-selected': darken(#82b4bc, 20%),
+  'is-fixed-nav-bg': #624B86,
+  'nav-bg': $c-navBar,
+  'nav-item-hover': darken(#3D2F53, 10%),
+  'nav-item-selected': darken(#3D2F53, 10%),
   'nav-text-color': #f5f0e1,
   'nav-trigger-color': #f5f0e1
 );
 
-$c-color-1: #e35746;
+$c-color-1: #DA4843;
 $c-color-2: #c96aa4;
 $c-color-3: #d6915e;
 $c-color-4: #5397c7;
 $c-color-5: #77cd91;
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Signika|Pacifico);
-$f-signika: 'Signika', sans-serif;
-$f-pacifico: 'Pacifico';
-
-$f-primary: 'Signika', sans-serif;
 
 // Import Addon SCSS
 @import 'ember-3d-nav';
@@ -43,7 +41,7 @@ html {
 
 body {
   height: 200vh;
-  background-color: #82b4bc;
+  background-color: $c-primary;
   font: {
     size: 1.6rem;
     family: $f-primary;
@@ -92,8 +90,15 @@ a {
 .main {
 
   .info-text {
-    width: 60vw;
+    width: 75vw;
     margin: 0 auto;
+
+    a {
+      color: $c-bloodOrange;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
 
     h1,
     p {
@@ -108,7 +113,9 @@ a {
     }
 
     h1 {
-      font-family: $f-pacifico;
+      .pacifico {
+        font-family: $f-pacifico;
+      }
       font-size: 10vw;
     }
   }

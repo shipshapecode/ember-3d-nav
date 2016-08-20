@@ -144,7 +144,7 @@ $ember-3d-nav-defaults: (
   'nav-item-hover': darken($c-codyhouse, 15%),
   'nav-item-selected': darken($c-codyhouse, 20%),
   'nav-items': 5,
-  'nav-marker-color': #e35746,
+  'nav-marker-color': #DA4843,
   'nav-text-color': #fff,
   'nav-trigger-color': #fff,
   'transition-duration': 0.5s
@@ -160,7 +160,7 @@ Here is an example of what your Sass might look like:
 ```scss
 // User settings
 $ember-3d-nav: (
-  'is-fixed-nav-bg': #354952,
+  'is-fixed-nav-bg': #624B86,
   'nav-items': 4,
   'nav-text-color': #f5f0e1
 );
