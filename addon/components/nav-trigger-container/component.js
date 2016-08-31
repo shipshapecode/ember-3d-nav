@@ -22,14 +22,14 @@ export default Component.extend(RespondsToScroll, {
       }
     }
   }),
-  didInsertElement() {
+  setupHeadroom: on('didInsertElement', function() {
     if (this.get('useHeadroom')) {
       run.scheduleOnce('afterRender', this, function() {
         let headroom  = new Headroom(this.element);
         headroom.init();
       });
     }
-  },
+  }),
   actions: {
     toggleMenu() {
       this.toggleProperty('navService.navIsVisible');
