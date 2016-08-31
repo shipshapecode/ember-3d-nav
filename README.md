@@ -30,7 +30,7 @@ To make the nav work, you must provide a `nav-trigger-container`, `nav-container
 This is the configuration used in the sample app in tests/dummy:
 
 ```hbs
-{{#nav-trigger-container isFixed=true}}
+{{#nav-trigger-container isFixed=true useHeadroom=false}}
   <a href="//shipshape.io" class="cd-logo"><img src="img/ShipShapeIcon.svg" alt="Logo"></a>
 {{/nav-trigger-container}}
 
@@ -70,6 +70,10 @@ Each `nav-item` must have an `index`, which is an integer, passed in. This allow
 `multiColor (optional)`
 
 `nav-container` accepts a parameter `multiColor`, which is a boolean. You can set `multiColor` to true, which will enable class names like `color-1`, `color-2`, `color-3` etc. on the nav-marker, so you can specify different colors for the indicator.
+
+`useHeadroom (optional)`
+
+`nav-trigger-container` accepts a parameter `useHeadroom`, which is a boolean. If you set `useHeadroom` to true, the header will disappear as you scroll down and reappear when you scroll back up, using headroom.js.
 
 You currently must define your links in an array, so we can easily determine the selected index. Each item must have a `type`, `text` and `href` or `linkTo`. Please see the following example:
 

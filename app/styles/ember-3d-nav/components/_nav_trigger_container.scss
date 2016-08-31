@@ -1,6 +1,8 @@
-//////////////////////////////
-// Nav Trigger Container
-//////////////////////////////
+/*////////////////////////////*/
+
+/* Nav Trigger Container*/
+
+/*////////////////////////////*/
 
 .nav-trigger-container {
   @include clearfix;
@@ -8,18 +10,16 @@
   min-height: 80px;
   padding: 15px 5vw;
   transition: transform _e3dn('transition-duration');
-  transform: translateZ(0); // Force hardware acceleration in Webkit
+  transform: translateZ(0); /* Force hardware acceleration in Webkit*/
   backface-visibility: hidden;
 
-  &,
-  & *,
-  & *:before,
-  & *:after {
+  &, & *, & *:before, & *:after {
     box-sizing: border-box;
   }
 
   &.nav-is-visible {
     transform: translateY(_e3dn('nav-height-small'));
+
     @include bp(medium) {
       transform: translateY(_e3dn('nav-height-medium'));
     }
@@ -37,6 +37,7 @@
 
     &.nav-is-visible {
       transform: translateX(-50%) translateY(_e3dn('nav-height-small'));
+
       @include bp(medium) {
         transform: translateX(-50%) translateY(_e3dn('nav-height-medium'));
       }
@@ -45,5 +46,18 @@
 
   &.is-fixed-and-scrolled {
     background-color: _e3dn('is-fixed-nav-bg');
+  }
+
+  &.headroom {
+    will-change: opacity;
+    transition: opacity 1000ms linear, transform _e3dn('transition-duration');
+  }
+
+  &.headroom--pinned {
+    opacity: 1;
+  }
+
+  &.headroom--unpinned {
+    opacity: 0;
   }
 }

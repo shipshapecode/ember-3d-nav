@@ -11,6 +11,9 @@ module.exports = {
   env: {
     'browser': true
   },
+  globals : {
+    Headroom: false
+  },
   rules: {
   }
 };
