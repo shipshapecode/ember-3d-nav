@@ -1,6 +1,6 @@
 # Ember-3d-nav
 
-<a href="https://shipshape.io/"><img src="http://i.imgur.com/EVjM7AV.png" width="100" height="100"/></a>
+<a href="https://shipshape.io/"><img src="http://i.imgur.com/bU4ABmk.png" width="100" height="100"/></a>
 
 [![Join the chat at https://gitter.im/shipshapecode/ember-3d-nav](https://badges.gitter.im/shipshapecode/ember-3d-nav.svg)](https://gitter.im/shipshapecode/ember-3d-nav?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -16,7 +16,7 @@ Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-ro
 ## Looking for contributors!
 This is currently **beta**, but if you'd like to help out and contribute please let me know!
 
-[![Demo](http://i.imgur.com/408RMvv.gif)](http://shipshapecode.github.io/ember-3d-nav/)
+[![Demo](http://i.imgur.com/bt5OMJ8.gif)](http://shipshapecode.github.io/ember-3d-nav/)
 [http://shipshapecode.github.io/ember-3d-nav/](http://shipshapecode.github.io/ember-3d-nav/)
 
 ## Installation
