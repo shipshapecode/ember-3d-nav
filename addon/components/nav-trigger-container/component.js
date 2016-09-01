@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import $ from 'jquery';
+import Headroom from 'headroom';
 import layout from './template';
 import RespondsToScroll from 'ember-responds-to/mixins/responds-to-scroll';
-const { Component, inject, on, run } = Ember;
+const { $, Component, inject, on, run } = Ember;
 
 export default Component.extend(RespondsToScroll, {
   layout,
