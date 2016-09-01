@@ -12,6 +12,7 @@
   transition: transform _e3dn('transition-duration');
   transform: translateZ(0); /* Force hardware acceleration in Webkit*/
   backface-visibility: hidden;
+  will-change: transform, visibility;
 
   &, & *, & *:before, & *:after {
     box-sizing: border-box;
@@ -46,5 +47,23 @@
 
   &.is-fixed-and-scrolled {
     background-color: _e3dn('is-fixed-nav-bg');
+  }
+
+  &.headroom--pinned {
+    left: 50%;
+    transform: translateX(-50%) translateY(0) translateZ(0);
+    transition: height _e3dn('transition-duration'),
+                    transform _e3dn('transition-duration'),
+                    visibility _e3dn('transition-duration');
+    visibility: visible;
+  }
+
+  &.headroom--unpinned {
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) translateZ(0);
+    transition: height _e3dn('transition-duration'),
+                    transform _e3dn('transition-duration'),
+                    visibility _e3dn('transition-duration');
+    visibility: hidden;
   }
 }
