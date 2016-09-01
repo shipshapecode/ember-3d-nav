@@ -58,7 +58,7 @@
     "ember-cli-babel": "^5.1.6",
     "ember-cli-htmlbars": "^1.0.5",
     "ember-cli-sass": "5.5.1",
-    "ember-headroom": "0.0.2",
+    "ember-headroom": "0.0.3",
     "ember-responds-to": "1.2.1"
   },
   "ember-addon": {
