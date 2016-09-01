@@ -1,3 +1,5 @@
+### 1.1.4
+ - Use ember-headroom
 ### 1.0.5
  - Remove reset css
 
