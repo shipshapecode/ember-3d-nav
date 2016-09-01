@@ -25,7 +25,15 @@ export default Component.extend(RespondsToScroll, {
   setupHeadroom: on('didInsertElement', function() {
     if (this.get('useHeadroom')) {
       run.scheduleOnce('afterRender', this, function() {
-        let headroom  = new Headroom(this.element);
+        let headroomOpts = {
+          offset: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+          onUnpin: () => {
+            if (this.get('navService.navIsVisible')) {
+              this.send('toggleMenu');
+            }
+          }
+        };
+        let headroom  = new Headroom(this.element, headroomOpts);
         headroom.init();
       });
     }

@@ -1,0 +1,23 @@
+.nav-trigger-container {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  will-change: transform, visibility;
+
+  &.headroom--pinned {
+    left: 50%;
+    transform: translateX(-50%) translateY(0) translateZ(0);
+    transition: height _e3dn('transition-duration'),
+                    transform _e3dn('transition-duration'),
+                    visibility _e3dn('transition-duration');
+    visibility: visible;
+  }
+
+  &.headroom--unpinned {
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) translateZ(0);
+    transition: height _e3dn('transition-duration'),
+                    transform _e3dn('transition-duration'),
+                    visibility _e3dn('transition-duration');
+    visibility: hidden;
+  }
+}

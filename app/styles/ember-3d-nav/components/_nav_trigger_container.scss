@@ -47,17 +47,4 @@
   &.is-fixed-and-scrolled {
     background-color: _e3dn('is-fixed-nav-bg');
   }
-
-  &.headroom {
-    will-change: opacity;
-    transition: opacity 1000ms linear, transform _e3dn('transition-duration');
-  }
-
-  &.headroom--pinned {
-    opacity: 1;
-  }
-
-  &.headroom--unpinned {
-    opacity: 0;
-  }
 }
