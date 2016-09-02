@@ -22,12 +22,12 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^6.4.0",
     "babel-eslint": "^6.0.4",
     "broccoli-asset-rev": "^2.4.2",
     "codeclimate-test-reporter": "^0.3.1",
     "ember-cli": "2.7.0",
     "ember-cli-app-version": "^1.0.0",
-    "ember-cli-autoprefixer": "0.6.0",
     "ember-cli-blanket": "0.9.8",
     "ember-cli-dependency-checker": "^1.2.0",
     "ember-cli-eslint": "1.8.0",
@@ -49,7 +49,8 @@
     "eslint-config-ember": "0.3.0",
     "eslint-plugin-ember-suave": "^0.1.2",
     "flexi": "1.1.9",
-    "loader.js": "^4.0.1"
+    "loader.js": "^4.0.1",
+    "postcss-cssnext": "^2.7.0"
   },
   "keywords": [
     "ember-addon"
@@ -57,7 +58,7 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
     "ember-cli-htmlbars": "^1.0.5",
-    "ember-cli-sass": "5.5.1",
+    "ember-css-modules": "0.4.3",
     "ember-headroom": "0.0.2",
     "ember-responds-to": "1.2.1"
   },

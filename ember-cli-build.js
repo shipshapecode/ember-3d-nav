@@ -1,16 +1,16 @@
-/*jshint node:true*/
+/* jshint node:true*/
 /* global require, module */
-var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-var shim = require('flexi/lib/pod-templates-shim');
+let EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+let shim = require('flexi/lib/pod-templates-shim');
 
 shim(EmberAddon);
 
 module.exports = function(defaults) {
-  var app = new EmberAddon(defaults, {
-    autoprefixer: {
-      browsers: ['> 5%', 'IE >= 10']
-    },
-    "ember-cli-qunit": {
+  let app = new EmberAddon(defaults, {
+    // autoprefixer: {
+    //   browsers: ['> 5%', 'IE >= 10']
+    // },
+    'ember-cli-qunit': {
       useLintTree: false
     }
   });

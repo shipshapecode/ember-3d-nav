@@ -1,11 +1,13 @@
 import Ember from 'ember';
 import Headroom from 'headroom';
 import layout from './template';
+import styles from './styles';
 import RespondsToScroll from 'ember-responds-to/mixins/responds-to-scroll';
 const { $, Component, inject, on, run } = Ember;
 
 export default Component.extend(RespondsToScroll, {
   layout,
+  styles,
   tagName: 'header',
   classNameBindings: [':nav-trigger-container', 'navService.navIsVisible:nav-is-visible', 'isFixed', 'isFixedAndScrolled'],
   navService: inject.service('ember-3d-nav'),
