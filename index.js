@@ -13,7 +13,6 @@ module.exports = {
       }
 
       app.import('vendor/headroom.min.js');
-      app.import('vendor/jQuery.headroom.min.js');
     }
   }
 };

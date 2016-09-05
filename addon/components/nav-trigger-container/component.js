@@ -33,7 +33,8 @@ export default Component.extend(RespondsToScroll, {
           }
         };
 
-        $(this.element).headroom(headroomOpts);
+        let headroom  = new Headroom(this.element, headroomOpts);
+        headroom.init();
       });
     }
   }),
