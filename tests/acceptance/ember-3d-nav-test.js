@@ -31,7 +31,7 @@ test('clicking an option selects it and closes the menu', function(assert) {
   });
   run.scheduleOnce('afterRender', this, function() {
     click('centered:nth-of-type(2)');
-    run.scheduleOnce('afterRender', this, function() {
+    andThen(function() {
       assert.equal(find('centered:nth-of-type(2)').hasClass('is-selected'), true, 'nav item is selected');
       assert.equal(find('.ember-3d-nav-container').hasClass('nav-is-visible'), false, 'nav-is-visible class removed after clicking nav item');
     });
