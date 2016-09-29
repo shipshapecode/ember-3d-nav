@@ -47,7 +47,7 @@
     "ember-responds-to": "1.2.1",
     "ember-truth-helpers": "1.2.0",
     "eslint-config-ember": "0.3.0",
-    "eslint-plugin-ember-suave": "^0.1.2",
+    "eslint-plugin-ember-suave": "^1.0.0",
     "flexi": "runspired/flexi#develop",
     "loader.js": "^4.0.10"
   },
