@@ -74,6 +74,7 @@
       "ember-cli-qunit",
       "ember-cli-sri",
       "ember-cli-test-loader",
+      "ember-export-application-global",
       "ember-resolver",
       "loader.js"
     ]
