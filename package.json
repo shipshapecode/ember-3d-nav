@@ -58,7 +58,7 @@
     "ember-cli-htmlbars": "^1.0.10",
     "ember-cli-sass": "5.5.2",
     "ember-responds-to": "1.2.1",
-     "flexi": "1.2.0"
+    "flexi": "1.2.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
