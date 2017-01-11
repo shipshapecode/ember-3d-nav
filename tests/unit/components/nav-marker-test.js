@@ -7,7 +7,7 @@ moduleFor('component:nav-marker', 'Unit | nav marker', {
 
 test('calculate colorNumber: not multiColor', function(assert) {
   assert.expect(1);
-  let navMarker = this.subject();
+  const navMarker = this.subject();
 
   navMarker.set('multiColor', false);
   assert.equal(navMarker.get('colorNumber'), 'color-1');
@@ -15,7 +15,7 @@ test('calculate colorNumber: not multiColor', function(assert) {
 
 test('calculate colorNumber: multiColor', function(assert) {
   assert.expect(1);
-  let navMarker = this.subject();
+  const navMarker = this.subject();
 
   navMarker.set('multiColor', true);
   assert.equal(navMarker.get('colorNumber'), 'color-1');

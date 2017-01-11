@@ -5,8 +5,5 @@ const { Component } = Ember;
 export default Component.extend({
   layout,
   classNameBindings: [':nav-trigger'],
-  tagName: 'span',
-  click() {
-    this.sendAction('onClickAction');
-  }
+  tagName: 'span'
 });

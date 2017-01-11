@@ -303,7 +303,7 @@ babel-core@^5.0.0, babel-core@^5.8.38:
     trim-right "^1.0.0"
     try-resolve "^1.0.0"
 
-babel-eslint@^7.0.0:
+babel-eslint@^7.0.0, babel-eslint@^7.1.0:
   version "7.1.1"
   resolved "https://registry.npmjs.org/babel-eslint/-/babel-eslint-7.1.1.tgz#8a6a884f085aa7060af69cfc77341c2f99370fb2"
   dependencies:
@@ -796,6 +796,17 @@ broccoli-sass-source-maps@^1.8.0:
     include-path-searcher "^0.1.0"
     mkdirp "^0.3.5"
     node-sass "^3.8.0"
+    object-assign "^2.0.0"
+    rsvp "^3.0.6"
+
+broccoli-sass-source-maps@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/broccoli-sass-source-maps/-/broccoli-sass-source-maps-2.0.0.tgz#7f25f9f4b296918cec6e00672c63e75abce33d45"
+  dependencies:
+    broccoli-caching-writer "^3.0.3"
+    include-path-searcher "^0.1.0"
+    mkdirp "^0.3.5"
+    node-sass "^4.1.0"
     object-assign "^2.0.0"
     rsvp "^3.0.6"
 
@@ -1479,9 +1490,9 @@ ember-cli-broccoli-sane-watcher@^2.0.3:
     rsvp "^3.0.18"
     sane "^1.1.1"
 
-ember-cli-code-coverage@0.3.8:
-  version "0.3.8"
-  resolved "https://registry.npmjs.org/ember-cli-code-coverage/-/ember-cli-code-coverage-0.3.8.tgz#b3f8f765f3c9f34d3f2c78e5ace33bc681adad89"
+ember-cli-code-coverage@0.3.9:
+  version "0.3.9"
+  resolved "https://registry.npmjs.org/ember-cli-code-coverage/-/ember-cli-code-coverage-0.3.9.tgz#bdd971fd3de451c2ec3644fd3e0be6ed8541a961"
   dependencies:
     babel-core "^5.8.38"
     body-parser "^1.15.0"
@@ -1636,7 +1647,18 @@ ember-cli-release@^0.2.9:
     semver "^4.3.1"
     silent-error "^1.0.0"
 
-ember-cli-sass@5.6.0, ember-cli-sass@^5.3.1:
+ember-cli-sass@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/ember-cli-sass/-/ember-cli-sass-6.0.0.tgz#31c9c8fa789c0d25aaf8e315431b7a3ec4ba0175"
+  dependencies:
+    broccoli-funnel "^1.0.0"
+    broccoli-merge-trees "^1.1.0"
+    broccoli-sass-source-maps "^2.0.0"
+    ember-cli-babel "5.1.10"
+    ember-cli-version-checker "^1.0.2"
+    merge "^1.2.0"
+
+ember-cli-sass@^5.3.1:
   version "5.6.0"
   resolved "https://registry.npmjs.org/ember-cli-sass/-/ember-cli-sass-5.6.0.tgz#792de67544bb903eef421a3e59c484840fea5352"
   dependencies:
@@ -1684,6 +1706,12 @@ ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.1.4, ember-cli-ve
   resolved "https://registry.npmjs.org/ember-cli-version-checker/-/ember-cli-version-checker-1.1.7.tgz#cbabacb5eef2635048d5208fab05b032e5313d1a"
   dependencies:
     semver "^4.2.2"
+
+ember-cli-version-checker@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/ember-cli-version-checker/-/ember-cli-version-checker-1.2.0.tgz#caa286b77d1b485df5d2f62c67a6f19aa8b582c4"
+  dependencies:
+    semver "^5.3.0"
 
 ember-cli@2.10.0:
   version "2.10.0"
@@ -1782,15 +1810,24 @@ ember-export-application-global@^1.0.5:
   dependencies:
     ember-cli-babel "^5.1.10"
 
-ember-getowner-polyfill@1.0.1, ember-getowner-polyfill@^1.0.1:
+ember-getowner-polyfill@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/ember-getowner-polyfill/-/ember-getowner-polyfill-1.1.1.tgz#6bb6603827dd2f8f33be2434570a86cc9e5273ff"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+    ember-cli-version-checker "^1.2.0"
+
+ember-getowner-polyfill@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/ember-getowner-polyfill/-/ember-getowner-polyfill-1.0.1.tgz#f60a31d25d642461dac4b4746184afaf7f5084ae"
   dependencies:
     ember-cli-babel "^5.1.5"
 
-ember-load-initializers@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.npmjs.org/ember-load-initializers/-/ember-load-initializers-0.5.1.tgz#76e3db23c111dbdcd3ae6f687036bf0b56be0cbe"
+ember-load-initializers@^0.6.0:
+  version "0.6.3"
+  resolved "https://registry.npmjs.org/ember-load-initializers/-/ember-load-initializers-0.6.3.tgz#f47396ad271ba77294068c98f992a5f19705441a"
+  dependencies:
+    ember-cli-babel "^5.1.6"
 
 ember-qunit@^1.0.0-beta.1:
   version "1.0.0"
@@ -2024,6 +2061,13 @@ eslint-plugin-ember-suave@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/eslint-plugin-ember-suave/-/eslint-plugin-ember-suave-1.0.0.tgz#ea7d232a126562dcd8b1ee3aa2700ac3b626e514"
   dependencies:
+    requireindex "~1.1.0"
+
+eslint-plugin-ship-shape@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/eslint-plugin-ship-shape/-/eslint-plugin-ship-shape-0.4.0.tgz#5e957dda8267eb6350b295b4d4dc26b2aaf34da5"
+  dependencies:
+    babel-eslint "^7.1.0"
     requireindex "~1.1.0"
 
 eslint@^3.0.0:
@@ -3479,6 +3523,10 @@ lodash.merge@^4.3.0, lodash.merge@^4.4.0, lodash.merge@^4.5.1:
   version "4.6.0"
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
 
+lodash.mergewith@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.npmjs.org/lodash.mergewith/-/lodash.mergewith-4.6.0.tgz#150cf0a16791f5903b8891eab154609274bdea55"
+
 lodash.omit@^4.1.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
@@ -3868,6 +3916,29 @@ node-sass@^3.8.0:
     npmlog "^4.0.0"
     request "^2.61.0"
     sass-graph "^2.1.1"
+
+node-sass@^4.1.0:
+  version "4.2.0"
+  resolved "https://registry.npmjs.org/node-sass/-/node-sass-4.2.0.tgz#ef3e686c119118e01b0a3c7345821a0d7400acf2"
+  dependencies:
+    async-foreach "^0.1.3"
+    chalk "^1.1.1"
+    cross-spawn "^3.0.0"
+    gaze "^1.0.0"
+    get-stdin "^4.0.1"
+    glob "^7.0.3"
+    in-publish "^2.0.0"
+    lodash.assign "^4.2.0"
+    lodash.clonedeep "^4.3.2"
+    lodash.mergewith "^4.6.0"
+    meow "^3.7.0"
+    mkdirp "^0.5.1"
+    nan "^2.3.2"
+    node-gyp "^3.3.1"
+    npmlog "^4.0.0"
+    request "^2.61.0"
+    sass-graph "^2.1.1"
+    stdout-stream "^1.4.0"
 
 node-uuid@^1.4.3, node-uuid@~1.4.7:
   version "1.4.7"
@@ -4420,22 +4491,11 @@ read@1, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2, readable-stream@^2.0.2, readable-stream@~2.1.5:
+"readable-stream@1 || 2", readable-stream@^2, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@~2.1.5:
   version "2.1.5"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
   dependencies:
     buffer-shims "^1.0.0"
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "~1.0.0"
-    process-nextick-args "~1.0.6"
-    string_decoder "~0.10.x"
-    util-deprecate "~1.0.1"
-
-"readable-stream@^2.0.0 || ^1.1.13", readable-stream@~2.0.0, readable-stream@~2.0.5:
-  version "2.0.6"
-  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
-  dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -4451,6 +4511,17 @@ readable-stream@~1.0.2:
     inherits "~2.0.1"
     isarray "0.0.1"
     string_decoder "~0.10.x"
+
+readable-stream@~2.0.0, readable-stream@~2.0.5:
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "~1.0.0"
+    process-nextick-args "~1.0.6"
+    string_decoder "~0.10.x"
+    util-deprecate "~1.0.1"
 
 readdir-scoped-modules@^1.0.0:
   version "1.0.2"
@@ -4728,11 +4799,11 @@ sass-graph@^2.1.1:
     lodash "^4.0.0"
     yargs "^4.7.1"
 
-"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@^2.3.0 || 3.x || 4 || 5", semver@^5.1.0, semver@^5.1.1, semver@~5.3.0:
+"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", "semver@^2.3.0 || 3.x || 4 || 5", semver@^5.1.0, semver@^5.1.1, semver@^5.3.0, semver@~5.3.0:
   version "5.3.0"
   resolved "https://registry.npmjs.org/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^4.1.0, semver@^4.2.2, semver@^4.3.1:
+semver@^4.1.0, semver@^4.2.2, semver@^4.3.1:
   version "4.3.6"
   resolved "https://registry.npmjs.org/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
 
@@ -4989,6 +5060,12 @@ stable@~0.1.3:
 "statuses@>= 1.3.1 < 2", statuses@~1.3.0:
   version "1.3.1"
   resolved "https://registry.npmjs.org/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
+
+stdout-stream@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/stdout-stream/-/stdout-stream-1.4.0.tgz#a2c7c8587e54d9427ea9edb3ac3f2cd522df378b"
+  dependencies:
+    readable-stream "^2.0.1"
 
 string-template@~0.2.1:
   version "0.2.1"
