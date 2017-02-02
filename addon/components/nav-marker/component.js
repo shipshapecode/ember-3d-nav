@@ -2,9 +2,9 @@ import Ember from 'ember';
 const { Component, computed, inject } = Ember;
 
 export default Component.extend({
+  navService: inject.service('ember-3d-nav'),
   tagName: 'span',
   classNameBindings: [':nav-marker', 'colorNumber'],
-  navService: inject.service('ember-3d-nav'),
   colorNumber: computed('multiColor', 'navService.selectedIndex', function() {
     let color = 'color-';
 

@@ -7,9 +7,7 @@ shim(EmberAddon);
 
 module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
-    "ember-cli-qunit": {
-      useLintTree: false
-    }
+    // Add options here
   });
 
   /*
