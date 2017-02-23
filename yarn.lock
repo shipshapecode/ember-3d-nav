@@ -2,26 +2,26 @@
 # yarn lockfile v1
 
 
-"@html-next/flexi-config@2.0.0-beta.11":
-  version "2.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@html-next/flexi-config/-/flexi-config-2.0.0-beta.11.tgz#85e6eac5839b86ed405eb7ad2a0896c836e7ea5f"
+"@html-next/flexi-config@2.0.0-beta.12":
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@html-next/flexi-config/-/flexi-config-2.0.0-beta.12.tgz#af2fa4d90a6d1fb510511c1c02e51a9d6514eac6"
   dependencies:
     ember-cli-babel "^5.1.7"
 
-"@html-next/flexi-default-styles@2.0.0-beta.11":
-  version "2.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@html-next/flexi-default-styles/-/flexi-default-styles-2.0.0-beta.11.tgz#475d9cc5a9aa9c4ee8be20ff7f2ea48fe9ea9878"
+"@html-next/flexi-default-styles@2.0.0-beta.12":
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@html-next/flexi-default-styles/-/flexi-default-styles-2.0.0-beta.12.tgz#5f7a58a85e63d84dc75172b4045f0430a91084b0"
   dependencies:
-    "@html-next/flexi-config" "2.0.0-beta.11"
+    "@html-next/flexi-config" "2.0.0-beta.12"
     ember-cli-babel "^5.1.7"
     ember-cli-sass "^6.0.0"
     rsvp "^3.2.0"
 
-"@html-next/flexi-dsl@2.0.0-beta.11":
-  version "2.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@html-next/flexi-dsl/-/flexi-dsl-2.0.0-beta.11.tgz#2b3743d4c5473de553c6702911ea4532e6d251d7"
+"@html-next/flexi-dsl@2.0.0-beta.12":
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@html-next/flexi-dsl/-/flexi-dsl-2.0.0-beta.12.tgz#475f710c48f20c1bf8bbfc1a738e3245985870be"
   dependencies:
-    "@html-next/flexi-config" "2.0.0-beta.11"
+    "@html-next/flexi-config" "2.0.0-beta.12"
     chalk "^1.1.1"
     debug "^2.2.0"
     ember-cli-babel "^5.1.7"
@@ -29,11 +29,11 @@
     object-assign "^4.1.0"
     rsvp "^3.2.0"
 
-"@html-next/flexi-layouts@2.0.0-beta.11":
-  version "2.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@html-next/flexi-layouts/-/flexi-layouts-2.0.0-beta.11.tgz#885f87254a50067d175b7ba7377bdc56edc91090"
+"@html-next/flexi-layouts@2.0.0-beta.12":
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@html-next/flexi-layouts/-/flexi-layouts-2.0.0-beta.12.tgz#05c27c57436017fda8ea86fc40d7cc75e43cc53d"
   dependencies:
-    "@html-next/flexi-config" "2.0.0-beta.11"
+    "@html-next/flexi-config" "2.0.0-beta.12"
     broccoli-funnel "^1.0.1"
     broccoli-merge-trees "^1.1.1"
     broccoli-plugin "^1.2.1"
@@ -963,9 +963,9 @@ can-symlink@^1.0.0:
   dependencies:
     tmp "0.0.28"
 
-capture-exit@^1.0.4:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/capture-exit/-/capture-exit-1.1.0.tgz#d931b32b11c2bd20ae57f34af0c1eb2c18781626"
+capture-exit@^1.0.7:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/capture-exit/-/capture-exit-1.2.0.tgz#1c5fcc489fd0ab00d4f1ac7ae1072e3173fbab6f"
   dependencies:
     rsvp "^3.3.3"
 
@@ -1316,6 +1316,13 @@ core-object@^2.0.2:
 core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
+
+cross-spawn-async@^2.1.1:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/cross-spawn-async/-/cross-spawn-async-2.2.5.tgz#845ff0c0834a3ded9d160daca6d390906bb288cc"
+  dependencies:
+    lru-cache "^4.0.0"
+    which "^1.2.8"
 
 cross-spawn@^3.0.0:
   version "3.0.1"
@@ -1721,6 +1728,14 @@ ember-cli-sass@^6.0.0, ember-cli-sass@^6.1.0:
     ember-cli-version-checker "^1.0.2"
     merge "^1.2.0"
 
+ember-cli-shims@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-shims/-/ember-cli-shims-1.0.2.tgz#e2ec1b6687f94df1b68cc0aa66c1d690d9ded02c"
+  dependencies:
+    ember-cli-babel "^5.2.1"
+    ember-cli-version-checker "^1.2.0"
+    silent-error "^1.0.1"
+
 ember-cli-sri@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ember-cli-sri/-/ember-cli-sri-2.1.1.tgz#971620934a4b9183cf7923cc03e178b83aa907fd"
@@ -1761,9 +1776,9 @@ ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.1.4, ember-cli-ve
   dependencies:
     semver "^5.3.0"
 
-ember-cli@2.11.0-beta.1:
-  version "2.11.0-beta.1"
-  resolved "https://registry.npmjs.org/ember-cli/-/ember-cli-2.11.0-beta.1.tgz#c6d8c4935e45f79977192f81c9dfd79627424ed0"
+ember-cli@2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-2.11.0.tgz#29461b1b3b1d7412b60dfc14e9399ba49ac9b707"
   dependencies:
     amd-name-resolver "0.0.6"
     bower "^1.3.12"
@@ -1781,7 +1796,7 @@ ember-cli@2.11.0-beta.1:
     broccoli-middleware "^0.18.1"
     broccoli-source "^1.1.0"
     broccoli-stew "^1.2.0"
-    capture-exit "^1.0.4"
+    capture-exit "^1.0.7"
     chalk "^1.1.3"
     clean-base-url "^1.0.0"
     compression "^1.4.4"
@@ -1799,6 +1814,7 @@ ember-cli@2.11.0-beta.1:
     ember-cli-string-utils "^1.0.0"
     ember-try "^0.2.6"
     escape-string-regexp "^1.0.3"
+    execa "^0.4.0"
     exists-sync "0.0.4"
     exit "^0.1.2"
     express "^4.12.3"
@@ -1894,9 +1910,9 @@ ember-router-generator@^1.0.0:
   dependencies:
     recast "^0.11.3"
 
-ember-source@^2.11.0-beta.2:
-  version "2.11.0"
-  resolved "https://registry.npmjs.org/ember-source/-/ember-source-2.11.0.tgz#fada3652feaaa5ed1fffd40c9ec68ca995801d73"
+ember-source@^2.11.0:
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.11.2.tgz#07239925dc8fc2a8377bdf43210c42093e8fc4ae"
   dependencies:
     broccoli-stew "^1.2.0"
     ember-cli-get-component-path-option "^1.0.0"
@@ -2234,6 +2250,17 @@ exec-sh@^0.2.0:
   dependencies:
     merge "^1.1.3"
 
+execa@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.4.0.tgz#4eb6467a36a095fabb2970ff9d5e3fb7bce6ebc3"
+  dependencies:
+    cross-spawn-async "^2.1.1"
+    is-stream "^1.1.0"
+    npm-run-path "^1.0.0"
+    object-assign "^4.0.1"
+    path-key "^1.0.0"
+    strip-eof "^1.0.0"
+
 exists-sync@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/exists-sync/-/exists-sync-0.0.3.tgz#b910000bedbb113b378b82f5f5a7638107622dcf"
@@ -2433,11 +2460,11 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flexi@2.0.0-beta.11:
-  version "2.0.0-beta.11"
-  resolved "https://registry.npmjs.org/flexi/-/flexi-2.0.0-beta.11.tgz#38436455166d3a31643b0ab8e4184b78572d371c"
+flexi@2.0.0-beta.12:
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/flexi/-/flexi-2.0.0-beta.12.tgz#ef67768f1c78c8132a804da04ec991b1112461a1"
   dependencies:
-    "@html-next/flexi-config" "2.0.0-beta.11"
+    "@html-next/flexi-config" "2.0.0-beta.12"
     ember-cli-babel "^5.1.7"
 
 for-in@^0.1.5:
@@ -3146,7 +3173,7 @@ is-resolvable@^1.0.0:
   dependencies:
     tryit "^1.0.1"
 
-is-stream@^1.0.1:
+is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
@@ -3647,7 +3674,7 @@ loud-rejection@^1.0.0:
     currently-unhandled "^0.4.1"
     signal-exit "^3.0.0"
 
-lru-cache@^4.0.1:
+lru-cache@^4.0.0, lru-cache@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.0.2.tgz#1d17679c069cda5d040991a09dbc2c0db377e55e"
   dependencies:
@@ -4032,6 +4059,12 @@ npm-registry-client@~7.2.1:
   optionalDependencies:
     npmlog "~2.0.0 || ~3.1.0"
 
+npm-run-path@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-1.0.0.tgz#f5c32bf595fe81ae927daec52e82f8b000ac3c8f"
+  dependencies:
+    path-key "^1.0.0"
+
 npm-user-validate@~0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-0.1.5.tgz#52465d50c2d20294a57125b996baedbf56c5004b"
@@ -4310,6 +4343,10 @@ path-is-inside@^1.0.1, path-is-inside@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
 
+path-key@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/path-key/-/path-key-1.0.0.tgz#5d53d578019646c0d68800db4e146e6bdc2ac7af"
+
 path-posix@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/path-posix/-/path-posix-1.0.0.tgz#06b26113f56beab042545a23bfa88003ccac260f"
@@ -4527,9 +4564,9 @@ read@1, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@~2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
+"readable-stream@1 || 2", readable-stream@^2, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
   dependencies:
     buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
@@ -4539,11 +4576,10 @@ read@1, read@~1.0.1, read@~1.0.7:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
+readable-stream@^2.0.1, readable-stream@~2.0.5:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
-    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -4560,10 +4596,11 @@ readable-stream@~1.0.2:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@~2.0.5:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
+readable-stream@~2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
   dependencies:
+    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -5184,6 +5221,10 @@ strip-bom@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
 
+strip-eof@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
+
 strip-indent@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-1.0.1.tgz#0c7962a6adefa7bbd4ac366460a638552ae1a0a2"
@@ -5560,7 +5601,7 @@ which-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/which-module/-/which-module-1.0.0.tgz#bba63ca861948994ff307736089e3b96026c2a4f"
 
-which@1, which@^1.0.5, which@^1.1.1, which@^1.2.12, which@^1.2.9, which@~1.2.11:
+which@1, which@^1.0.5, which@^1.1.1, which@^1.2.12, which@^1.2.8, which@^1.2.9, which@~1.2.11:
   version "1.2.12"
   resolved "https://registry.yarnpkg.com/which/-/which-1.2.12.tgz#de67b5e450269f194909ef23ece4ebe416fa1192"
   dependencies:
