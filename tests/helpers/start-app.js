@@ -1,11 +1,11 @@
-import Ember from 'ember';
 import Application from '../../app';
 import config from '../../config/environment';
-const { assign, run } = Ember;
+import { assign } from 'ember-platform';
+import run from 'ember-runloop';
 
 export default function startApp(attrs) {
-  // use defaults, but you can override
-  const attributes = assign({}, config.APP, attrs);
+  let attributes = assign({}, config.APP);
+  attributes = assign(attributes, attrs); // use defaults, but you can override;
 
   return run(() => {
     const application = Application.create(attributes);

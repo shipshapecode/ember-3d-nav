@@ -9,7 +9,7 @@ module.exports = {
     'plugin:ship-shape/recommended'
   ],
   env: {
-    'browser': true
+    browser: true
   },
   globals: {
     Headroom: false
