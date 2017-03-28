@@ -27,7 +27,7 @@
     "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push; git checkout -"
   },
   "dependencies": {
-    "@html-next/flexi-config": "2.0.0-beta.12",
+    "@html-next/flexi-config": "2.0.0-rc.1",
     "@html-next/flexi-default-styles": "2.0.0-rc.2",
     "@html-next/flexi-dsl": "2.0.0-rc.2",
     "@html-next/flexi-layouts": "2.0.0-rc.2",
