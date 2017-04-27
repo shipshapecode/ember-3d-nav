@@ -33,14 +33,14 @@
     "@html-next/flexi-layouts": "2.0.0-rc.2",
     "ember-cli-babel": "^6.0.0",
     "ember-cli-htmlbars": "^1.1.1",
-    "ember-cli-sass": "^6.1.2",
+    "ember-cli-sass": "^6.1.3",
     "ember-headroom": "^1.0.0",
-    "ember-responds-to": "1.2.1",
+    "ember-responds-to": "1.3.0",
     "ember-truth-helpers": "1.3.0",
     "flexi": "2.0.0-rc.1"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.0",
+    "babel-eslint": "^7.2.3",
     "broccoli-asset-rev": "^2.4.5",
     "codeclimate-test-reporter": "^0.4.1",
     "ember-cli": "2.13.0-beta.4",
