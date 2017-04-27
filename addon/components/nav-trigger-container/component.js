@@ -1,12 +1,15 @@
 /* eslint-disable ship-shape/no-on-calls-in-components */
-import Ember from 'ember';
+import $ from 'jquery';
+import Component from 'ember-component';
+import on from 'ember-evented/on';
+import service from 'ember-service/inject';
+import run from 'ember-runloop';
 import Headroom from 'headroom';
 import layout from './template';
 import RespondsToScroll from 'ember-responds-to/mixins/responds-to-scroll';
-const { $, Component, inject, on, run } = Ember;
 
 export default Component.extend(RespondsToScroll, {
-  navService: inject.service('ember-3d-nav'),
+  navService: service('ember-3d-nav'),
   layout,
   tagName: 'header',
   classNameBindings: [':nav-trigger-container', 'navService.navIsVisible:nav-is-visible', 'isFixed', 'isFixedAndScrolled'],

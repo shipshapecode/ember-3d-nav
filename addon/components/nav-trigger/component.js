@@ -1,9 +1,8 @@
-import Ember from 'ember';
+import Component from 'ember-component';
 import layout from './template';
-const { Component } = Ember;
 
 export default Component.extend({
   layout,
-  classNameBindings: [':nav-trigger'],
+  classNames: ['nav-trigger'],
   tagName: 'span'
 });

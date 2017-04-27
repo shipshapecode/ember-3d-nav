@@ -1,10 +1,12 @@
-import Ember from 'ember';
-const { Component, computed, inject } = Ember;
+import Component from 'ember-component';
+import computed from 'ember-computed';
+import service from 'ember-service/inject';
 
 export default Component.extend({
-  navService: inject.service('ember-3d-nav'),
+  navService: service('ember-3d-nav'),
   tagName: 'span',
-  classNameBindings: [':nav-marker', 'colorNumber'],
+  classNames: ['nav-marker'],
+  classNameBindings: ['colorNumber'],
   colorNumber: computed('multiColor', 'navService.selectedIndex', function() {
     let color = 'color-';
 

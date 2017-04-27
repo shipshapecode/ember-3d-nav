@@ -1,6 +1,7 @@
-import Ember from 'ember';
 import $ from 'jquery';
-const { computed, getOwner, Service } = Ember;
+import computed from 'ember-computed';
+import getOwner from 'ember-owner/get';
+import Service from 'ember-service';
 
 export default Service.extend({
   init(...args) {

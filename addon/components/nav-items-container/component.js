@@ -1,10 +1,10 @@
-import Ember from 'ember';
 import $ from 'jquery';
+import Component from 'ember-component';
+import service from 'ember-service/inject';
 import layout from './template';
-const { Component, inject } = Ember;
 
 export default Component.extend({
-  navService: inject.service('ember-3d-nav'),
+  navService: service('ember-3d-nav'),
   layout,
   tagName: 'grid',
   classNameBindings: [''],

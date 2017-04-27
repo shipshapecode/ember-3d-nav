@@ -1,10 +1,13 @@
 /* eslint-disable ship-shape/no-observers, ship-shape/prefer-destructuring */
-import Ember from 'ember';
+import Component from 'ember-component';
+import computed from 'ember-computed';
+import observer from 'ember-metal/observer';
+import run from 'ember-runloop';
+import service from 'ember-service/inject';
 import layout from './template';
-const { Component, computed, inject, observer, run } = Ember;
 
 export default Component.extend({
-  navService: inject.service('ember-3d-nav'),
+  navService: service('ember-3d-nav'),
   layout,
   tagName: 'centered',
   classNameBindings: ['isSelected'],
