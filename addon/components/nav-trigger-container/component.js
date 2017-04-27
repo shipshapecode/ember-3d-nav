@@ -1,5 +1,6 @@
 /* eslint-disable ship-shape/no-on-calls-in-components */
 import Ember from 'ember';
+import Headroom from 'headroom';
 import layout from './template';
 import RespondsToScroll from 'ember-responds-to/mixins/responds-to-scroll';
 const { $, Component, inject, on, run } = Ember;
