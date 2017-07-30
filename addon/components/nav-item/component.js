@@ -1,9 +1,9 @@
 /* eslint-disable ship-shape/no-observers, ship-shape/prefer-destructuring */
-import Component from 'ember-component';
-import computed from 'ember-computed';
-import observer from 'ember-metal/observer';
-import run from 'ember-runloop';
-import service from 'ember-service/inject';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { observer } from '@ember/object';
+import { run } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 import layout from './template';
 
 export default Component.extend({

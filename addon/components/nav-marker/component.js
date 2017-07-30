@@ -1,6 +1,6 @@
-import Component from 'ember-component';
-import computed from 'ember-computed';
-import service from 'ember-service/inject';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
   navService: service('ember-3d-nav'),

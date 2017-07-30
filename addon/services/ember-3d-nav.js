@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import computed from 'ember-computed';
-import getOwner from 'ember-owner/get';
-import Service from 'ember-service';
+import { computed } from '@ember/object';
+import { getOwner } from '@ember/application';
+import Service from '@ember/service';
 
 export default Service.extend({
   init(...args) {

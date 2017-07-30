@@ -1,9 +1,9 @@
 /* eslint-disable ship-shape/no-on-calls-in-components */
 import $ from 'jquery';
-import Component from 'ember-component';
-import on from 'ember-evented/on';
-import service from 'ember-service/inject';
-import run from 'ember-runloop';
+import Component from '@ember/component';
+import { on } from '@ember/object/evented';
+import { inject as service } from '@ember/service';
+import { run } from '@ember/runloop';
 import Headroom from 'headroom';
 import layout from './template';
 import RespondsToScroll from 'ember-responds-to/mixins/responds-to-scroll';

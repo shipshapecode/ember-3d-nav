@@ -1,18 +1,27 @@
 ---
 language: node_js
 node_js:
-  - "6"
+  # we recommend testing addons with the same minimum supported node version as Ember CLI
+  # so that your addon works for all apps
+  - "4"
 
-sudo: required
+sudo: false
 dist: trusty
+
+addons:
+  chrome: stable
+  code_climate:
+    repo_token:
+      secure: "k4wbZZ5Rh2h7ZnMl0Njax86WPo1KAXBCRQwMdLZiRsZ0fDIBlTN69xwRXqVanbZUP30Nq8T3OvSwilJl1OBZS/et6hSZZmQXjkE05YBXvgKMheU/mtqvQW0dkYC29AYsXHbJpVMNfZiR6T0z95wGZSO08zwiA0upFGnOMPGj7kuQiq1qBNcQF8qzQ5z1IUV3Mq4wo5QvS+VaAQt0eBTXBr9hkIS7Nosq0AO/33q0gnm6glGnl68oSNpp4CO4uHRfK83dsaHW4UvbEEOEKes3HgwyDnUudecL+Yniask7ojIC0HLm9Bhg83D5sO2FburD00ZAi0EPW1KjjnxwvqEuuQZ5UT/2zMYwBi9EmHxsBmQReR2SFNMklG+nFB6hIWItW4LII3STyh7ZzP1dan6b83cGrsxO7r29ZyofwmOhToazu3+6D5VAhhDVX3tQqMYv8MHpF53u5rlAHbhaEajYJzfVpnY9M2VoZDUQMqU7hJfRnDOjFOswF7WImQFXzbNf1zAjhINhuw7vPyTiU9mEXFuZndHhxrAqt2GYoRp5OmoH6SgGedqiEf3FrXiydjduHVBAyniErt2myzeXvOC6aW5Dh4fNf83b4MBlw8IM4AbhGYqquE4Xi4nSGSyn5dEQR4ZY4ndFHHd3uyJNqC6Afj+4g32b82kakDspOb6TxKo="
 
 cache:
   yarn: true
 
 env:
-  # we recommend testing LTS's and latest stable release (bonus points to beta/canary)
-  - EMBER_TRY_SCENARIO=ember-lts-2.4
+  # we recommend new addons test the current and previous LTS
+  # as well as latest stable release (bonus points to beta/canary)
   - EMBER_TRY_SCENARIO=ember-lts-2.8
+  - EMBER_TRY_SCENARIO=ember-lts-2.12
   - EMBER_TRY_SCENARIO=ember-release
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
@@ -24,16 +33,11 @@ matrix:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn global add phantomjs-prebuilt
-  - phantomjs --version
 
 install:
-  - yarn install --force
+  - yarn install --no-lockfile --non-interactive
 
 script:
   # Usually, it's ok to finish the test scenario without reverting
@@ -42,8 +46,3 @@ script:
 
 after_script:
   - codeclimate-test-reporter < coverage/lcov.info
-
-addons:
-    code_climate:
-        repo_token:
-              secure: "k4wbZZ5Rh2h7ZnMl0Njax86WPo1KAXBCRQwMdLZiRsZ0fDIBlTN69xwRXqVanbZUP30Nq8T3OvSwilJl1OBZS/et6hSZZmQXjkE05YBXvgKMheU/mtqvQW0dkYC29AYsXHbJpVMNfZiR6T0z95wGZSO08zwiA0upFGnOMPGj7kuQiq1qBNcQF8qzQ5z1IUV3Mq4wo5QvS+VaAQt0eBTXBr9hkIS7Nosq0AO/33q0gnm6glGnl68oSNpp4CO4uHRfK83dsaHW4UvbEEOEKes3HgwyDnUudecL+Yniask7ojIC0HLm9Bhg83D5sO2FburD00ZAi0EPW1KjjnxwvqEuuQZ5UT/2zMYwBi9EmHxsBmQReR2SFNMklG+nFB6hIWItW4LII3STyh7ZzP1dan6b83cGrsxO7r29ZyofwmOhToazu3+6D5VAhhDVX3tQqMYv8MHpF53u5rlAHbhaEajYJzfVpnY9M2VoZDUQMqU7hJfRnDOjFOswF7WImQFXzbNf1zAjhINhuw7vPyTiU9mEXFuZndHhxrAqt2GYoRp5OmoH6SgGedqiEf3FrXiydjduHVBAyniErt2myzeXvOC6aW5Dh4fNf83b4MBlw8IM4AbhGYqquE4Xi4nSGSyn5dEQR4ZY4ndFHHd3uyJNqC6Afj+4g32b82kakDspOb6TxKo="
