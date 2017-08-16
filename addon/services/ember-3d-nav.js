@@ -1,6 +1,6 @@
-import $ from 'jquery';
 import { computed } from '@ember/object';
 import { getOwner } from '@ember/application';
+import { oneTimeTransitionEvent } from '../utils';
 import Service from '@ember/service';
 
 export default Service.extend({
@@ -13,8 +13,9 @@ export default Service.extend({
   selectedIndex: 0,
   toggle3dBlock() {
     const addOrRemove = this.get('navIsVisible');
-
-    $('.main').toggleClass('nav-is-visible', addOrRemove).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
+    const main = document.querySelectorAll('.main')[0];
+    main.classList.toggle('nav-is-visible', addOrRemove);
+    oneTimeTransitionEvent(main, () => {
       // fix marker position when opening the menu (after a window resize)
       if (addOrRemove) {
         this.updateSelectedNav();
@@ -28,17 +29,14 @@ export default Service.extend({
    * @private
    */
   updateSelectedNav(type) {
-    const selectedItem = $('.is-selected');
+    const selectedItem = document.querySelectorAll('.is-selected')[0];
+    const leftPosition = selectedItem.getBoundingClientRect().left + document.body.scrollLeft;
+    const marker = document.querySelectorAll('.nav-marker')[0];
 
-    const leftPosition = selectedItem.offset().left;
+    marker.style.left = `${leftPosition}px`;
 
-    const marker = $('.nav-marker');
-
-    marker.css({
-      'left': leftPosition
-    });
     if (type === 'close') {
-      marker.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', () => {
+      oneTimeTransitionEvent(marker, () => {
         this.set('navIsVisible', false);
         this.toggle3dBlock();
       });

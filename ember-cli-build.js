@@ -7,8 +7,8 @@ const shim = require('@html-next/flexi-layouts/lib/pod-templates-shim');
 shim(EmberAddon);
 
 module.exports = function(defaults) {
-  const app = new EmberAddon(defaults, {
-    // Add options here
+  let app = new EmberAddon(defaults, {
+    vendorFiles: { 'jquery.js': null }
   });
 
   /*

@@ -1,12 +1,12 @@
 /* eslint-disable ship-shape/no-on-calls-in-components */
-import $ from 'jquery';
 import Component from '@ember/component';
 import { on } from '@ember/object/evented';
+import { getScrollTop } from '../../utils';
 import { inject as service } from '@ember/service';
 import { run } from '@ember/runloop';
 import Headroom from 'headroom';
 import layout from './template';
-import RespondsToScroll from 'ember-responds-to/mixins/responds-to-scroll';
+import RespondsToScroll from '../../mixins/responds-to-scroll';
 
 export default Component.extend(RespondsToScroll, {
   navService: service('ember-3d-nav'),
@@ -17,7 +17,7 @@ export default Component.extend(RespondsToScroll, {
   useHeadroom: false,
   onScroll: on('scroll', function() {
     if (this.get('isFixed')) {
-      const scrollPosition = $(window).scrollTop();
+      const scrollPosition = getScrollTop();
 
       if (scrollPosition > 0) {
         this.set('isFixedAndScrolled', true);
