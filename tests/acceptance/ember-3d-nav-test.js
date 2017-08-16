@@ -44,7 +44,7 @@ test('clicking an option selects it and closes the menu', async function(assert)
     assert.equal(find('.ember-3d-nav-container').classList.contains('nav-is-visible'), false,
       'nav-is-visible class removed after clicking nav item');
     done();
-  }, 1500);
+  }, 5000);
 
 });
 
