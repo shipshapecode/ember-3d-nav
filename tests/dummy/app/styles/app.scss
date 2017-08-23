@@ -35,15 +35,11 @@ $c-color-5: #77cd91;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   height: 200vh;
   background-color: $c-primary;
   font: {
-    size: 1.6rem;
+    size: 1.2rem;
     family: $f-primary;
   }
 }
@@ -105,7 +101,7 @@ a {
       @include font-smoothing;
       color: #f5f0e1;
       font: {
-        size: 2rem;
+        size: 1.5rem;
         weight: 300;
       }
       text-align: center;
@@ -116,7 +112,7 @@ a {
       .pacifico {
         font-family: $f-pacifico;
       }
-      font-size: 10vw;
+      font-size: 8vw;
     }
   }
 }
