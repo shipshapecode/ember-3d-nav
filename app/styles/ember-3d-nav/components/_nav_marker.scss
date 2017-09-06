@@ -4,30 +4,31 @@
 
 // Line at the bottom of nav selected item
 .nav-marker {
-  width: (100% / _e3dn('nav-items'));
-  height: 3px;
   background: _e3dn('nav-marker-color');
-  color: _e3dn('nav-marker-color');
-  position: absolute;
   bottom: 0;
+  color: _e3dn('nav-marker-color');
+  height: 3px;
   left: 0;
-  transform-origin: center bottom;
+  position: absolute;
   transform: translateZ(0) rotateX(90deg);
+  transform-origin: center bottom;
   transition: transform _e3dn('transition-duration'),
-              left _e3dn('transition-duration'),
-              color _e3dn('transition-duration'),
-              background-color _e3dn('transition-duration');
+  left _e3dn('transition-duration'),
+  color _e3dn('transition-duration'),
+  background-color _e3dn('transition-duration');
+  width: (100% / _e3dn('nav-items'));
 
   // Triangle at the bottom of nav selected item
   &::before {
     @include center(x);
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    bottom: 3px;
+
     border: 10px solid transparent;
     border-bottom-color: inherit;
+    bottom: 3px;
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 0;
   }
 
   .nav-is-visible & {

@@ -1,6 +1,6 @@
 @import "./fonts";
-$c-bloodOrange: #DA4843;
-$c-primary: #3D2F53;
+$c-bloodOrange: #da4843;
+$c-primary: #3d2f53;
 $c-navBar: darken($c-primary, 5%);
 
 //////////////////////////////
@@ -8,15 +8,15 @@ $c-navBar: darken($c-primary, 5%);
 //////////////////////////////
 
 $ember-3d-nav: (
-  'is-fixed-nav-bg': #624B86,
+  'is-fixed-nav-bg': #624b86,
   'nav-bg': $c-navBar,
-  'nav-item-hover': darken(#3D2F53, 10%),
-  'nav-item-selected': darken(#3D2F53, 10%),
+  'nav-item-hover': darken($c-primary, 10%),
+  'nav-item-selected': darken($c-primary, 10%),
   'nav-text-color': #f5f0e1,
   'nav-trigger-color': #f5f0e1
 );
 
-$c-color-1: #DA4843;
+$c-color-1: $c-bloodOrange;
 $c-color-2: #c96aa4;
 $c-color-3: #d6915e;
 $c-color-4: #5397c7;
@@ -30,18 +30,19 @@ $c-color-5: #77cd91;
 //////////////////////////////
 
 *,
-*::after,
-*::before {
+*:after,
+*:before {
   box-sizing: border-box;
 }
 
 body {
-  height: 200vh;
   background-color: $c-primary;
   font: {
-    size: 1.2rem;
     family: $f-primary;
+    size: 1.2rem;
   }
+
+  height: 200vh;
 }
 
 a {
@@ -49,26 +50,24 @@ a {
 }
 
 .ember-3d-nav {
-
   centered {
-
-    &:first-of-type a::before {
+    &:first-of-type a:before {
       background-image: url(../img/boat.svg);
     }
 
-    &:nth-of-type(2) a::before {
+    &:nth-of-type(2) a:before {
       background-image: url(../img/code.svg);
     }
 
-    &:nth-of-type(3) a::before {
+    &:nth-of-type(3) a:before {
       background-image: url(../img/team.svg);
     }
 
-    &:nth-of-type(4) a::before {
+    &:nth-of-type(4) a:before {
       background-image: url(../img/portfolio.svg);
     }
 
-    &:nth-of-type(5) a::before {
+    &:nth-of-type(5) a:before {
       background-image: url(../img/anchor.svg);
     }
   }
@@ -78,19 +77,19 @@ a {
   float: left;
 
   img {
-    width: 75px;
     height: 75px;
+    width: 75px;
   }
 }
 
 .main {
-
   .info-text {
-    width: 75vw;
     margin: 0 auto;
+    width: 75vw;
 
     a {
       color: $c-bloodOrange;
+
       &:hover {
         text-decoration: underline;
       }
@@ -99,46 +98,49 @@ a {
     h1,
     p {
       @include font-smoothing;
+
       color: #f5f0e1;
+      margin: 100px auto;
       font: {
         size: 1.5rem;
         weight: 300;
       }
+
       text-align: center;
-      margin: 100px auto;
     }
 
     h1 {
+      font-size: 8vw;
+
       .pacifico {
         font-family: $f-pacifico;
       }
-      font-size: 8vw;
     }
   }
 }
 
 // These are the colors of the markers - Line & Arrow
 .color-1 {
-  color: $c-color-1;
   background-color: $c-color-1;
+  color: $c-color-1;
 }
 
 .color-2 {
-  color: $c-color-2;
   background-color: $c-color-2;
+  color: $c-color-2;
 }
 
 .color-3 {
-  color: $c-color-3;
   background-color: $c-color-3;
+  color: $c-color-3;
 }
 
 .color-4 {
-  color: $c-color-4;
   background-color: $c-color-4;
+  color: $c-color-4;
 }
 
 .color-5 {
-  color: $c-color-5;
   background-color: $c-color-5;
+  color: $c-color-5;
 }

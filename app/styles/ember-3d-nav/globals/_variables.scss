@@ -14,23 +14,23 @@ $breakpoints: (
 //////////////////////////////
 
 // Semantic Colors
-$c-white: #fff;
-$c-black: #000;
+$c-white: #ffffff;
+$c-black: #000000;
 $c-codyhouse: #485274;
 
 // Ember 3D Nav Defaults
 $ember-3d-nav-defaults: (
   'is-fixed-nav-bg': darken($c-codyhouse, 5%),
   'nav-bg': darken($c-codyhouse, 10%),
-  'nav-container-bg': #000,
+  'nav-container-bg': $c-black,
   'nav-height-small': 80px,
   'nav-height-medium': 170px,
   'nav-item-hover': darken($c-codyhouse, 15%),
   'nav-item-selected': darken($c-codyhouse, 20%),
   'nav-items': 5,
-  'nav-marker-color': #DA4843,
-  'nav-text-color': #fff,
-  'nav-trigger-color': #fff,
+  'nav-marker-color': #da4843,
+  'nav-text-color': $c-white,
+  'nav-trigger-color': $c-white,
   'transition-duration': 0.5s
 );
 

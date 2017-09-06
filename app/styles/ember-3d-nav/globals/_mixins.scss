@@ -10,10 +10,10 @@
 ///
 @mixin center($xy:xy) {
   @if $xy == xy {
-    left: 50%;
-    top: 50%;
     bottom: auto;
+    left: 50%;
     right: auto;
+    top: 50%;
     transform: translateX(-50%) translateY(-50%);
   }
   @else if $xy == x {
@@ -22,19 +22,18 @@
     transform: translateX(-50%);
   }
   @else if $xy == y {
-    top: 50%;
     bottom: auto;
+    top: 50%;
     transform: translateY(-50%);
   }
 }
 
-///
-/// Adds clearfix the ::after psuedo-element to an element
+/// Adds clearfix the :after psuedo-element to an element
 /// @access public
 /// @output - Clearfix CSS
 ///
 @mixin clearfix() {
-  &::after {
+  &:after {
     clear: both;
     content: "";
     display: table;
@@ -51,7 +50,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-///
 /// Media query mixin for supplying responsive styles nested within the selector
 /// @access public
 /// @param {String} $breakpoint - Name of a breakpoint in the supplied or default map
@@ -65,7 +63,8 @@
     @media only screen and (min-width: $value) {
       @content;
     }
-  } @else {
+  }
+  @else {
     @warn 'Unfortunately, no value with the name #{$breakpoint} could be retrieved from `$breakpoints`. ' +
       'Please make sure it is defined in `$breakpoints` map.';
   }

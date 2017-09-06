@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { computed, get } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default Component.extend({
@@ -10,8 +10,8 @@ export default Component.extend({
   colorNumber: computed('multiColor', 'navService.selectedIndex', function() {
     let color = 'color-';
 
-    if (this.get('multiColor')) {
-      color += (this.get('navService.selectedIndex') + 1);
+    if (get(this, 'multiColor')) {
+      color += (get(this, 'navService.selectedIndex') + 1);
     } else {
       color += 1;
     }

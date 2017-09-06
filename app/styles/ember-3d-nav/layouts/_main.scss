@@ -3,10 +3,10 @@
 //////////////////////////////
 
 .main {
+  backface-visibility: hidden;
   display: block;
   transform: translateZ(0); // Force hardware acceleration in Webkit
   transition: transform _e3dn('transition-duration');
-  backface-visibility: hidden;
 
   &.nav-is-visible {
     transform: translateY(_e3dn('nav-height-small'));

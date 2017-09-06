@@ -1,19 +1,15 @@
-import { computed } from '@ember/object';
-import { getOwner } from '@ember/application';
+import { computed, get, set } from '@ember/object';
 import { oneTimeTransitionEvent } from '../utils';
-import Service from '@ember/service';
+import Service, { inject as service } from '@ember/service';
 
 export default Service.extend({
-  init(...args) {
-    this._super(args);
-    this.set('applicationController', getOwner(this).lookup('controller:application'));
-  },
-  currentPath: computed.alias('applicationController.currentPath'),
+  router: service(),
+  currentPath: computed.alias('router.currentRouteName'),
   navIsVisible: false,
   selectedIndex: 0,
   toggle3dBlock() {
-    const addOrRemove = this.get('navIsVisible');
-    const main = document.querySelectorAll('.main')[0];
+    const addOrRemove = get(this, 'navIsVisible');
+    const main = document.querySelector('.main');
     main.classList.toggle('nav-is-visible', addOrRemove);
     oneTimeTransitionEvent(main, () => {
       // fix marker position when opening the menu (after a window resize)
@@ -29,15 +25,15 @@ export default Service.extend({
    * @private
    */
   updateSelectedNav(type) {
-    const selectedItem = document.querySelectorAll('.is-selected')[0];
+    const selectedItem = document.querySelector('.is-selected');
     const leftPosition = selectedItem.getBoundingClientRect().left + document.body.scrollLeft;
-    const marker = document.querySelectorAll('.nav-marker')[0];
+    const marker = document.querySelector('.nav-marker');
 
     marker.style.left = `${leftPosition}px`;
 
     if (type === 'close') {
       oneTimeTransitionEvent(marker, () => {
-        this.set('navIsVisible', false);
+        set(this, 'navIsVisible', false);
         this.toggle3dBlock();
       });
     }
