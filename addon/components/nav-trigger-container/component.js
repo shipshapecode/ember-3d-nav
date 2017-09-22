@@ -15,6 +15,7 @@ export default Component.extend(RespondsToScroll, {
   tagName: 'header',
   classNameBindings: [':nav-trigger-container', 'navService.navIsVisible:nav-is-visible', 'isFixed', 'isFixedAndScrolled'],
   isFixedAndScrolled: false,
+  headroomOffset: null,
   useHeadroom: false,
   onScroll: on('scroll', function() {
     if (get(this, 'isFixed')) {
@@ -31,8 +32,10 @@ export default Component.extend(RespondsToScroll, {
     this._super();
     if (get(this, 'useHeadroom')) {
       run.scheduleOnce('afterRender', this, function() {
+        const offset = get(this, 'headroomOffset') ||
+          Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         const headroomOpts = {
-          offset: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+          offset,
           onUnpin: () => {
             if (get(this, 'navService.navIsVisible')) {
               this.send('toggleMenu');

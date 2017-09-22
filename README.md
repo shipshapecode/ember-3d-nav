@@ -72,6 +72,10 @@ Each `nav-item` must have an `index`, which is an integer, passed in. This allow
 
 `nav-trigger-container` accepts a parameter `useHeadroom`, which is a boolean. If you set `useHeadroom` to true, the header will disappear as you scroll down and reappear when you scroll back up, using headroom.js.
 
+`headroomOffset (optional)`
+
+`nav-trigger-container` accepts a parameter `headroomOffset` to set the point in which headroom kicks in.
+
 You currently must define your links in an array, so we can easily determine the selected index. Each item must have a `type`, `text` and `href` or `linkTo`. Please see the following example:
 
 ```js
