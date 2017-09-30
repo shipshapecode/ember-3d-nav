@@ -1,8 +1,8 @@
-{{#if (eq link.type 'href')}}
+{{#if isHref}}
   <a href="{{link.href}}">{{link.text}}</a>
 {{/if}}
 
-{{#if (eq link.type 'linkTo')}}
+{{#if isLinkTo}}
   {{#link-to link.linkTo}}{{link.text}}{{/link-to}}
 {{/if}}
 

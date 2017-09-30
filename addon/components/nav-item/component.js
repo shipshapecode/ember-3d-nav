@@ -1,6 +1,7 @@
 /* eslint-disable ember/no-observers, ember-suave/prefer-destructuring */
 import Component from '@ember/component';
 import { computed, get, observer, set } from '@ember/object';
+import { equal } from '@ember/object/computed';
 import { run } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 import layout from './template';
@@ -10,6 +11,8 @@ export default Component.extend({
   layout,
   tagName: 'centered',
   classNameBindings: ['isSelected'],
+  isHref: equal('link.type', 'href'),
+  isLinkTo: equal('link.type', 'linkTo'),
   isSelected: computed('navService.selectedIndex', function() {
     return get(this, 'index') === get(this, 'navService.selectedIndex');
   }),
