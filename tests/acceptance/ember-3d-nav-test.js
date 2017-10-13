@@ -54,13 +54,13 @@ test('scrolling applies isFixedAndScrolled', async function(assert) {
   await visit('/');
   assert.equal(getScrollTop(), 0, 'window scroll is 0');
 
-  await scrollTo(document.body, 0, 50);
+  await scrollTo(window, 0, 50);
   assert.equal(getScrollTop(), 50, 'window scroll is 50');
 
   assert.equal(find('.nav-trigger-container').classList.contains('is-fixed-and-scrolled'), true,
     'is-fixed-and-scrolled applied');
 
-  await scrollTo(document.body, 0, 0);
+  await scrollTo(window, 0, 0);
   assert.equal(getScrollTop(), 0, 'window scroll is 0');
 
   assert.equal(find('.nav-trigger-container').classList.contains('is-fixed-and-scrolled'), false,
