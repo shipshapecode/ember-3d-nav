@@ -3,7 +3,7 @@ import { visit } from '@ember/test-helpers';
 import { getScrollTop } from 'ember-3d-nav/utils';
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
-import { run } from '@ember/runloop';
+import wait from 'ember-test-helpers/wait';
 
 module('Acceptance | Nav menu behavior', function(hooks) {
   setupApplicationTest(hooks);
@@ -42,12 +42,13 @@ module('Acceptance | Nav menu behavior', function(hooks) {
     assert.equal(findAll('centered')[2].classList.contains('is-selected'), true,
       'nav item is selected');
 
-    run.later(function() {
-      assert.equal(find('.ember-3d-nav-container').classList.contains('nav-is-visible'), false,
-        'nav-is-visible class removed after clicking nav item');
-      done();
-    }, 5000);
-
+    return wait().then(() => {
+      setTimeout(() => {
+        assert.equal(find('.ember-3d-nav-container').classList.contains('nav-is-visible'), false,
+          'nav-is-visible class removed after clicking nav item');
+        done();
+      }, 2000);
+    });
   });
 
   test('scrolling applies isFixedAndScrolled', async function(assert) {
