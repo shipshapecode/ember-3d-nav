@@ -76,7 +76,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://shipshapecode.github.io/ember-3d-nav/"
+    "demoURL": "http://ember-3d-nav.shipshape.io"
   },
   "greenkeeper": {
     "ignore": [
