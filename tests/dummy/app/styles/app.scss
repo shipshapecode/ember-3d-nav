@@ -1,7 +1,8 @@
 @import "./fonts";
-$c-bloodOrange: #da4843;
+$c-blood-orange: #da4843;
 $c-primary: #3d2f53;
-$c-navBar: darken($c-primary, 5%);
+$c-nav-bar: darken($c-primary, 5%);
+$c-paragraph: #f5f0e1;
 
 //////////////////////////////
 // Dummy App Variables - Overrides default variables set in _variables.scss
@@ -9,14 +10,14 @@ $c-navBar: darken($c-primary, 5%);
 
 $ember-3d-nav: (
   'is-fixed-nav-bg': #624b86,
-  'nav-bg': $c-navBar,
+  'nav-bg': $c-nav-bar,
   'nav-item-hover': darken($c-primary, 10%),
   'nav-item-selected': darken($c-primary, 10%),
   'nav-text-color': #f5f0e1,
   'nav-trigger-color': #f5f0e1
 );
 
-$c-color-1: $c-bloodOrange;
+$c-color-1: $c-blood-orange;
 $c-color-2: #c96aa4;
 $c-color-3: #d6915e;
 $c-color-4: #5397c7;
@@ -88,7 +89,7 @@ a {
     width: 75vw;
 
     a {
-      color: $c-bloodOrange;
+      color: $c-blood-orange;
 
       &:hover {
         text-decoration: underline;
@@ -99,7 +100,7 @@ a {
     p {
       @include font-smoothing;
 
-      color: #f5f0e1;
+      color: $c-paragraph;
       margin: 100px auto;
       font: {
         size: 1.5rem;

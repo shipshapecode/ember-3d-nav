@@ -38,7 +38,15 @@ export default Component.extend({
   updateSelected() {
     // If we are using linkTo, we need to check the currentPath and see if it is the same as the linkTo value
     if (get(this, 'link.type') === 'linkTo') {
-      if (get(this, 'link.linkTo') === get(this, 'navService.currentPath')) {
+
+      const currentPath = get(this, 'navService.currentPath');
+      const linkTo = get(this, 'link.linkTo');
+      const linkToEqualsCurrentPath = linkTo === currentPath;
+
+      const shouldMatchParentRoute = Boolean(get(this, 'link.matchParentRoute'));
+      const linkToEqualsParentPath = shouldMatchParentRoute &&
+        currentPath.startsWith(linkTo);
+      if (linkToEqualsCurrentPath || linkToEqualsParentPath) {
         set(this, 'navService.selectedIndex', get(this, 'index'));
       }
     } else if (get(this, 'link.type') === 'href') {
