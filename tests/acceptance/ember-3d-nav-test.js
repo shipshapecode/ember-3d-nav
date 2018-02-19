@@ -1,5 +1,5 @@
-import { click, find, findAll, scrollTo } from 'ember-native-dom-helpers';
-import { visit } from '@ember/test-helpers';
+import { scrollTo } from 'ember-native-dom-helpers';
+import { visit, click, find, findAll } from '@ember/test-helpers';
 import { getScrollTop } from 'ember-3d-nav/utils';
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
