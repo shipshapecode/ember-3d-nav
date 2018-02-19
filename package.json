@@ -28,8 +28,8 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "@html-next/flexi-config": "^2.0.2",
-    "@html-next/flexi-default-styles": "^2.0.2",
+    "@html-next/flexi-config": "^2.1.0",
+    "@html-next/flexi-default-styles": "^2.1.0",
     "@html-next/flexi-dsl": "^2.0.3",
     "@html-next/flexi-layouts": "^2.0.3",
     "ember-cli-babel": "^6.6.0",
@@ -52,10 +52,10 @@
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
-    "ember-cli-qunit": "^4.1.1",
+    "ember-cli-qunit": "^4.3.2",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
-    "ember-cli-stylelint": "^1.0.0",
+    "ember-cli-stylelint": "^1.2.0",
     "ember-cli-template-lint": "^0.7.5",
     "ember-cli-uglify": "^2.0.0",
     "ember-debonair": "^0.4.4",
