@@ -72,7 +72,7 @@
     "eslint-plugin-ember-suave": "^1.0.0",
     "eslint-plugin-node": "^6.0.1",
     "loader.js": "^4.2.3",
-    "qunit-dom": "^0.6.2",
+    "qunit-dom": "^0.7.0",
     "stylelint-config-ship-shape": "^0.4.0"
   },
   "engines": {
