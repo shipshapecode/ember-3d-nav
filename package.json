@@ -9,6 +9,7 @@
     "3d nav",
     "navigation"
   ],
+  "repository": "https://github.com/shipshapecode/ember-3d-nav",
   "license": "MIT",
   "author": {
     "name": "Robert Wagner",
@@ -19,10 +20,9 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/shipshapecode/ember-3d-nav",
   "scripts": {
     "build": "ember build",
-    "lint:js": "eslint ./*.js addon addon-test-support app blueprints config lib server test-support tests",
+    "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
     "test:all": "ember try:each"
@@ -43,7 +43,7 @@
     "broccoli-asset-rev": "^2.7.0",
     "codeclimate-test-reporter": "^0.5.0",
     "ember-chrome-devtools": "^0.2.0",
-    "ember-cli": "~3.2.0-beta.2",
+    "ember-cli": "~3.3.0",
     "ember-cli-code-coverage": "1.0.0-beta.4",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-deploy": "^1.0.2",
@@ -65,7 +65,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-native-dom-helpers": "^0.6.2",
     "ember-resolver": "^4.0.0",
-    "ember-source": "~3.2.0-beta.2",
+    "ember-source": "~3.3.0",
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^1.0.0-beta.2",
     "eslint-plugin-ember": "^5.0.0",
@@ -76,7 +76,7 @@
     "stylelint-config-ship-shape": "^0.4.0"
   },
   "engines": {
-    "node": "^4.5 || 6.* || >= 7.*"
+    "node": "6.* || 8.* || >= 10.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
