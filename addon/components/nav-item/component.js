@@ -9,8 +9,8 @@ import layout from './template';
 export default Component.extend({
   navService: service('ember-3d-nav'),
   layout,
-  tagName: 'centered',
   classNameBindings: ['isSelected'],
+  classNames: ['flexi-centered'],
   isHref: equal('link.type', 'href'),
   isLinkTo: equal('link.type', 'linkTo'),
   isSelected: computed('navService.selectedIndex', function() {

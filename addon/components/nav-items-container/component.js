@@ -5,8 +5,10 @@ import layout from './template';
 
 export default Component.extend({
   navService: service('ember-3d-nav'),
+
   layout,
-  tagName: 'grid',
+  classNames: ['flexi-grid'],
+
   didInsertElement() {
     window.addEventListener('resize', () => {
       window.requestAnimationFrame(get(this, 'navService').updateSelectedNav);

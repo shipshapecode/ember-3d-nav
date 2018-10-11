@@ -51,7 +51,7 @@ a {
 }
 
 .ember-3d-nav {
-  centered {
+  .flexi-centered {
     &:first-of-type a:before {
       background-image: url(../img/boat.svg);
     }

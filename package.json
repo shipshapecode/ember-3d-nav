@@ -28,16 +28,13 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "@html-next/flexi-config": "^2.1.1",
-    "@html-next/flexi-default-styles": "^2.1.1",
-    "@html-next/flexi-dsl": "^2.1.0",
-    "@html-next/flexi-layouts": "^2.2.1",
+    "broccoli-merge-trees": "^3.0.1",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-sass": "^7.0.0",
+    "ember-cli-tailwind": "^0.6.2",
     "ember-headroom": "^1.1.2",
-    "ember-router-service-polyfill": "^1.0.2",
-    "flexi": "^2.1.0"
+    "ember-router-service-polyfill": "^1.0.2"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.7.0",
