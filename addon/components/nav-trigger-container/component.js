@@ -11,9 +11,11 @@ import RespondsToScroll from '../../mixins/responds-to-scroll';
 
 export default Component.extend(RespondsToScroll, {
   navService: service('ember-3d-nav'),
+
   layout,
   tagName: 'header',
-  classNameBindings: [':nav-trigger-container', 'navService.navIsVisible:nav-is-visible', 'isFixed', 'isFixedAndScrolled'],
+  classNames: ['nav-trigger-container'],
+  classNameBindings: ['navService.navIsVisible:nav-is-visible', 'isFixed', 'isFixedAndScrolled'],
   isFixedAndScrolled: false,
   headroomOffset: null,
   useHeadroom: false,
@@ -28,8 +30,10 @@ export default Component.extend(RespondsToScroll, {
       }
     }
   }),
+
   didInsertElement() {
     this._super();
+
     if (get(this, 'useHeadroom')) {
       run.scheduleOnce('afterRender', this, function() {
         const offset = get(this, 'headroomOffset') ||
@@ -48,6 +52,7 @@ export default Component.extend(RespondsToScroll, {
       });
     }
   },
+
   actions: {
     toggleMenu() {
       this.toggleProperty('navService.navIsVisible');

@@ -37,9 +37,9 @@ module('Acceptance | Nav menu behavior', function(hooks) {
     assert.equal(find('.ember-3d-nav-container').classList.contains('nav-is-visible'), true,
       'nav-is-visible class applied after clicking menu button');
 
-    await click(findAll('centered')[2]);
+    await click(findAll('.flexi-centered')[2]);
 
-    assert.equal(findAll('centered')[2].classList.contains('is-selected'), true,
+    assert.equal(findAll('.flexi-centered')[2].classList.contains('is-selected'), true,
       'nav item is selected');
 
     return wait().then(() => {

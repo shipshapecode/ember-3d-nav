@@ -1,9 +1,6 @@
 'use strict';
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
-const shim = require('@html-next/flexi-layouts/lib/pod-templates-shim');
-
-shim(EmberAddon);
 
 module.exports = function(defaults) {
   let project = defaults.project;

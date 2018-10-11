@@ -30,10 +30,10 @@
     width: 100%;
   }
 
-  grid {
+  .flexi-grid {
     height: 100%;
 
-    centered {
+    .flexi-centered {
       > * {
         left: 0;
         position: absolute;
@@ -43,7 +43,7 @@
     }
   }
 
-  centered {
+  .flexi-centered {
     a {
       &:hover {
         background: _e3dn('nav-item-hover');
