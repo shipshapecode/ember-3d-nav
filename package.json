@@ -29,11 +29,12 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "ember-auto-import": "^1.2.13",
     "ember-cli-babel": "^6.16.0",
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-sass": "^8.0.1",
-    "ember-headroom": "^1.1.2",
     "ember-router-service-polyfill": "^1.0.2",
+    "headroom.js": "^0.9.4",
     "sass": "^1.14.1"
   },
   "devDependencies": {
