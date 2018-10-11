@@ -5,7 +5,7 @@ import { on } from '@ember/object/evented';
 import { getScrollTop } from '../../utils';
 import { inject as service } from '@ember/service';
 import { run } from '@ember/runloop';
-import Headroom from 'headroom.js';
+import Headroom from 'headroom';
 import layout from './template';
 import RespondsToScroll from '../../mixins/responds-to-scroll';
 
