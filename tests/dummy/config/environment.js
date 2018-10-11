@@ -1,8 +1,7 @@
-/* eslint-env node */
 'use strict';
 
 module.exports = function(environment) {
-  const ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
