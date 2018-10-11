@@ -10,10 +10,11 @@
 [![Build Status](https://travis-ci.org/shipshapecode/ember-3d-nav.svg?branch=master)](https://travis-ci.org/shipshapecode/ember-3d-nav)
 [![Code Climate](https://codeclimate.com/github/shipshapecode/ember-3d-nav/badges/gpa.svg)](https://codeclimate.com/github/shipshapecode/ember-3d-nav)
 [![Test Coverage](https://codeclimate.com/github/shipshapecode/ember-3d-nav/badges/coverage.svg)](https://codeclimate.com/github/shipshapecode/ember-3d-nav/coverage)
+[![Greenkeeper badge](https://badges.greenkeeper.io/shipshapecode/ember-3d-nav.svg)](https://greenkeeper.io/)
 
 Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-rotating-navigation/) by CodyHouse. It aims to make it easily configurable for use with your Ember apps.
 
-[![Demo](http://i.imgur.com/bt5OMJ8.gif)](http://shipshapecode.github.io/ember-3d-nav/) [![Greenkeeper badge](https://badges.greenkeeper.io/shipshapecode/ember-3d-nav.svg)](https://greenkeeper.io/)
+[![Demo](http://i.imgur.com/bt5OMJ8.gif)](http://shipshapecode.github.io/ember-3d-nav/)
 [http://shipshapecode.github.io/ember-3d-nav/](http://shipshapecode.github.io/ember-3d-nav/)
 
 ## Installation
