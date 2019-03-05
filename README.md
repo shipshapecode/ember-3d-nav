@@ -1,4 +1,5 @@
-# Ember-3d-nav
+ember-3d-nav
+==============================================================================
 
 <a href="https://shipshape.io/"><img src="http://i.imgur.com/DWHQjA5.png" alt="Ship Shape" width="100" height="100"/></a>
 
@@ -17,11 +18,20 @@ Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-ro
 [![Demo](http://i.imgur.com/bt5OMJ8.gif)](http://shipshapecode.github.io/ember-3d-nav/)
 [http://shipshapecode.github.io/ember-3d-nav/](http://shipshapecode.github.io/ember-3d-nav/)
 
-## Installation
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+
+
+Installation
+------------------------------------------------------------------------------
 
 `ember install ember-3d-nav`
 
-## Usage
+Usage
+------------------------------------------------------------------------------
 
 To make the nav work, you must provide a `nav-trigger-container`, `nav-container`, and at least one `nav-item` inside the `nav-container`.
 
@@ -177,3 +187,14 @@ Lastly, be sure to `@import` the styles into your project.
 ```scss
 @import 'ember-3d-nav';
 ```
+
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
