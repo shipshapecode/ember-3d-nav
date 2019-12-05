@@ -29,23 +29,22 @@ export default Component.extend({
   click() {
     if (!get(this, 'isSelected')) {
       set(this, 'navService.selectedIndex', get(this, 'index'));
-      run.scheduleOnce('afterRender', this, () => {
-        get(this, 'navService').updateSelectedNav('close');
-      });
+      run.scheduleOnce('afterRender', this, this._updateSelectedNav);
     }
   },
 
   updateSelected() {
     // If we are using linkTo, we need to check the currentPath and see if it is the same as the linkTo value
     if (get(this, 'link.type') === 'linkTo') {
-
       const currentPath = get(this, 'navService.currentPath');
       const linkTo = get(this, 'link.linkTo');
       const linkToEqualsCurrentPath = linkTo === currentPath;
 
-      const shouldMatchParentRoute = Boolean(get(this, 'link.matchParentRoute'));
-      const linkToEqualsParentPath = shouldMatchParentRoute &&
-        currentPath.startsWith(linkTo);
+      const shouldMatchParentRoute = Boolean(
+        get(this, 'link.matchParentRoute')
+      );
+      const linkToEqualsParentPath =
+        shouldMatchParentRoute && currentPath.startsWith(linkTo);
       if (linkToEqualsCurrentPath || linkToEqualsParentPath) {
         set(this, 'navService.selectedIndex', get(this, 'index'));
       }
@@ -56,11 +55,18 @@ export default Component.extend({
       // Remove the first slash
       const href = pathAndHash.split(/\/(.+)?/)[1];
 
-      const linkHref = get(this, 'link.href').indexOf('/') === 0 ? get(this, 'link.href').split(/\/(.+)?/)[1] : get(this, 'link.href');
+      const linkHref =
+        get(this, 'link.href').indexOf('/') === 0
+          ? get(this, 'link.href').split(/\/(.+)?/)[1]
+          : get(this, 'link.href');
 
       if (linkHref === href) {
         set(this, 'navService.selectedIndex', get(this, 'index'));
       }
     }
+  },
+
+  _updateSelectedNav() {
+    get(this, 'navService').updateSelectedNav('close');
   }
 });

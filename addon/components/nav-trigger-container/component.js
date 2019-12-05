@@ -15,7 +15,11 @@ export default Component.extend(RespondsToScroll, {
   layout,
   tagName: 'header',
   classNames: ['nav-trigger-container'],
-  classNameBindings: ['navService.navIsVisible:nav-is-visible', 'isFixed', 'isFixedAndScrolled'],
+  classNameBindings: [
+    'navService.navIsVisible:nav-is-visible',
+    'isFixed',
+    'isFixedAndScrolled'
+  ],
   isFixedAndScrolled: false,
   headroomOffset: null,
   useHeadroom: false,
@@ -35,21 +39,7 @@ export default Component.extend(RespondsToScroll, {
     this._super();
 
     if (get(this, 'useHeadroom')) {
-      run.scheduleOnce('afterRender', this, function() {
-        const offset = get(this, 'headroomOffset') ||
-          Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        const headroomOpts = {
-          offset,
-          onUnpin: () => {
-            if (get(this, 'navService.navIsVisible')) {
-              this.send('toggleMenu');
-            }
-          }
-        };
-
-        const headroom = new Headroom(this.element, headroomOpts);
-        headroom.init();
-      });
+      run.scheduleOnce('afterRender', this, this._setupHeadroom);
     }
   },
 
@@ -58,5 +48,22 @@ export default Component.extend(RespondsToScroll, {
       this.toggleProperty('navService.navIsVisible');
       get(this, 'navService').toggle3dBlock();
     }
+  },
+
+  _setupHeadroom() {
+    const offset =
+      get(this, 'headroomOffset') ||
+      Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    const headroomOpts = {
+      offset,
+      onUnpin: () => {
+        if (get(this, 'navService.navIsVisible')) {
+          this.send('toggleMenu');
+        }
+      }
+    };
+
+    const headroom = new Headroom(this.element, headroomOpts);
+    headroom.init();
   }
 });
