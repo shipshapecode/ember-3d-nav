@@ -1,6 +1,6 @@
 <ul class="ember-3d-nav">
-  {{#nav-items-container}}
+  <NavItemsContainer>
     {{yield}}
-    {{nav-marker multiColor=multiColor}}
-  {{/nav-items-container}}
+    <NavMarker @multiColor={{@multiColor}} />
+  </NavItemsContainer>
 </ul>

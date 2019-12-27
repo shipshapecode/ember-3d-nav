@@ -1,9 +1,11 @@
-{{#if isHref}}
-  <a href={{link.href}}>{{link.text}}</a>
+{{#if this.isHref}}
+  <a href={{@link.href}}>{{@link.text}}</a>
 {{/if}}
 
-{{#if isLinkTo}}
-  {{#link-to link.linkTo}}{{link.text}}{{/link-to}}
+{{#if this.isLinkTo}}
+  <LinkTo @route={{@link.linkTo}}>
+    {{@link.text}}
+  </LinkTo>
 {{/if}}
 
 {{yield}}

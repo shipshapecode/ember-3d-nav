@@ -5,8 +5,7 @@ module.exports = function(deployTarget) {
     build: {},
     // include other plugin configuration that applies to all deploy targets here
     ghpages: {
-      gitRemoteUrl: 'https://github.com/shipshapecode/ember-3d-nav',
-      domain: 'ember-3d-nav.shipshape.io'
+      gitRemoteUrl: 'https://github.com/shipshapecode/ember-3d-nav'
     }
   };
 

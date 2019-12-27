@@ -1,6 +1,8 @@
-{{#nav-trigger-container isFixed=true useHeadroom=true}}
-  <a href="//shipshape.io" class="logo"><img src="img/white.svg" alt="Logo" height="45px" width="45px"></a>
-{{/nav-trigger-container}}
+<NavTriggerContainer @isFixed={{true}} @useHeadroom={{true}}>
+  <a href="//shipshape.io" class="logo">
+    <img src="img/white.svg" alt="Ship Shape Cthulhu Logo" height="45px" width="45px">
+  </a>
+</NavTriggerContainer>
 
 <screen class="main">
   <div class="info-text">
@@ -14,8 +16,8 @@
   </div>
 </screen>
 
-{{#nav-container multiColor=true}}
-  {{#each model.links as |link index|}}
-    {{nav-item index=index link=link}}
+<NavContainer @multiColor={{true}}>
+  {{#each this.model.links as |link index|}}
+    <NavItem @index={{index}} @link={{link}}/>
   {{/each}}
-{{/nav-container}}
+</NavContainer>

@@ -8,6 +8,7 @@ import { run } from '@ember/runloop';
 import Headroom from 'headroom';
 import layout from './template';
 import RespondsToScroll from '../../mixins/responds-to-scroll';
+import { action } from '@ember/object';
 
 export default Component.extend(RespondsToScroll, {
   navService: service('ember-3d-nav'),
@@ -43,11 +44,10 @@ export default Component.extend(RespondsToScroll, {
     }
   },
 
-  actions: {
-    toggleMenu() {
-      this.toggleProperty('navService.navIsVisible');
-      get(this, 'navService').toggle3dBlock();
-    }
+  @action
+  toggleMenu() {
+    this.toggleProperty('navService.navIsVisible');
+    get(this, 'navService').toggle3dBlock();
   },
 
   _setupHeadroom() {
