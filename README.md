@@ -15,8 +15,8 @@ ember-3d-nav
 
 Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-rotating-navigation/) by CodyHouse. It aims to make it easily configurable for use with your Ember apps.
 
-[![Demo](http://i.imgur.com/bt5OMJ8.gif)](http://shipshapecode.github.io/ember-3d-nav/)
-[http://shipshapecode.github.io/ember-3d-nav/](http://shipshapecode.github.io/ember-3d-nav/)
+[![Demo](http://i.imgur.com/bt5OMJ8.gif)](https://shipshapecode.github.io/ember-3d-nav/)
+[https://shipshapecode.github.io/ember-3d-nav/](https://shipshapecode.github.io/ember-3d-nav/)
 
 Compatibility
 ------------------------------------------------------------------------------
