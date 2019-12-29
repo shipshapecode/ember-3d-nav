@@ -1,1 +1,1 @@
-export { default } from 'ember-3d-nav/components/nav-items-container/component';
+export { default } from 'ember-3d-nav/components/nav-items-container';

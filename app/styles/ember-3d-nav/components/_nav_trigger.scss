@@ -3,10 +3,13 @@
 //////////////////////////////
 
 .nav-trigger {
+  background: transparent;
+  border: none;
   cursor: pointer;
   float: right;
   height: 45px;
   margin-top: 18px;
+  outline: none;
   position: relative;
   width: 45px;
 

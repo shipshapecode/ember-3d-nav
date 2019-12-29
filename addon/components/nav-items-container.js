@@ -1,17 +1,17 @@
 import Component from '@ember/component';
 import { get } from '@ember/object';
 import { inject as service } from '@ember/service';
-import layout from './template';
+import { tagName } from '@ember-decorators/component';
 
-export default Component.extend({
-  navService: service('ember-3d-nav'),
+@tagName('')
+export default class NavItemsContainer extends Component {
+  @service('ember-3d-nav') navService;
 
-  layout,
-  classNames: ['flexi-grid'],
+  init() {
+    super.init(...arguments);
 
-  didInsertElement() {
     window.addEventListener('resize', () => {
       window.requestAnimationFrame(get(this, 'navService').updateSelectedNav);
     });
   }
-});
+}

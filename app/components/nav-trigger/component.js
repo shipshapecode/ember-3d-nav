@@ -1,1 +1,1 @@
-export { default } from 'ember-3d-nav/components/nav-trigger/component';
+export { default } from 'ember-3d-nav/components/nav-trigger';
