@@ -1,9 +1,11 @@
 import Component from '@ember/component';
 import { computed, get } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { tagName } from '@ember-decorators/component';
+import { layout, tagName } from '@ember-decorators/component';
+import template from '../templates/components/nav-marker';
 
 @tagName('')
+@layout(template)
 export default class NavMarker extends Component {
   @service('ember-3d-nav') navService;
 
