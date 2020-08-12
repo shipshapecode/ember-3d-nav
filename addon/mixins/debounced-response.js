@@ -1,5 +1,4 @@
 import Mixin from '@ember/object/mixin';
-import { get } from '@ember/object';
 import { run } from '@ember/runloop';
 
 export default Mixin.create({
@@ -11,7 +10,7 @@ export default Mixin.create({
         window.requestAnimationFrame(() => {
           this.isScheduled = false;
 
-          if (get(this, 'isDestroyed')) {
+          if (this.isDestroyed) {
             return;
           }
 

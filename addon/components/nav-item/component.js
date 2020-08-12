@@ -1,6 +1,6 @@
-/* eslint-disable ember/no-observers, ember-suave/prefer-destructuring */
+/* eslint-disable ember/no-observers */
 import Component from '@ember/component';
-import { computed, get, observer, set } from '@ember/object';
+import { computed, observer, set } from '@ember/object';
 import { equal } from '@ember/object/computed';
 import { run } from '@ember/runloop';
 import { inject as service } from '@ember/service';
@@ -13,8 +13,8 @@ export default Component.extend({
   classNames: ['flexi-centered'],
   isHref: equal('link.type', 'href'),
   isLinkTo: equal('link.type', 'linkTo'),
-  isSelected: computed('navService.selectedIndex', function() {
-    return get(this, 'index') === get(this, 'navService.selectedIndex');
+  isSelected: computed('index', 'navService.selectedIndex', function() {
+    return this.index === this.navService.selectedIndex;
   }),
   updateOnPathChange: observer('navService.currentPath', function() {
     run.later(this, function() {
@@ -27,28 +27,28 @@ export default Component.extend({
     });
   },
   click() {
-    if (!get(this, 'isSelected')) {
-      set(this, 'navService.selectedIndex', get(this, 'index'));
+    if (!this.isSelected) {
+      set(this, 'navService.selectedIndex', this.index);
       run.scheduleOnce('afterRender', this, this._updateSelectedNav);
     }
   },
 
   updateSelected() {
     // If we are using linkTo, we need to check the currentPath and see if it is the same as the linkTo value
-    if (get(this, 'link.type') === 'linkTo') {
-      const currentPath = get(this, 'navService.currentPath');
-      const linkTo = get(this, 'link.linkTo');
+    if (this.link.type === 'linkTo') {
+      const { currentPath } = this.navService;
+      const { linkTo } = this.link;
       const linkToEqualsCurrentPath = linkTo === currentPath;
 
       const shouldMatchParentRoute = Boolean(
-        get(this, 'link.matchParentRoute')
+        this.link.matchParentRoute
       );
       const linkToEqualsParentPath =
         shouldMatchParentRoute && currentPath.startsWith(linkTo);
       if (linkToEqualsCurrentPath || linkToEqualsParentPath) {
-        set(this, 'navService.selectedIndex', get(this, 'index'));
+        set(this, 'navService.selectedIndex', this.index);
       }
-    } else if (get(this, 'link.type') === 'href') {
+    } else if (this.link.type === 'href') {
       // If the type is href, we want to look at the end of the url and match it
       const pathAndHash = window.location.pathname + window.location.hash;
 
@@ -56,17 +56,17 @@ export default Component.extend({
       const href = pathAndHash.split(/\/(.+)?/)[1];
 
       const linkHref =
-        get(this, 'link.href').indexOf('/') === 0
-          ? get(this, 'link.href').split(/\/(.+)?/)[1]
-          : get(this, 'link.href');
+        this.link.href.indexOf('/') === 0
+          ? this.link.href.split(/\/(.+)?/)[1]
+          : this.link.href;
 
       if (linkHref === href) {
-        set(this, 'navService.selectedIndex', get(this, 'index'));
+        set(this, 'navService.selectedIndex', this.index);
       }
     }
   },
 
   _updateSelectedNav() {
-    get(this, 'navService').updateSelectedNav('close');
+    this.navService.updateSelectedNav('close');
   }
 });

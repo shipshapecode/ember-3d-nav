@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed, get } from '@ember/object';
+import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { layout, tagName } from '@ember-decorators/component';
 import template from '../templates/components/nav-marker';
@@ -12,8 +12,8 @@ export default class NavMarker extends Component {
   @computed('multiColor', 'navService.selectedIndex', function() {
     let color = 'color-';
 
-    if (get(this, 'multiColor')) {
-      color += get(this, 'navService.selectedIndex') + 1;
+    if (this.multiColor) {
+      color += this.navService.selectedIndex + 1;
     } else {
       color += 1;
     }

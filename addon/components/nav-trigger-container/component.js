@@ -1,5 +1,5 @@
 /* eslint-disable ember/no-on-calls-in-components */
-import { get, set } from '@ember/object';
+import { set } from '@ember/object';
 import Component from '@ember/component';
 import { on } from '@ember/object/evented';
 import { getScrollTop } from '../../utils';
@@ -25,7 +25,7 @@ export default Component.extend(RespondsToScroll, {
   headroomOffset: null,
   useHeadroom: false,
   onScroll: on('scroll', function() {
-    if (get(this, 'isFixed')) {
+    if (this.isFixed) {
       const scrollPosition = getScrollTop();
 
       if (scrollPosition > 0) {
@@ -39,7 +39,7 @@ export default Component.extend(RespondsToScroll, {
   didInsertElement() {
     this._super();
 
-    if (get(this, 'useHeadroom')) {
+    if (this.useHeadroom) {
       run.scheduleOnce('afterRender', this, this._setupHeadroom);
     }
   },
@@ -47,17 +47,17 @@ export default Component.extend(RespondsToScroll, {
   @action
   toggleMenu() {
     this.toggleProperty('navService.navIsVisible');
-    get(this, 'navService').toggle3dBlock();
+    this.navService.toggle3dBlock();
   },
 
   _setupHeadroom() {
     const offset =
-      get(this, 'headroomOffset') ||
+      this.headroomOffset ||
       Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     const headroomOpts = {
       offset,
       onUnpin: () => {
-        if (get(this, 'navService.navIsVisible')) {
+        if (this.navService.navIsVisible) {
           this.send('toggleMenu');
         }
       }

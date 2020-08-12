@@ -1,4 +1,4 @@
-import { computed, get, set } from '@ember/object';
+import { computed, set } from '@ember/object';
 import { oneTimeTransitionEvent } from '../utils';
 import Service, { inject as service } from '@ember/service';
 
@@ -8,7 +8,7 @@ export default Service.extend({
   navIsVisible: false,
   selectedIndex: 0,
   toggle3dBlock() {
-    const addOrRemove = get(this, 'navIsVisible');
+    const addOrRemove = this.navIsVisible;
     const main = document.querySelector('.main');
     main.classList.toggle('nav-is-visible', addOrRemove);
     oneTimeTransitionEvent(main, () => {

@@ -21,9 +21,9 @@ Ember-3d-nav is based on [3D Rotating Navigation](https://codyhouse.co/gem/3d-ro
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.8 or above
+* Ember.js v3.12 or above
 * Ember CLI v2.13 or above
-* Node.js v8 or above
+* Node.js v10 or above
 
 
 Installation
