@@ -4,7 +4,7 @@ import Component from '@ember/component';
 import { on } from '@ember/object/evented';
 import { getScrollTop } from '../../utils';
 import { inject as service } from '@ember/service';
-import { run } from '@ember/runloop';
+import { scheduleOnce } from '@ember/runloop';
 import Headroom from 'headroom';
 import RespondsToScroll from '../../mixins/responds-to-scroll';
 import { action } from '@ember/object';
@@ -38,7 +38,7 @@ export default Component.extend(RespondsToScroll, {
     this._super();
 
     if (this.useHeadroom) {
-      run.scheduleOnce('afterRender', this, this._setupHeadroom);
+      scheduleOnce('afterRender', this, this._setupHeadroom);
     }
   },
 

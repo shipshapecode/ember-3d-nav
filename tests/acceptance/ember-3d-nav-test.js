@@ -1,9 +1,14 @@
-import { scrollTo } from 'ember-native-dom-helpers';
-import { visit, click, find, findAll } from '@ember/test-helpers';
+import {
+  visit,
+  click,
+  find,
+  findAll,
+  waitUntil,
+  settled,
+} from '@ember/test-helpers';
 import { getScrollTop } from 'ember-3d-nav/utils';
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
-import wait from 'ember-test-helpers/wait';
 
 module('Acceptance | Nav menu behavior', function (hooks) {
   setupApplicationTest(hooks);
@@ -52,41 +57,64 @@ module('Acceptance | Nav menu behavior', function (hooks) {
       'nav item is selected'
     );
 
-    return wait().then(() => {
-      setTimeout(() => {
-        assert.false(
-          find('.ember-3d-nav-container').classList.contains('nav-is-visible'),
-          'nav-is-visible class removed after clicking nav item'
-        );
-        done();
-      }, 2000);
-    });
+    await settled();
+
+    setTimeout(() => {
+      assert.false(
+        find('.ember-3d-nav-container').classList.contains('nav-is-visible'),
+        'nav-is-visible class removed after clicking nav item'
+      );
+      done();
+    }, 2000);
   });
 
   test('scrolling applies isFixedAndScrolled', async function (assert) {
-    assert.expect(5);
+    assert.expect(3);
 
     await visit('/');
     assert.deepEqual(getScrollTop(), 0, 'window scroll is 0');
 
-    await scrollTo(window, 0, 50);
-    assert.deepEqual(getScrollTop(), 50, 'window scroll is 50');
+    window.scrollTo(0, 50);
+    await waitUntil(
+      function () {
+        return getScrollTop() === 50;
+      },
+      { timeout: 2000 }
+    );
+    await settled();
 
-    assert.true(
-      find('.nav-trigger-container').classList.contains(
-        'is-fixed-and-scrolled'
-      ),
-      'is-fixed-and-scrolled applied'
+    await waitUntil(
+      function () {
+        return find('.nav-trigger-container').classList.contains(
+          'is-fixed-and-scrolled'
+        );
+      },
+      { timeout: 2000 }
     );
 
-    await scrollTo(window, 0, 0);
-    assert.deepEqual(getScrollTop(), 0, 'window scroll is 0');
+    assert.dom('.nav-trigger-container').hasClass('is-fixed-and-scrolled');
 
-    assert.false(
-      find('.nav-trigger-container').classList.contains(
-        'is-fixed-and-scrolled'
-      ),
-      'is-fixed-and-scrolled removed'
+    window.scrollTo(0, 0);
+    await waitUntil(
+      function () {
+        return getScrollTop() === 0;
+      },
+      { timeout: 2000 }
     );
+
+    await settled();
+
+    await waitUntil(
+      function () {
+        return !find('.nav-trigger-container').classList.contains(
+          'is-fixed-and-scrolled'
+        );
+      },
+      { timeout: 2000 }
+    );
+
+    assert
+      .dom('.nav-trigger-container')
+      .doesNotHaveClass('is-fixed-and-scrolled');
   });
 });

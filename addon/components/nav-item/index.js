@@ -2,7 +2,7 @@
 import Component from '@ember/component';
 import { computed, observer, set } from '@ember/object';
 import { equal } from '@ember/object/computed';
-import { run } from '@ember/runloop';
+import { later, scheduleOnce } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 
 export default Component.extend({
@@ -16,20 +16,20 @@ export default Component.extend({
     return this.index === this.navService.selectedIndex;
   }),
   updateOnPathChange: observer('navService.currentPath', function () {
-    run.later(this, function () {
+    later(this, function () {
       this.updateSelected();
     });
   }),
   didInsertElement() {
     this._super(...arguments);
-    run.later(this, function () {
+    later(this, function () {
       this.updateSelected();
     });
   },
   click() {
     if (!this.isSelected) {
       set(this, 'navService.selectedIndex', this.index);
-      run.scheduleOnce('afterRender', this, this._updateSelectedNav);
+      scheduleOnce('afterRender', this, this._updateSelectedNav);
     }
   },
 
