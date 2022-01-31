@@ -6,10 +6,10 @@ import { inject as service } from '@ember/service';
 export default class NavMarker extends Component {
   @service('ember-3d-nav') navService;
 
-  @computed('multiColor', 'navService.selectedIndex', function () {
+  @computed('args.multiColor', 'navService.selectedIndex', function () {
     let color = 'color-';
 
-    if (this.multiColor) {
+    if (this.args.multiColor) {
       color += this.navService.selectedIndex + 1;
     } else {
       color += 1;

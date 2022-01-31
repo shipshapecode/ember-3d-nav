@@ -42,11 +42,10 @@ export default Component.extend(RespondsToScroll, {
     }
   },
 
-  @action
-  toggleMenu() {
+  toggleMenu: action(function () {
     this.toggleProperty('navService.navIsVisible');
     this.navService.toggle3dBlock();
-  },
+  }),
 
   _setupHeadroom() {
     const offset =
