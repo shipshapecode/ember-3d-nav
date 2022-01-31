@@ -1,4 +1,4 @@
-import { computed, set } from '@ember/object';
+import { set } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import { oneTimeTransitionEvent } from '../utils';
 import Service, { inject as service } from '@ember/service';
