@@ -3,10 +3,10 @@ function whichTransitionEvent() {
   const el = document.createElement('fakeelement');
 
   const transitions = {
-    'transition': 'transitionend',
-    'OTransition': 'oTransitionEnd',
-    'MozTransition': 'transitionend',
-    'WebkitTransition': 'webkitTransitionEnd'
+    transition: 'transitionend',
+    OTransition: 'oTransitionEnd',
+    MozTransition: 'transitionend',
+    WebkitTransition: 'webkitTransitionEnd',
   };
 
   for (t in transitions) {
@@ -16,13 +16,14 @@ function whichTransitionEvent() {
   }
 }
 
-const getScrollTop = function() {
-  return (window.pageYOffset !== undefined) ?
-    window.pageYOffset :
-    (document.documentElement || document.body.parentNode || document.body).scrollTop;
+const getScrollTop = function () {
+  return window.pageYOffset !== undefined
+    ? window.pageYOffset
+    : (document.documentElement || document.body.parentNode || document.body)
+        .scrollTop;
 };
 
-const oneTimeTransitionEvent = function(element, callback) {
+const oneTimeTransitionEvent = function (element, callback) {
   const transitionEvent = whichTransitionEvent();
   const customFunction = (e) => {
     e.target.removeEventListener(transitionEvent, customFunction);
@@ -32,7 +33,4 @@ const oneTimeTransitionEvent = function(element, callback) {
   element.addEventListener(transitionEvent, customFunction);
 };
 
-export {
-  getScrollTop,
-  oneTimeTransitionEvent
-};
+export { getScrollTop, oneTimeTransitionEvent };

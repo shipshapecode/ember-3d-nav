@@ -26,7 +26,8 @@ export default Service.extend({
    */
   updateSelectedNav(type) {
     const selectedItem = document.querySelector('.is-selected');
-    const leftPosition = selectedItem.getBoundingClientRect().left + document.body.scrollLeft;
+    const leftPosition =
+      selectedItem.getBoundingClientRect().left + document.body.scrollLeft;
     const marker = document.querySelector('.nav-marker');
 
     marker.style.left = `${leftPosition}px`;
@@ -37,5 +38,5 @@ export default Service.extend({
         this.toggle3dBlock();
       });
     }
-  }
+  },
 });

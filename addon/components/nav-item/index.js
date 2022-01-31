@@ -1,28 +1,28 @@
-/* eslint-disable ember/no-observers */
+/* eslint-disable ember/no-component-lifecycle-hooks, ember/no-observers, ember/require-tagless-components */
 import Component from '@ember/component';
 import { computed, observer, set } from '@ember/object';
 import { equal } from '@ember/object/computed';
 import { run } from '@ember/runloop';
 import { inject as service } from '@ember/service';
-import layout from './template';
 
 export default Component.extend({
   navService: service('ember-3d-nav'),
-  layout,
+
   classNameBindings: ['isSelected'],
   classNames: ['flexi-centered'],
   isHref: equal('link.type', 'href'),
   isLinkTo: equal('link.type', 'linkTo'),
-  isSelected: computed('index', 'navService.selectedIndex', function() {
+  isSelected: computed('index', 'navService.selectedIndex', function () {
     return this.index === this.navService.selectedIndex;
   }),
-  updateOnPathChange: observer('navService.currentPath', function() {
-    run.later(this, function() {
+  updateOnPathChange: observer('navService.currentPath', function () {
+    run.later(this, function () {
       this.updateSelected();
     });
   }),
   didInsertElement() {
-    run.later(this, function() {
+    this._super(...arguments);
+    run.later(this, function () {
       this.updateSelected();
     });
   },
@@ -40,9 +40,7 @@ export default Component.extend({
       const { linkTo } = this.link;
       const linkToEqualsCurrentPath = linkTo === currentPath;
 
-      const shouldMatchParentRoute = Boolean(
-        this.link.matchParentRoute
-      );
+      const shouldMatchParentRoute = Boolean(this.link.matchParentRoute);
       const linkToEqualsParentPath =
         shouldMatchParentRoute && currentPath.startsWith(linkTo);
       if (linkToEqualsCurrentPath || linkToEqualsParentPath) {
@@ -68,5 +66,5 @@ export default Component.extend({
 
   _updateSelectedNav() {
     this.navService.updateSelectedNav('close');
-  }
+  },
 });

@@ -1,4 +1,4 @@
-/* eslint-disable ember/no-on-calls-in-components */
+/* eslint-disable ember/no-component-lifecycle-hooks, ember/no-on-calls-in-components, ember/require-tagless-components */
 import { set } from '@ember/object';
 import Component from '@ember/component';
 import { on } from '@ember/object/evented';
@@ -6,25 +6,23 @@ import { getScrollTop } from '../../utils';
 import { inject as service } from '@ember/service';
 import { run } from '@ember/runloop';
 import Headroom from 'headroom';
-import layout from './template';
 import RespondsToScroll from '../../mixins/responds-to-scroll';
 import { action } from '@ember/object';
 
 export default Component.extend(RespondsToScroll, {
   navService: service('ember-3d-nav'),
 
-  layout,
   tagName: 'header',
   classNames: ['nav-trigger-container'],
   classNameBindings: [
     'navService.navIsVisible:nav-is-visible',
     'isFixed',
-    'isFixedAndScrolled'
+    'isFixedAndScrolled',
   ],
   isFixedAndScrolled: false,
   headroomOffset: null,
   useHeadroom: false,
-  onScroll: on('scroll', function() {
+  onScroll: on('scroll', function () {
     if (this.isFixed) {
       const scrollPosition = getScrollTop();
 
@@ -60,10 +58,10 @@ export default Component.extend(RespondsToScroll, {
         if (this.navService.navIsVisible) {
           this.send('toggleMenu');
         }
-      }
+      },
     };
 
     const headroom = new Headroom(this.element, headroomOpts);
     headroom.init();
-  }
+  },
 });

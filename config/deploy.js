@@ -1,12 +1,12 @@
 /* eslint-env node */
 
-module.exports = function(deployTarget) {
+module.exports = function (deployTarget) {
   var ENV = {
     build: {},
     // include other plugin configuration that applies to all deploy targets here
     ghpages: {
-      gitRemoteUrl: 'https://github.com/shipshapecode/ember-3d-nav'
-    }
+      gitRemoteUrl: 'https://github.com/shipshapecode/ember-3d-nav',
+    },
   };
 
   if (deployTarget === 'development') {

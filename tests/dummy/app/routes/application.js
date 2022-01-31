@@ -7,29 +7,29 @@ export default Route.extend({
         {
           href: '#0',
           text: 'About',
-          type: 'href'
+          type: 'href',
         },
         {
           href: '#1',
           text: 'Technologies',
-          type: 'href'
+          type: 'href',
         },
         {
           linkTo: 'team',
           text: 'Team',
-          type: 'linkTo'
+          type: 'linkTo',
         },
         {
           linkTo: 'portfolio',
           text: 'Portfolio',
-          type: 'linkTo'
+          type: 'linkTo',
         },
         {
           href: '#4',
           text: 'Contact',
-          type: 'href'
-        }
-      ]
+          type: 'href',
+        },
+      ],
     };
-  }
+  },
 });
