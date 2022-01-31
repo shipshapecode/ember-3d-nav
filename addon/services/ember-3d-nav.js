@@ -1,10 +1,11 @@
 import { computed, set } from '@ember/object';
+import { alias } from '@ember/object/computed';
 import { oneTimeTransitionEvent } from '../utils';
 import Service, { inject as service } from '@ember/service';
 
 export default Service.extend({
   router: service(),
-  currentPath: computed.alias('router.currentRouteName'),
+  currentPath: alias('router.currentRouteName'),
   navIsVisible: false,
   selectedIndex: 0,
   toggle3dBlock() {
