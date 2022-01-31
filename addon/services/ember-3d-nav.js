@@ -1,10 +1,11 @@
-import { computed, set } from '@ember/object';
+import { set } from '@ember/object';
+import { alias } from '@ember/object/computed';
 import { oneTimeTransitionEvent } from '../utils';
 import Service, { inject as service } from '@ember/service';
 
 export default Service.extend({
   router: service(),
-  currentPath: computed.alias('router.currentRouteName'),
+  currentPath: alias('router.currentRouteName'),
   navIsVisible: false,
   selectedIndex: 0,
   toggle3dBlock() {
@@ -26,7 +27,8 @@ export default Service.extend({
    */
   updateSelectedNav(type) {
     const selectedItem = document.querySelector('.is-selected');
-    const leftPosition = selectedItem.getBoundingClientRect().left + document.body.scrollLeft;
+    const leftPosition =
+      selectedItem.getBoundingClientRect().left + document.body.scrollLeft;
     const marker = document.querySelector('.nav-marker');
 
     marker.style.left = `${leftPosition}px`;
@@ -37,5 +39,5 @@ export default Service.extend({
         this.toggle3dBlock();
       });
     }
-  }
+  },
 });

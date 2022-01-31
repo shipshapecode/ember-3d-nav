@@ -1,15 +1,11 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
-import { layout, tagName } from '@ember-decorators/component';
-import template from '../templates/components/nav-items-container';
 
-@tagName('')
-@layout(template)
 export default class NavItemsContainer extends Component {
   @service('ember-3d-nav') navService;
 
-  init() {
-    super.init(...arguments);
+  constructor() {
+    super(...arguments);
 
     window.addEventListener('resize', () => {
       window.requestAnimationFrame(this.navService.updateSelectedNav);

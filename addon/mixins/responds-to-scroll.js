@@ -2,30 +2,26 @@ import DebouncedResponse from './debounced-response';
 import Evented from '@ember/object/evented';
 import Mixin from '@ember/object/mixin';
 
-function noop() { }
+function noop() {}
 
 // Debounces browser event, triggers 'scroll' event and calls 'scroll' handler.
-export default Mixin.create(
-  Evented,
-  DebouncedResponse,
-  {
+export default Mixin.create(Evented, DebouncedResponse, {
+  scroll: noop,
 
-    scroll: noop,
+  didInsertElement() {
+    this._super(...arguments);
 
-    didInsertElement() {
-      this._super(...arguments);
+    this.scrollHandler = this.debounce((...args) => {
+      this.trigger('scroll', ...args);
+      this.scroll(...args);
+    });
 
-      this.scrollHandler = this.debounce((...args) => {
-        this.trigger('scroll', ...args);
-        this.scroll(...args);
-      });
+    window.addEventListener('scroll', this.scrollHandler);
+  },
 
-      window.addEventListener('scroll', this.scrollHandler);
-    },
+  willDestroyElement() {
+    this._super(...arguments);
 
-    willDestroyElement() {
-      this._super(...arguments);
-
-      window.removeEventListener('scroll', this.scrollHandler);
-    }
-  });
+    window.removeEventListener('scroll', this.scrollHandler);
+  },
+});
